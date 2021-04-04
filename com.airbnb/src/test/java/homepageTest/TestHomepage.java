@@ -9,14 +9,13 @@ public class TestHomepage extends BaseAPI {
     Homepage homepage;
 
     @Test
-    public void testDoSearch() {
+    public void testDoSearch() throws InterruptedException {
         homepage = new Homepage();
 
-        homepage.doSearch("California, United States");
-        String actualTitle = driver.getTitle();
+        homepage.doSearch();
+        String actualTitle = BaseAPI.driver.getTitle();
 
-
-        String expectedTitle = "Vacation Rentals, Homes, Hotels, Experiences & More - Airbnb";
+        String expectedTitle = "California · Stays · Airbnb";
 
         Assert.assertEquals(actualTitle, expectedTitle, "TITLE DOES NOT MATCH");
     }

@@ -38,6 +38,11 @@
             <artifactId>cucumber-java</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.cassandra</groupId>
+            <artifactId>cassandra-all</artifactId>
+        </dependency>
+
 
     </dependencies>
 

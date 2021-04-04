@@ -4,8 +4,9 @@ public class HomepageLocators {
 
     //Search Button
 
-    public static final String webElementInputSearch = "#bigsearch-query-detached-query";
-    public static final String webElementButtonSearch = "._m9v25n";
+    public static final String webElementInputSearch = "//input[@id='bigsearch-query-detached-query']";
+    public static final String webElementButtonSearch = "//div[@class='_1hb5o3s']";
+    public static final String webElementText = "California, United States";
 
 
 

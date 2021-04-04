@@ -14,6 +14,16 @@ public class HomepageLocators {
     public static final String webElementFieldGuide = "#field-guide-toggle";
     public static final String webElementSignUp = "._14tt8lmp > ._ojs7nk";
 
+    //online experience
+
+    public static final String webElementOnlineExperience = "._p4ul2ts";
+    public static final String webElementCooking = "#menuItemButton-toggleItem-taxonomy-Cooking-Cooking > ._1n56hy1 > ._w37zq5";
+
+
+
+
+
+
 
 
 

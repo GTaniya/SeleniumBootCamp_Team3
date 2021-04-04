@@ -2,6 +2,7 @@ package homepageTest;
 
 import common.BaseAPI;
 import homepage.Homepage;
+import io.cucumber.java.bs.A;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -33,6 +34,22 @@ public class TestHomepage extends BaseAPI {
 
         Assert.assertEquals(actualText, expectedText, "Test not found");
 
+    }
+
+    @Test
+    public void testOnlineExperienceLink(){
+
+        homepage = new Homepage();
+
+        homepage.clickOnlineExperienceLink();
+
+        homepage.clickCookingLink();
+
+        String actualResult = driver.getTitle();
+
+        String expectedResult = "";
+
+        Assert.assertEquals(actualResult, expectedResult, "Test Failed");
     }
 
 

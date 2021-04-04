@@ -57,6 +57,16 @@ public class Homepage extends BaseAPI {
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    @FindBy (css = webElementOnlineExperience)
+    WebElement onlineExperienceLink;
+
+    @FindBy (css = webElementCooking)
+    WebElement cookingLink;
+
+    public void clickOnlineExperienceLink() {onlineExperienceLink.click();}
+
+    public void clickCookingLink() {cookingLink.click();}
+
 
 }
 

@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import java.security.cert.X509Certificate;
+
 import static homepage.HomepageLocators.*;
 
 public class Homepage extends BaseAPI {
@@ -240,8 +242,152 @@ public class Homepage extends BaseAPI {
     public void clickDonateButton() {clickByXpathUsingJavaScript(webElementDonate);}
   //  WebDriverWait wait10 = new WebDriverWait(driver, 40);
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    @FindBy (xpath = WEB_ELEMENT_RESOURCE_CENTER_LINK)
+    WebElement resourceCenterLink;
+
+    @FindBy (xpath = WEB_ELEMENT_RESOURCE_CENTER_TOPICS_MENU_BUTTON)
+    WebElement topicsMenuButton;
+
+    @FindBy (xpath = WEB_ELEMENT_RESOURCE_CENTER_TOPICS_DESIGN_DECOR_LINK)
+    WebElement designAndDecorLink;
+
+    public void clickResourceCenterLink(){clickByXpathUsingJavaScript(WEB_ELEMENT_RESOURCE_CENTER_LINK);}
+
+    public void clickResourceCenterTopicsMenuButton(){clickByXpathUsingJavaScript(WEB_ELEMENT_RESOURCE_CENTER_TOPICS_MENU_BUTTON);}
+
+    public void clickResourceCenterTopicsDesignDecorLink(){clickByXpathUsingJavaScript(WEB_ELEMENT_RESOURCE_CENTER_TOPICS_DESIGN_DECOR_LINK);}
 
 
-}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    @FindBy (xpath = WEB_ELEMENT_RESOURCE_CENTER_LINK2)
+    WebElement resourceCenter2;
+
+    @FindBy (xpath = WEB_ELEMENT_RESOURCE_CENTER_GUIDE_MENU_BUTTON)
+    WebElement guideMenuButton;
+
+    @FindBy (xpath = WEB_ELEMENT_RESOURCE_CENTER_GUIDE_SETTING_LISTING)
+    WebElement settingUpSettingsListing;
+
+    public void clickResourceCenterLink2(){clickByXpathUsingJavaScript(WEB_ELEMENT_RESOURCE_CENTER_LINK2);}
+
+    public void clickResourceCenterGuideMenuButton(){clickByXpathUsingJavaScript(WEB_ELEMENT_RESOURCE_CENTER_GUIDE_MENU_BUTTON);}
+
+    public void clickResourceCenterGuideSettingListing(){clickByXpathUsingJavaScript(WEB_ELEMENT_RESOURCE_CENTER_GUIDE_SETTING_LISTING);}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    @FindBy (xpath = WEB_ELEMENT_OCEAN_CITY_IMAGE_LINK)
+    WebElement oceanCityImageLink;
+
+    @FindBy (xpath = WEB_ELEMENT_OCEAN_CITY_TYPE_OF_PLACE)
+    WebElement oceanCityTypeOfPlace;
+
+    public void clickOceanCityImageLink(){clickByXpathUsingJavaScript(WEB_ELEMENT_OCEAN_CITY_IMAGE_LINK);}
+
+    //WebDriverWait wait12 = new WebDriverWait(driver, 20);
+
+    public void clickOceanCityTypeOfPlaceButton(){clickByXpathUsingJavaScript(WEB_ELEMENT_OCEAN_CITY_TYPE_OF_PLACE);}
+
+   // WebDriverWait wait13 = new WebDriverWait(driver, 40);
+
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    @FindBy (xpath = WEB_ELEMENT_LANGUAGE_BUTTON)
+    WebElement languageButton;
+
+    @FindBy (xpath = WEB_ELEMENT_LANGUAGE_ITALIA)
+    WebElement languageItalia;
+
+    public void clickLanguageButton(){clickByXpathUsingJavaScript(WEB_ELEMENT_LANGUAGE_BUTTON);}
+
+    public void clickLanguageItaliaButton(){clickByXpathUsingJavaScript(WEB_ELEMENT_LANGUAGE_ITALIA);}
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    @FindBy (xpath = WEB_ELEMENT_INVESTORS)
+    WebElement investorsLink;
+
+    @FindBy (xpath = WEB_ELEMENT_INVESTORS_QUARTERLY_RESULTS)
+    WebElement investorsQuarterlyResults;
+
+
+    public void clickInvestorsLink(){clickByXpathUsingJavaScript(WEB_ELEMENT_INVESTORS);}
+
+    public void clickInvestorsQuarterlyResults(){clickByXpathUsingJavaScript(WEB_ELEMENT_INVESTORS_QUARTERLY_RESULTS);}
+
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    @FindBy (xpath = WEB_ELEMENT_INVESTORS)
+    WebElement investorsLinkButton;
+
+    @FindBy (xpath = WEB_ELEMENT_INVESTORS_STOCK_INFO)
+    WebElement investorsStockInfo;
+
+    @FindBy (xpath = WEB_ELEMENT_INVESTORS_STOCK_INFO_QUOTE)
+    WebElement investorsStockInfoQuote;
+
+    public void clickInvestorsLinkButton(){clickByXpathUsingJavaScript(WEB_ELEMENT_INVESTORS);}
+
+    public void clickInvestorsStockInfoButton(){clickByXpathUsingJavaScript(WEB_ELEMENT_INVESTORS_STOCK_INFO);}
+
+    public void clickInvestorsStockInfoQuoteButton(){clickByXpathUsingJavaScript(WEB_ELEMENT_INVESTORS_STOCK_INFO_QUOTE);}
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    @FindBy (xpath = WEB_ELEMENT_AIRBNB_FOR_WORK)
+    WebElement airBnBForWork;
+
+    @FindBy (xpath = WEB_ELEMENT_AIRBNB_FOR_WORK_INPUT_EMAIL)
+    WebElement airBnBForWorkEmail;
+
+    @FindBy (xpath = WEB_ELEMENT_AIRBNB_FOR_WORK_INPUT_EMAIL_SUBMIT_BUTTON)
+    public WebElement emailSubmitButton;
+
+    public void clickAirBnBLink(){clickByXpathUsingJavaScript(WEB_ELEMENT_AIRBNB_FOR_WORK);}
+
+    public void addEmail(){
+        typeOnElement(WEB_ELEMENT_AIRBNB_FOR_WORK_INPUT_EMAIL, WEB_ELEMENT_AIRBNB_FOR_WORK_EMAIL);
+    }
+    public void submitEmail(){clickByXpathUsingJavaScript(WEB_ELEMENT_AIRBNB_FOR_WORK_INPUT_EMAIL_SUBMIT_BUTTON);}
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    @FindBy (xpath = WEB_ELEMENT_FOUNDERS_LETTER)
+    WebElement foundersLetter;
+
+    @FindBy (xpath = WEB_ELEMENT_FOUNDERS_LETTER_ABOUT_US)
+    WebElement foundersLetterAboutUs;
+
+    public void clickFoundersLetterLink(){clickByXpathUsingJavaScript(WEB_ELEMENT_FOUNDERS_LETTER);}
+
+    public void clickAboutUs(){clickByXpathUsingJavaScript(WEB_ELEMENT_FOUNDERS_LETTER_ABOUT_US);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
 
 

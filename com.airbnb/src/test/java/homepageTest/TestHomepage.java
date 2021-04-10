@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 public class TestHomepage extends BaseAPI {
     Homepage homepage;
 
-    @Test
+    @Test(enabled = false)
     public void testDoSearch() throws InterruptedException {
         homepage = new Homepage();
 
@@ -21,7 +21,7 @@ public class TestHomepage extends BaseAPI {
         Assert.assertEquals(actualTitle, expectedTitle, "TITLE DOES NOT MATCH");
     }
 
-    @Test
+    @Test(enabled = false)
     public void testSignUp() {
         homepage = new Homepage();
 
@@ -36,8 +36,8 @@ public class TestHomepage extends BaseAPI {
     }
 
 
-    @Test
-    public void testHelpCenter(){
+    @Test(enabled = false)
+    public void testHelpCenter() {
 
         homepage = new Homepage();
         homepage.clickHelpCenterLink();
@@ -52,7 +52,7 @@ public class TestHomepage extends BaseAPI {
         Assert.assertEquals(actualResult, expectedResult, "Test Failed");
     }
 
-    @Test
+    @Test(enabled = false)
     public void testCareersLink() throws InterruptedException {
 
         homepage = new Homepage();
@@ -69,7 +69,7 @@ public class TestHomepage extends BaseAPI {
 
     }
 
-    @Test
+    @Test(enabled = false)
     public void testGiftCard() {
 
         homepage = new Homepage();
@@ -92,8 +92,8 @@ public class TestHomepage extends BaseAPI {
 
     }
 
-    @Test
-    public void testAirbnbOrg(){
+    @Test(enabled = false)
+    public void testAirbnbOrg() {
 
         homepage = new Homepage();
         homepage.clickAirbngOrgLink();
@@ -108,6 +108,130 @@ public class TestHomepage extends BaseAPI {
         Assert.assertEquals(actualResult, expectedResult, "Test Failed");
     }
 
+    @Test(enabled = false)
+    public void testDesignAndDecor() {
 
+        homepage = new Homepage();
+        homepage.clickResourceCenterLink();
+        homepage.clickResourceCenterTopicsMenuButton();
+        homepage.clickResourceCenterTopicsDesignDecorLink();
+
+        String actualResult = driver.getTitle();
+
+        String expectedResult = "Design & decor - Resource Center";
+
+        Assert.assertEquals(actualResult, expectedResult, "Test Failed");
+    }
+
+    @Test(enabled = false)
+    public void testGuideMenu() {
+        homepage = new Homepage();
+        homepage.clickResourceCenterLink2();
+        homepage.clickResourceCenterGuideMenuButton();
+        homepage.clickResourceCenterGuideSettingListing();
+
+        String actualResult = driver.getTitle();
+
+        String expectedResult = "Setting up a successful listing - Resource Center";
+
+        Assert.assertEquals(actualResult, expectedResult, "Test Failed");
+
+    }
+
+    @Test(enabled = false)
+
+    public void testOceanCityImageLink() {
+        homepage = new Homepage();
+        homepage.clickOceanCityImageLink();
+        homepage.clickOceanCityTypeOfPlaceButton();
+
+        String actualResult = driver.getTitle();
+
+        String expectedResult = "Vacation Rentals, Homes, Hotels, Experiences & More - Airbnb";
+
+        Assert.assertEquals(actualResult, expectedResult, "Test Failed");
+    }
+
+
+    @Test(enabled = false)
+
+    public void testLanguage() {
+        homepage = new Homepage();
+        homepage.clickLanguageButton();
+        homepage.clickLanguageItaliaButton();
+
+        String actualResult = driver.getTitle();
+
+        String expectedResult = "Case vacanze, alloggi, esperienze e luoghi - Airbnb";
+
+        Assert.assertEquals(actualResult, expectedResult, "Test Failed");
+
+    }
+
+
+    @Test(enabled = false)
+
+    public void testInvestors() {
+
+        homepage = new Homepage();
+        homepage.clickInvestorsLink();
+        homepage.clickInvestorsQuarterlyResults();
+
+        String actualResult = driver.getTitle();
+
+        String expectedResult = "Investor Relations | Airbnb | Financials";
+
+        Assert.assertEquals(actualResult, expectedResult, "Test Failed");
+    }
+
+    @Test(enabled = false)
+
+    public void testStockQuote() {
+
+        homepage = new Homepage();
+        homepage.clickInvestorsLink();
+        homepage.clickInvestorsStockInfoButton();
+        homepage.clickInvestorsStockInfoQuoteButton();
+
+        String actualResult = driver.getTitle();
+
+        String expectedResult = "Investor Relations | Airbnb | Stock Info";
+
+        Assert.assertEquals(actualResult, expectedResult, "Test Failed");
+
+
+    }
+
+    @Test (enabled = false)
+
+    public void testDoSubmit() {
+        homepage = new Homepage();
+        homepage.clickAirBnBLink();
+        homepage.addEmail();
+        homepage.submitEmail();
+
+        String actualResult = driver.getTitle();
+
+        String expectedResult = "Business Travel – Airbnb";
+
+        Assert.assertEquals(actualResult, expectedResult, "Test Failed");
+    }
+
+    @Test
+
+    public void testAboutUs(){
+
+        homepage = new Homepage();
+        homepage.clickFoundersLetterLink();
+
+
+        String actualResult = driver.getTitle();
+
+        String expectedResult = "What Makes Airbnb, Airbnb";
+
+        Assert.assertEquals(actualResult, expectedResult, "Test Failed");
+    }
 }
+
+
 

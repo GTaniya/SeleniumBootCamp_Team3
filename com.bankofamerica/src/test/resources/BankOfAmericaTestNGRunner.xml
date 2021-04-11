@@ -11,6 +11,8 @@
 
         <classes>
 
+            <class name="businessAndInstitutionsPageTest.TestBusinessAndInstitutionsPage"/>
+
         </classes>
 
     </test>

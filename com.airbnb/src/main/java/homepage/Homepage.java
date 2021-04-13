@@ -34,12 +34,18 @@ public class Homepage extends BaseAPI {
 
     }
 
+    public void clickByXpathUsingJavaScript(String webElementButtonSearch) {
+    }
+
     public void doSearch() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         typeOnElement(webElementInputSearch, webElementText);
         WebDriverWait wait2 = new WebDriverWait(driver, 10);
         clickSearchButton();
 
+    }
+
+   public void typeOnElement(String webElementInputSearch, String webElementText) {
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////

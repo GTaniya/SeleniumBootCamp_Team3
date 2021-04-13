@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 public class BaseAPI {
     public static WebDriver driver;
@@ -401,6 +402,19 @@ public class BaseAPI {
         }
     }
 
+    public void basicHoverUsingXpath(String loc) {
+        //Hover over Like-New Cams link using Actions
+        WebElement ele = driver.findElement(By.xpath(loc));
+        //Creating object of an Actions class
+        Actions action = new Actions(driver);
+        //Performing the mouse hover action on the target element.
+        action.moveToElement(ele).perform();
+
+
+    }
+    public void implicitWait(){
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    }
 
 
 

@@ -21,9 +21,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 
-    public class BaseAPI {
+public class BaseAPI {
 
         public static WebDriver driver;
         public static WebDriverWait driverWait;
@@ -304,12 +305,21 @@ import java.util.Properties;
             driver.findElement(By.xpath(loc)).click();
         }
 
-        public void scrollToElementUsingJavaScript(String loc) {
+        public void scrollToElementJScript(WebElement element) {
             JavascriptExecutor js = (JavascriptExecutor) driver;
-            //Find element by link text and store in variable "Element"
-            WebElement Element = driver.findElement(By.xpath(loc));
-            //This will scroll the page till the element is found
-            js.executeScript("arguments[0].scrollIntoView();", Element);
+
+            try {
+                js.executeScript("arguments[0].scrollIntoView();", element);
+            } catch (NoSuchElementException e) {
+                System.out.println("NO SUCH ELEMENT - " + element);
+                e.printStackTrace();
+            } catch (StaleElementReferenceException e) {
+                System.out.println("STALE ELEMENT - " + element);
+                e.printStackTrace();
+            } catch (Exception e) {
+                System.out.println("COULD NOT SCROLL TO ELEMENT - " + element);
+                e.printStackTrace();
+            }
         }
 
         // looking at actual and then look at the expected  (It will do  the assertion)
@@ -398,6 +408,26 @@ import java.util.Properties;
                 ex.printStackTrace();
                 System.out.println("UNABLE TO LOCATE ELEMENT");
             }
+        }
+
+       public void waitUntilClickable(String locator){
+           WebDriverWait wait = new WebDriverWait(driver, 20);
+           wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
+       }
+
+        public void basicHoverUsingXpath(String loc) {
+            //Hover over Like-New Cams link using Actions
+            WebElement ele = driver.findElement(By.xpath(loc));
+            //Creating object of an Actions class
+            Actions action = new Actions(driver);
+            //Performing the mouse hover action on the target element.
+            action.moveToElement(ele).perform();
+
+
+        }
+
+        public void implicitWait(){
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         }
 
 

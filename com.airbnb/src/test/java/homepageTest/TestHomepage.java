@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 public class TestHomepage extends BaseAPI {
     Homepage homepage;
 
+    //Test #1
     @Test(enabled = false)
     public void testDoSearch() throws InterruptedException {
         homepage = new Homepage();
@@ -21,6 +22,7 @@ public class TestHomepage extends BaseAPI {
         Assert.assertEquals(actualTitle, expectedTitle, "TITLE DOES NOT MATCH");
     }
 
+    //Test #2
     @Test(enabled = false)
     public void testSignUp() {
         homepage = new Homepage();
@@ -35,7 +37,7 @@ public class TestHomepage extends BaseAPI {
 
     }
 
-
+    //Test #3
     @Test(enabled = false)
     public void testHelpCenter() {
 
@@ -52,14 +54,15 @@ public class TestHomepage extends BaseAPI {
         Assert.assertEquals(actualResult, expectedResult, "Test Failed");
     }
 
-    @Test(enabled = true)
+    //Test #4
+    @Test(enabled = false)
     public void testCareersLink() throws InterruptedException {
 
         homepage = new Homepage();
         homepage.clickCareersLink();
         homepage.clickExploreRolesButton();
-//        homepage.clickBusinessDevelopmentButton();
-//        homepage.clickQuestionsLink();
+        homepage.clickBusinessDevelopmentButton();
+        homepage.clickQuestionsLink();
 
         String actualResult = driver.getTitle();
 
@@ -69,6 +72,7 @@ public class TestHomepage extends BaseAPI {
 
     }
 
+    //Test #5
     @Test(enabled = false)
     public void testGiftCard() {
 
@@ -92,6 +96,7 @@ public class TestHomepage extends BaseAPI {
 
     }
 
+    //Test #6
     @Test(enabled = false)
     public void testAirbnbOrg() {
 
@@ -108,6 +113,7 @@ public class TestHomepage extends BaseAPI {
         Assert.assertEquals(actualResult, expectedResult, "Test Failed");
     }
 
+    //Test #7
     @Test(enabled = false)
     public void testDesignAndDecor() {
 
@@ -123,6 +129,7 @@ public class TestHomepage extends BaseAPI {
         Assert.assertEquals(actualResult, expectedResult, "Test Failed");
     }
 
+    //Test #8
     @Test(enabled = false)
     public void testGuideMenu() {
         homepage = new Homepage();
@@ -138,6 +145,7 @@ public class TestHomepage extends BaseAPI {
 
     }
 
+    //Test #9
     @Test(enabled = false)
 
     public void testOceanCityImageLink() {
@@ -153,6 +161,7 @@ public class TestHomepage extends BaseAPI {
     }
 
 
+    //Test #10
     @Test(enabled = false)
 
     public void testLanguage() {
@@ -168,6 +177,7 @@ public class TestHomepage extends BaseAPI {
 
     }
 
+    //Test #11
 
     @Test(enabled = false)
 
@@ -184,6 +194,7 @@ public class TestHomepage extends BaseAPI {
         Assert.assertEquals(actualResult, expectedResult, "Test Failed");
     }
 
+    //Test #12
     @Test(enabled = false)
 
     public void testStockQuote() {
@@ -202,7 +213,8 @@ public class TestHomepage extends BaseAPI {
 
     }
 
-    @Test (enabled = false)
+    //Test #13
+    @Test(enabled = false)
 
     public void testDoSubmit() {
         homepage = new Homepage();
@@ -217,9 +229,10 @@ public class TestHomepage extends BaseAPI {
         Assert.assertEquals(actualResult, expectedResult, "Test Failed");
     }
 
+    //Test #14
     @Test(enabled = false)
 
-    public void testAboutUs(){
+    public void testAboutUs() {
 
         homepage = new Homepage();
         homepage.clickFoundersLetterLink();
@@ -231,7 +244,5 @@ public class TestHomepage extends BaseAPI {
 
         Assert.assertEquals(actualResult, expectedResult, "Test Failed");
     }
+
 }
-
-
-

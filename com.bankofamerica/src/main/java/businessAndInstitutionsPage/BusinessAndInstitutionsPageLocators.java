@@ -28,6 +28,8 @@ public class BusinessAndInstitutionsPageLocators {
     public static final String WEB_ELEMENT_BANK_CAREERS_SHARE_BUTTON_LINKEDIN = "//li[@class='linked']/a[1]";
     public static final String WEB_ELEMENT_BANK_CAREERS_ATTRACTING_TALENT = "//h3[.='Attracting and Retaining Valuable Talent']";
 
-
+    //Client Login
+    public static final String WEB_ELEMENT_BANK_CLIENT_LOGIN = "//div[@class='hub-navigation__utility hub-navigation__utility--top']//a[.='Client Login']";
+    public static final String WEB_ELEMENT_BANK_CLIENT_LOGIN_PRIME_PORTAL = "//div[@class='hub-navigation__utility hub-navigation__utility--top']//a[.='Prime Portal']";
 
 }

@@ -8,8 +8,6 @@ public class HomepageLocators {
     public static final String webElementButtonSearch = "//div[@class='_1hb5o3s']";
     public static final String webElementText = "California, United States";
 
-
-
     //SignIn
 
     public static final String webElementFieldGuide = "#field-guide-toggle";

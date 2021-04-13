@@ -112,6 +112,21 @@ public class BusinessAndInstitutionsPage extends BaseAPI {
 
     public void clickBankCareersLinkAttractTalent(){clickByXpathUsingJavaScript(WEB_ELEMENT_BANK_CAREERS_ATTRACTING_TALENT);}
 
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    @FindBy (xpath = WEB_ELEMENT_BANK_CLIENT_LOGIN)
+    WebElement bankClientLogin;
+
+    @FindBy (xpath = WEB_ELEMENT_BANK_CLIENT_LOGIN_PRIME_PORTAL)
+    WebElement loginPrimePortal;
+
+    public void clickToLoginClientPortal(){clickByXpathUsingJavaScript(WEB_ELEMENT_BANK_CLIENT_LOGIN);}
+
+    public void clickClientPrimePortal(){clickByXpathUsingJavaScript(WEB_ELEMENT_BANK_CLIENT_LOGIN_PRIME_PORTAL);}
+
+
+
 
 
 

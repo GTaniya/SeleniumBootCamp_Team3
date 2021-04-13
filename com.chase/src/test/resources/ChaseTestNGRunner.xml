@@ -11,6 +11,8 @@
 
         <classes>
 
+            <class name="mortgagePageTest.TestMortgagePage"/>
+
         </classes>
 
     </test>

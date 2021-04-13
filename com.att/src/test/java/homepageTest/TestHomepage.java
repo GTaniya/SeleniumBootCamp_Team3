@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 public class TestHomepage extends BaseAPI {
     Homepage homepage;
 
+    //Test #1
     @Test(enabled = false)
     public void testDoSearch() throws InterruptedException {
         homepage = new Homepage();
@@ -20,6 +21,7 @@ public class TestHomepage extends BaseAPI {
         Assert.assertEquals(actualTitle, expectedTitle, "TITLE DOES NOT MATCH");
     }
 
+    //Test #2
     @Test (enabled = false)
 
     public void testDeals(){
@@ -34,6 +36,7 @@ public class TestHomepage extends BaseAPI {
 
     }
 
+    //Test #3
     @Test (enabled = false)
 
     public void testDropDown() throws InterruptedException {
@@ -44,6 +47,7 @@ public class TestHomepage extends BaseAPI {
 
     }
 
+    //Test #4
     @Test (enabled = false)
 
     public void testDropDownClickInternet() throws InterruptedException {
@@ -53,6 +57,7 @@ public class TestHomepage extends BaseAPI {
         Thread.sleep(4000);
     }
 
+    //Test #5
     @Test (enabled = false)
 
     public void testExploreInternet(){
@@ -71,6 +76,7 @@ public class TestHomepage extends BaseAPI {
 
     }
 
+    //Test #6
     @Test (enabled = false)
 
     public void testShopNowButton(){
@@ -86,7 +92,8 @@ public class TestHomepage extends BaseAPI {
 
     }
 
-    @Test (enabled = false)
+    //Test #7
+    @Test (enabled = true)
 
     public void testPhoneFeaturesColor() throws InterruptedException {
 
@@ -96,7 +103,7 @@ public class TestHomepage extends BaseAPI {
         Thread.sleep(4000);
     }
 
-    //Test 8
+    //Test #8
 
     @Test (enabled = false)
 
@@ -108,6 +115,7 @@ public class TestHomepage extends BaseAPI {
         Thread.sleep(4000);
     }
 
+    //Test #9
     @Test (enabled = false)
 
     public void testAttTv() throws InterruptedException {
@@ -119,6 +127,7 @@ public class TestHomepage extends BaseAPI {
 
     }
 
+    //Test #10
     @Test (enabled = false)
 
     public void testAttChannels() throws InterruptedException {
@@ -135,6 +144,7 @@ public class TestHomepage extends BaseAPI {
 
     }
 
+    //Test #11
     @Test (enabled = false)
 
     public void testAtOZChannels() throws InterruptedException {
@@ -173,6 +183,7 @@ public class TestHomepage extends BaseAPI {
 
     }
 
+    //Test #13
     @Test (enabled = false)
     public void testNavigateToPager() throws Exception {
         homepage = new Homepage();
@@ -180,6 +191,7 @@ public class TestHomepage extends BaseAPI {
 
     }
 
+    //Test #14
     @Test (enabled = true)
     public void testHover() throws Exception {
         homepage = new Homepage();

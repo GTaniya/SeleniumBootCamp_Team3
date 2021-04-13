@@ -39,26 +39,11 @@ public class Homepage extends BaseAPI {
 
     }
 
-    public void scrollDown(){
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,250)", "");
-    }
-
-
-//    @FindBy (xpath = WEB_ELEMENT_RADIO_OPTION_ADIDAS)
-//    public WebElement radioOptionAdidas;
-//
-//    @FindBy (xpath = WEB_ELEMENT_RADIO_OPTION_NIKE)
-//    public WebElement radioOptionNike;
-//
-//    public void selectBMWRadioOption(){
-//        selectElement(radioOptionAdidas);
-//
+//    public void scrollDown(){
+//        JavascriptExecutor js = (JavascriptExecutor) driver;
+//        js.executeScript("window.scrollBy(0,250)", "");
 //    }
-//
-//    public void selectBenzRadioOption(){
-//        selectElement(radioOptionNike);
-//    }
+
 
     @FindBy (xpath = WEB_ELEMENT_RADIO_OPTION_ADIDAS)
     public WebElement radioOptionAdidas;
@@ -66,8 +51,15 @@ public class Homepage extends BaseAPI {
     @FindBy (xpath = WEB_ELEMENT_RADIO_OPTION_NIKE)
     public WebElement radioOptionNike;
 
-    public void clickRadioAdidasButton() {radioOptionAdidas.click();}
 
-    public void clickRadioNikeButton() {radioOptionNike.click();}
+    public void clickRadioAdidasButton(){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,250)", "");
+        selectElement(radioOptionAdidas);
+    }
+
+    public void clickRadioNikeButton(){
+        selectElement(radioOptionNike);
+    }
 
 }

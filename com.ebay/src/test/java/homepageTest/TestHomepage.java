@@ -21,34 +21,14 @@ public class TestHomepage extends BaseAPI {
         Assert.assertEquals(actualTitle, expectedTitle, "TITLE DOES NOT MATCH");
     }
 
-//    @Test ()
-//    public void testSelectBMW() throws InterruptedException {
-//
-//        homepage = new Homepage();
-//        homepage.doSearch();
-//        homepage.scrollDown();
-//        homepage.selectBMWRadioOption();
-//
-//        Assert.assertTrue(isElementSelected(homepage.radioOptionAdidas));
-//    }
-//
-//    @Test ()
-//    public void testSelectBenz() throws InterruptedException {
-//        homepage = new Homepage();
-//        homepage.doSearch();
-//        homepage.scrollDown();
-//        homepage.selectBenzRadioOption();
-//
-//        Assert.assertTrue(isElementSelected(homepage.radioOptionNike));
-//    }
 
     @Test
     public void testSelectAdidas() throws InterruptedException {
 
         homepage = new Homepage();
         homepage.doSearch();
+
         homepage.clickRadioAdidasButton();
-       // homepage.clickRadioNikeButton();
 
         String actualText = driver.getTitle();
 

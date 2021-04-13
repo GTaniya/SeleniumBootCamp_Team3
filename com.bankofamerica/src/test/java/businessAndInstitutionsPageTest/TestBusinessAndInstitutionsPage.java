@@ -10,6 +10,7 @@ public class TestBusinessAndInstitutionsPage extends BaseAPI {
 
     BusinessAndInstitutionsPage businessAndInstitutionsPage;
 
+    //Test #1
     @Test(enabled = false)
     public void testBusinessInstitutionPage() throws InterruptedException {
 
@@ -26,6 +27,7 @@ public class TestBusinessAndInstitutionsPage extends BaseAPI {
 
     }
 
+    //Test #2
     @Test(enabled = false)
     public void testHover() throws Exception {
 
@@ -38,6 +40,7 @@ public class TestBusinessAndInstitutionsPage extends BaseAPI {
 
     }
 
+    //Test #3
     @Test(enabled = false)
     public void testSearchBar() throws InterruptedException {
 
@@ -56,6 +59,7 @@ public class TestBusinessAndInstitutionsPage extends BaseAPI {
 
     }
 
+    //Test #4
     @Test(enabled = false)
     public void testManageBusinessButton() throws Exception {
 
@@ -75,6 +79,7 @@ public class TestBusinessAndInstitutionsPage extends BaseAPI {
 
     }
 
+    //Test #5
     @Test(enabled = false)
     public void testDropDown() {
 
@@ -94,6 +99,7 @@ public class TestBusinessAndInstitutionsPage extends BaseAPI {
 
     }
 
+    //Test #6
     @Test(enabled = false)
     public void testCareersPage() {
 
@@ -113,6 +119,7 @@ public class TestBusinessAndInstitutionsPage extends BaseAPI {
     }
 
 
+    //Test #7
     @Test(enabled = false)
     public void testCareersPageButton() throws InterruptedException {
 
@@ -131,8 +138,9 @@ public class TestBusinessAndInstitutionsPage extends BaseAPI {
 
         Assert.assertEquals(actualTitle, expectedTitle, "TITLE DOES NOT MATCH");
 
-
     }
+
+    //Test #8
     @Test(enabled = false)
     public void testCareersPageShareButton() throws InterruptedException {
 
@@ -151,8 +159,9 @@ public class TestBusinessAndInstitutionsPage extends BaseAPI {
 
         Assert.assertEquals(actualTitle, expectedTitle, "TITLE DOES NOT MATCH");
 
-
     }
+
+    //Test #9
     @Test(enabled = false)
     public void testCareersPageShareButtonLinkedIn() throws InterruptedException {
 
@@ -173,9 +182,10 @@ public class TestBusinessAndInstitutionsPage extends BaseAPI {
 
         Assert.assertEquals(actualTitle, expectedTitle, "TITLE DOES NOT MATCH");
 
-
     }
-    @Test(enabled = true)
+
+    //Test #10
+    @Test(enabled = false)
     public void testCareersPageAttractTalentLink() throws InterruptedException {
 
         businessAndInstitutionsPage = new BusinessAndInstitutionsPage();
@@ -190,6 +200,41 @@ public class TestBusinessAndInstitutionsPage extends BaseAPI {
         String actualTitle = BaseAPI.driver.getTitle();
 
         String expectedTitle = "Employee Recruitment & Retention Strategies Bank of America Merrill Lynch";
+
+        Assert.assertEquals(actualTitle, expectedTitle, "TITLE DOES NOT MATCH");
+    }
+
+    //Test #11
+    @Test(enabled = false)
+    public void testClientPortalLink() throws InterruptedException {
+
+        businessAndInstitutionsPage = new BusinessAndInstitutionsPage();
+
+        businessAndInstitutionsPage.navigateToBusinessAndInstitutionsPage();
+
+        businessAndInstitutionsPage.clickToLoginClientPortal();
+
+        Thread.sleep(4000);
+
+    }
+
+    //Test #12
+    @Test(enabled = true)
+    public void testClientPortalPrimePage() throws InterruptedException {
+
+        businessAndInstitutionsPage = new BusinessAndInstitutionsPage();
+
+        businessAndInstitutionsPage.navigateToBusinessAndInstitutionsPage();
+
+        businessAndInstitutionsPage.clickToLoginClientPortal();
+
+        businessAndInstitutionsPage.clickClientPrimePortal();
+
+        Thread.sleep(4000);
+
+        String actualTitle = BaseAPI.driver.getTitle();
+
+        String expectedTitle = "Bank of America Merrill Lynch is Now Bank of America & BofA Securities";
 
         Assert.assertEquals(actualTitle, expectedTitle, "TITLE DOES NOT MATCH");
     }

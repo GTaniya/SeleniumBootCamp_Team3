@@ -51,6 +51,9 @@ public class Homepage extends BaseAPI {
     @FindBy (xpath = WEB_ELEMENT_RADIO_OPTION_NIKE)
     public WebElement radioOptionNike;
 
+    @FindBy (xpath = WEB_ELEMENT_CHECK_HOVER_OVER)
+    public WebElement hoverOverTheButton;
+
 
     public void clickRadioAdidasButton(){
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -58,8 +61,26 @@ public class Homepage extends BaseAPI {
         selectElement(radioOptionAdidas);
     }
 
-    public void clickRadioNikeButton(){
+    public void clickRadioNikeButton() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,350)", "");
         selectElement(radioOptionNike);
     }
 
+    public void hoverOverButton() throws Exception {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,450)", "");
+        implicitWait();
+        //hoverOverElement(hoverOverTheButton);
+        basicHoverUsingXpath(WEB_ELEMENT_CHECK_HOVER_OVER);
+    }
+
+    @FindBy (xpath = WEB_ELEMENT_CHECK_BRAND_OUTLET_PAGE)
+    WebElement brandOutletPage;
+
+    @FindBy (xpath = WEB_ELEMENT_CHECK_BRAND_OUTLET_PAGE_CHAMPION_DISCOUNT)
+    WebElement brandOutletDiscount;
+
+    public void clickBrandOutletLink(){clickByXpathUsingJavaScript(WEB_ELEMENT_CHECK_BRAND_OUTLET_PAGE);}
+    public void clickBrandOutletChampionDiscount(){clickByXpathUsingJavaScript(WEB_ELEMENT_CHECK_BRAND_OUTLET_PAGE_CHAMPION_DISCOUNT);}
 }

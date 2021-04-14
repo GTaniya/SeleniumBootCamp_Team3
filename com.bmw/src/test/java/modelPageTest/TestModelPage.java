@@ -98,4 +98,5 @@ public class TestModelPage extends BaseAPI {
         Assert.assertEquals(actualAttributeValue,expectedAttributeValue,"class didn't find");
 
     }
+
 }

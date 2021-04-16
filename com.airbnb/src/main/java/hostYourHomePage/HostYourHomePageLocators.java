@@ -14,5 +14,13 @@ public class HostYourHomePageLocators {
     public static final String WEB_ELEMENT_GUEST_REGULATE = "//div[@id='What hosting regulations apply to you?']";
     public static final String WEB_ELEMENT_EARN_MONEY = "//div[@id='How to earn money on Airbnb']";
     public static final String WEB_ELEMENT_GET_STARTED= "//div[@id='How to get started on Airbnb']";
+    public static final String WEB_ELEMENT_HOST_AIRBNB= "//div[@id='Why host on Airbnb?']";
+    public static final String WEB_ELEMENT_PRIVACY_POLICY= "//a[.='Airbnb Privacy Policy']";
+    public static final String WEB_ELEMENT_ONLINE_EXPERIENCE= "//a[.='Host an Online Experience']";
+    public static final String WEB_ELEMENT_HOST_EXPERIENCE= "//a[.='Host an Experience']";
+    public static final String WEB_ELEMENT_RESPONSIBLE_HOSTING= "//a[.='Responsible hosting']";
+    public static final String WEB_ELEMENT_RESOURCE_CENTER= "//a[.='Resource Center']";
+    public static final String WEB_ELEMENT_COMMUNITY_CENTER= "//a[.='Community Center']";
+    public static final String WEB_ELEMENT_AIRBNB_WORKS= "//a[.='How Airbnb works']";
 
 }

@@ -70,7 +70,7 @@ public class Homepage extends BaseAPI {
     public void hoverOverButton() throws Exception {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,450)", "");
-        implicitWait();
+        implicitWait(10);
         //hoverOverElement(hoverOverTheButton);
         basicHoverUsingXpath(WEB_ELEMENT_CHECK_HOVER_OVER);
     }
@@ -83,4 +83,24 @@ public class Homepage extends BaseAPI {
 
     public void clickBrandOutletLink(){clickByXpathUsingJavaScript(WEB_ELEMENT_CHECK_BRAND_OUTLET_PAGE);}
     public void clickBrandOutletChampionDiscount(){clickByXpathUsingJavaScript(WEB_ELEMENT_CHECK_BRAND_OUTLET_PAGE_CHAMPION_DISCOUNT);}
+
+    @FindBy (css = WEB_ELEMENT_CART)
+    WebElement shoppingCart;
+
+    @FindBy (xpath = WEB_ELEMENT_CART_START_SHOPPING)
+    WebElement startShoppingButton;
+
+    public void clickShoppingCart(){clickByCssSelectorUsingJavaScript(WEB_ELEMENT_CART);}
+    public void clickShoppingButton(){clickByXpathUsingJavaScript(WEB_ELEMENT_CART);}
+
+    @FindBy (css = WEB_ELEMENT_SLIDE_PREV)
+    WebElement slideToPrevious;
+
+    @FindBy (css = WEB_ELEMENT_SLIDE_NEXT)
+    WebElement slideToNext;
+
+    public void clickSlidePrevButton(){clickByXpathUsingJavaScript(WEB_ELEMENT_SLIDE_PREV);}
+    public void clickSlideNextButton(){clickByXpathUsingJavaScript(WEB_ELEMENT_SLIDE_NEXT);}
+
 }
+

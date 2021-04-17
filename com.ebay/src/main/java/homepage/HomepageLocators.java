@@ -17,5 +17,17 @@ public class HomepageLocators {
     public static final String WEB_ELEMENT_CHECK_BRAND_OUTLET_PAGE = "//a[@href='https://www.ebay.com/b/Brand-Outlet/bn_7115532402']"; // xpath
     public static final String WEB_ELEMENT_CHECK_BRAND_OUTLET_PAGE_CHAMPION_DISCOUNT = "//a[.='Champion - Up to 50% off']"; // xpath
 
+    //Cart
+
+    public static final String WEB_ELEMENT_CART = ".gh-cart-icon"; // css
+    public static final String WEB_ELEMENT_CART_START_SHOPPING = "//a[.='Start shopping']"; // xpath
+
+    // arrow buttons
+    public static final String WEB_ELEMENT_SLIDE_PREV = "//div[@class='carousel hl-carousel carousel--slides carousel__autoplay']//button[@class='carousel__control carousel__control--prev']"; // xpath
+    public static final String WEB_ELEMENT_SLIDE_NEXT = "//div[@class='carousel hl-carousel carousel--slides carousel__autoplay']//button[@class='carousel__control carousel__control--next']"; // xpath
+
+
+
+
 
 }

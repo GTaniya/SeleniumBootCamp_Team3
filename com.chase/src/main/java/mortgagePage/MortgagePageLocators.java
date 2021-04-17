@@ -27,6 +27,16 @@ public class MortgagePageLocators {
     public static final String WEB_ELEMENT_SLIDE_ARROW= "//button[@class='slick-next chaseanalytics-track-link slick-arrow']";
     public static final String WEB_ELEMENT_HOME_LOANS= "//div[@class='slick-track']/div[@class='carousel--custom-pager__item slick-slide slick-active']//div[@class='carousel--custom-pager__icon icon-mortgage2-medium']";
 
+    //SignIn
+    public static final String WEB_ELEMENT_INPUT_USERID= "//input[@id='userId-text-input-field']";
+    public static final String WEB_ELEMENT_USERID= "Taniya";
+    public static final String WEB_ELEMENT_INPUT_PASSWORD= "//input[@id='password-text-input-field']";
+    public static final String WEB_ELEMENT_PASSWORD= "123!@#";
+    public static final String WEB_ELEMENT_SIGN_IN_BUTTON= "//button[@id='signin-button']";
+
+    //Iframe
+    public static final String WEB_ELEMENT_IFRAME_LOGIN_BOX= "//iframe[@id='logonbox']";
+
 
 
 

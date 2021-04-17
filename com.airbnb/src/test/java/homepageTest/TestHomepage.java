@@ -38,7 +38,7 @@ public class TestHomepage extends BaseAPI {
     }
 
     //Test #3
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void testHelpCenter() {
 
         homepage = new Homepage();

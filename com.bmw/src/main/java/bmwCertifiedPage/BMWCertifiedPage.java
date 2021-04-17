@@ -116,9 +116,14 @@ public class BMWCertifiedPage extends BaseAPI {
     @FindBy (xpath = WEB_ELEMENT_BMW_FOOTER_LINK_CONCEPT_VEHICLES)
     WebElement conceptVehiclesLink;
 
+    @FindBy (xpath = WEB_ELEMENT_DOWNLOAD_FILE)
+    WebElement downloadFile;
+
     public void clickConceptVehiclesLink(){
         conceptVehiclesLink.click();
     }
+
+    public void downloadTheFile(){clickByXpathUsingJavaScript(WEB_ELEMENT_DOWNLOAD_FILE);}
 
 
 

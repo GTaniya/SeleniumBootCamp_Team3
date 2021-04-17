@@ -88,7 +88,7 @@ public class TestHomepage extends BaseAPI {
     }
 
     //Test#6
-    @Test (enabled = true)
+    @Test (enabled = false)
     public void testBrandOutletChampion() throws Exception {
         homepage = new Homepage();
         homepage.clickBrandOutletLink();
@@ -103,5 +103,61 @@ public class TestHomepage extends BaseAPI {
     }
 
 
+    //Test#7
+    @Test (enabled = false)
+    public void testShoppingCart() throws Exception {
+        homepage = new Homepage();
+        homepage.clickShoppingCart();
+        Thread.sleep(4000);
+
+        String actualText = driver.getTitle();
+
+        String expectedText = "eBay shopping cart";
+
+        Assert.assertEquals(actualText, expectedText, "Test not found");
+    }
+
+    //Test#8
+    @Test (enabled = false)
+    public void testStartShoppingButton() throws Exception {
+        homepage = new Homepage();
+        homepage.clickShoppingCart();
+        homepage.clickShoppingButton();
+        Thread.sleep(4000);
+
+        String actualText = driver.getTitle();
+
+        String expectedText = "Electronics, Cars, Fashion, Collectibles & More | eBay";
+
+        Assert.assertEquals(actualText, expectedText, "Test not found");
+    }
+
+    //Test#9
+    @Test (enabled = false)
+    public void testSlideToPrevButton() throws Exception {
+        homepage = new Homepage();
+        homepage.clickSlidePrevButton();
+        Thread.sleep(4000);
+
+        String actualText = driver.getTitle();
+
+        String expectedText = "Electronics, Cars, Fashion, Collectibles & More | eBay";
+
+        Assert.assertEquals(actualText, expectedText, "Test not found");
+    }
+
+    //Test#10
+    @Test (enabled = false)
+    public void testSlideToNextButton() throws Exception {
+        homepage = new Homepage();
+        homepage.clickSlideNextButton();
+        Thread.sleep(4000);
+
+        String actualText = driver.getTitle();
+
+        String expectedText = "Electronics, Cars, Fashion, Collectibles & More | eBay";
+
+        Assert.assertEquals(actualText, expectedText, "Test not found");
+    }
 
 }

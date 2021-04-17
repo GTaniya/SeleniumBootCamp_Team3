@@ -1,6 +1,7 @@
 package mortgagePage;
 
 import common.BaseAPI;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -48,7 +49,7 @@ public class MortgagePage extends BaseAPI {
         clickByXpathUsingJavaScript(WEB_ELEMENT_CLICK_DROP_DOWN);
         waitUntilClickable(WEB_ELEMENT_NAVIGATE_TO_MORTGAGE_PAGE);
         clickByXpathUsingJavaScript(WEB_ELEMENT_NAVIGATE_TO_MORTGAGE_PAGE);
-        implicitWait();
+        implicitWait(10);
     }
 
     public void hoverOverTheButton(){
@@ -57,7 +58,7 @@ public class MortgagePage extends BaseAPI {
 
     public void clickStartOnlineButton(){
         scrollToElementJScript(startOnlineButton);
-        implicitWait();
+        implicitWait(10);
         clickByXpathUsingJavaScript(WEB_ELEMENT_START_ONLINE);}
 
     @FindBy (id = WEB_ELEMENT_RADIO_BUTTON_YES)
@@ -96,7 +97,7 @@ public class MortgagePage extends BaseAPI {
     public void clickSearchButton(){clickByXpathUsingJavaScript(WEB_ELEMENT_ATM_AND_BRANCH_INPUT_SEARCH_BUTTON);}
 
     public void doSearch(){
-        implicitWait();
+        implicitWait(10);
         typeOnElement(WEB_ELEMENT_ATM_AND_BRANCH_INPUT_SEARCH_BAR, WEB_ELEMENT_ATM_AND_BRANCH_INPUT_SEARCH_BAR_TEXT);
         clickSearchButton();
     }
@@ -109,6 +110,37 @@ public class MortgagePage extends BaseAPI {
 
     public void clickSlideArrow(){clickByXpathUsingJavaScript(WEB_ELEMENT_SLIDE_ARROW);}
     public void clickHomeLoansButton(){clickByXpathUsingJavaScript(WEB_ELEMENT_HOME_LOANS);}
+
+
+
+    @FindBy (xpath = WEB_ELEMENT_INPUT_USERID)
+    WebElement inputUserID;
+
+    @FindBy (xpath = WEB_ELEMENT_INPUT_PASSWORD)
+    WebElement inputPassword;
+
+    @FindBy (xpath = WEB_ELEMENT_SIGN_IN_BUTTON)
+    WebElement signInButton;
+
+    public void iframeLoginBox(){
+        WebElement iframeLogin = driver.findElement(By.xpath(WEB_ELEMENT_IFRAME_LOGIN_BOX));
+        iframeHandle(iframeLogin);
+
+    }
+
+    public void clickSearch(){clickByXpathUsingJavaScript(WEB_ELEMENT_SIGN_IN_BUTTON);
+    }
+
+    public void addUserCredentials(){
+        WebElement iframeLogin = driver.findElement(By.xpath(WEB_ELEMENT_IFRAME_LOGIN_BOX));
+        iframeHandle(iframeLogin);
+        clickByXpathUsingJavaScript(WEB_ELEMENT_INPUT_USERID);
+        typeOnElement(WEB_ELEMENT_INPUT_USERID,WEB_ELEMENT_USERID);
+        clickByXpathUsingJavaScript(WEB_ELEMENT_INPUT_PASSWORD);
+        typeOnElement(WEB_ELEMENT_INPUT_PASSWORD,WEB_ELEMENT_PASSWORD);
+        clickSearch();
+    }
+
 
 }
 

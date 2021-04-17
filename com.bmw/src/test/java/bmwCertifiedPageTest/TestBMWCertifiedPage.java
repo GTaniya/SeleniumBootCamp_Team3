@@ -257,4 +257,15 @@ public class TestBMWCertifiedPage extends BaseAPI {
 
     }
 
+    @Test
+    public void testDownloadFile() throws InterruptedException {
+        bmwCertifiedPage = new BMWCertifiedPage();
+
+        bmwCertifiedPage.clickBmwCertifiedPageLink();
+
+        bmwCertifiedPage.downloadTheFile();
+        Thread.sleep(4000);
+
+    }
+
     }

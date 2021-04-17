@@ -11,6 +11,8 @@
 
         <classes>
 
+            <class name="golfPageTest.TestGolfPage"/>
+
         </classes>
 
     </test>

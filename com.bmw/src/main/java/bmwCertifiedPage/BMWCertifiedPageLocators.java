@@ -32,4 +32,7 @@ public class BMWCertifiedPageLocators {
 
     //Concept Vehicles
     public static final String WEB_ELEMENT_BMW_FOOTER_LINK_CONCEPT_VEHICLES = "//footer[@class='globalnav-footer']//a[contains(.,'Concept Vehicles')]";
+
+    //Download
+    public static final String WEB_ELEMENT_DOWNLOAD_FILE = "//a[contains(.,'Download Exclusionary Warranty')]";
 }

@@ -182,16 +182,19 @@ public class TestMortgagePage extends BaseAPI {
     }
 
     //Test 12
-    @Test (enabled = true)
+    @Test (enabled = false)
     public void testHomeLoansButton() throws Exception {
         mortgagePage = new MortgagePage();
 
         mortgagePage.clickHomeLoansButton();
-        String actualTitle = BaseAPI.driver.getTitle();
+        softAssertEqualsGetTitle("Chase Mortgage | Home Lending | Chase.com");
+    }
 
-        String expectedTitle = "Chase Mortgage | Home Lending | Chase.com";
+    @Test
+    public void testSignIn() throws InterruptedException {
+        mortgagePage = new MortgagePage();
+        mortgagePage.addUserCredentials();
 
-        Assert.assertEquals(actualTitle, expectedTitle, "TITLE DOES NOT MATCH");
     }
 
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="BankOfAmerica Test Suite">
+<suite name="Macy's Test Suite">
 
     <test name="CR1">
 
@@ -10,6 +10,8 @@
         <parameter name="url" value="https://www.macys.com"></parameter>
 
         <classes>
+
+            <class name="homepageTest.TestHomepage"/>
 
         </classes>
 

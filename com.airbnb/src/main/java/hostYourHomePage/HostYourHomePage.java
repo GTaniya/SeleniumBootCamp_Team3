@@ -18,10 +18,6 @@ public class HostYourHomePage extends BaseAPI {
         PageFactory.initElements(driver, this);
     }
 
-    //public void clickHostYourPage(){
-    //  clickByXpathUsingJavaScript(WEB_ELEMENT_HOST_YOUR_PAGE);
-    //}
-
     public void clickHostYourPage() {
         hostYourPage.click();
     }

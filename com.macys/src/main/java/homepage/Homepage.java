@@ -140,6 +140,7 @@ public class Homepage extends BaseAPI {
     @FindBy(xpath = WEB_ELEMENT_SIGN_IN_REMEMBER_ME_CHECK_BOX)
     WebElement rememberMeCheckBox;
 
+
     public void clickCheckBox(){clickByXpathUsingJavaScript(WEB_ELEMENT_SIGN_IN_REMEMBER_ME_CHECK_BOX);}
 
 }

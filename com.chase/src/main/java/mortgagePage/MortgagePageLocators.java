@@ -37,6 +37,8 @@ public class MortgagePageLocators {
     //Iframe
     public static final String WEB_ELEMENT_IFRAME_LOGIN_BOX= "//iframe[@id='logonbox']";
 
+    public static final String WEB_ELEMENT_IFRAME_LOGIN= "//div[@class='herolayer__button']/a[.='Open an account']";
+
 
 
 

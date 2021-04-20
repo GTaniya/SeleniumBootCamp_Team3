@@ -63,14 +63,56 @@ public class TestHomepage extends BaseAPI {
     }
 
     //Test#6
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void testHover() throws InterruptedException {
         homepage = new Homepage();
         homepage.hoverOverSignInLink();
         Thread.sleep(6000);
     }
 
+    //Test#7
+    @Test(enabled = false)
+    public void testZipCode() throws InterruptedException {
+        homepage = new Homepage();
+        homepage.clickCatalogLink();
+        homepage.clickSearchBar();
+        Thread.sleep(6000);
+    }
 
+    //Test #8
+    @Test(enabled = false)
+    public void testStylistPage() throws InterruptedException {
+        homepage = new Homepage();
+        homepage.clickStylistPageLink();
+        homepage.clickStylistAppointmentLink();
+
+        softAssertEqualsGetTitle("Personal Stylist - Book an Online Appointment - Macy's");
+    }
+
+    //Test #9
+    @Test(enabled = false)
+    public void testSignInPage() throws InterruptedException {
+        homepage = new Homepage();
+        homepage.navigateToSignInPage();
+        homepage.addUserCredentials();
+        homepage.clickCheckBox();
+
+        softAssertEqualsGetTitle("Sign In - Macy's");
+
+
+    }
+
+    //Test#10
+    @Test(enabled = true)
+    public void testCheckBox() throws InterruptedException {
+        homepage = new Homepage();
+        homepage.navigateToSignInPage();
+        homepage.clickCheckBox();
+
+        softAssertEqualsGetTitle("Sign In - Macy's");
+
+
+    }
 
 
 }

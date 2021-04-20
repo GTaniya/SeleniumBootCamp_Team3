@@ -48,10 +48,14 @@ public class Homepage extends BaseAPI {
     WebElement beauty;
 
     public void clickDropDown(){clickByXpathUsingJavaScript(WEB_ELEMENT_OPEN_DROP_DOWN_MENU); }
+
+
    // public void clickBeauty(){clickByXpathUsingJavaScript(WEB_ELEMENT_DROP_DOWN_MENU_BEAUTY); }
-    public void clickBeauty() {
-        driver.findElement(By.xpath(WEB_ELEMENT_DROP_DOWN_MENU_BEAUTY)).click();
-    }
+//    public void clickBeauty() {
+//        driver.findElement(By.xpath(WEB_ELEMENT_DROP_DOWN_MENU_BEAUTY)).click();
+//    }
+
+
 
     @FindBy (xpath = WEB_ELEMENT_STORES)
     WebElement stores;
@@ -83,4 +87,59 @@ public class Homepage extends BaseAPI {
     public void hoverOverSignInLink(){
         hoverOverElement(hoverSignIn);
     }
+
+    @FindBy (xpath = WEB_ELEMENT_CATALOG)
+    WebElement catalogLink;
+
+    @FindBy (xpath = WEB_ELEMENT_CATALOG_ZIP_CODE_SEARCH_BAR)
+    WebElement catalogSearchBar;
+
+    @FindBy (css = WEB_ELEMENT_CATALOG_ZIP_CODE_SEARCH_BUTTON)
+    WebElement catalogSearchButton;
+
+    @FindBy (xpath = WEB_ELEMENT_PERSONAL_STYLIST)
+    WebElement personalStylistPageLink;
+
+    @FindBy (xpath = WEB_ELEMENT_PERSONAL_STYLIST_APPOINTMENT)
+    WebElement stylistAppointment;
+
+    public void clickCatalogLink(){clickByXpathUsingJavaScript(WEB_ELEMENT_CATALOG);}
+
+    public void clickSearchBar(){
+        WebElement zipCode = driver.findElement(By.xpath(WEB_ELEMENT_CATALOG_ZIP_CODE_SEARCH_BAR));
+        catalogSearchBar.sendKeys("20874");
+        catalogSearchBar.click();
+    }
+
+    public void clickStylistPageLink(){clickByXpathUsingJavaScript(WEB_ELEMENT_PERSONAL_STYLIST);}
+    public void clickStylistAppointmentLink(){clickByXpathUsingJavaScript(WEB_ELEMENT_PERSONAL_STYLIST_APPOINTMENT);}
+
+
+    @FindBy(xpath = WEB_ELEMENT_SIGN_IN_PAGE)
+    WebElement signInPage;
+
+    @FindBy(xpath = WEB_ELEMENT_SIGN_IN_EMAIL)
+    WebElement signInPageEmail;
+
+    @FindBy(xpath = WEB_ELEMENT_SIGN_IN_PASSWORD)
+    WebElement signInPagePassword;
+
+    @FindBy(xpath = WEB_ELEMENT_SIGN_IN_BUTTON)
+    WebElement signInButton;
+
+    public void navigateToSignInPage(){clickByXpathUsingJavaScript(WEB_ELEMENT_SIGN_IN_PAGE);}
+
+    public void addUserCredentials(){
+        WebElement email = driver.findElement(By.id("email"));
+        WebElement password = driver.findElement(By.id("pw-input"));
+
+        email.sendKeys("someone@gmail.com");
+        password.sendKeys("thisIsMyPassword");
+    }
+
+    @FindBy(xpath = WEB_ELEMENT_SIGN_IN_REMEMBER_ME_CHECK_BOX)
+    WebElement rememberMeCheckBox;
+
+    public void clickCheckBox(){clickByXpathUsingJavaScript(WEB_ELEMENT_SIGN_IN_REMEMBER_ME_CHECK_BOX);}
+
 }

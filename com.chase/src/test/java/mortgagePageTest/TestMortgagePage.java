@@ -190,11 +190,24 @@ public class TestMortgagePage extends BaseAPI {
         softAssertEqualsGetTitle("Chase Mortgage | Home Lending | Chase.com");
     }
 
-    @Test
+    @Test(enabled = false)
     public void testSignIn() throws InterruptedException {
         mortgagePage = new MortgagePage();
         mortgagePage.addUserCredentials();
 
+    }
+    @Test (enabled = true)
+    public void testHoverOver() throws Exception {
+        mortgagePage = new MortgagePage();
+        Thread.sleep(4000);
+
+        String actualAttributeValue = mortgagePage.login.getAttribute("class");
+        String expectedAttributeValue = "btn cta cta--primary cta--large cta--btn-green-aloe";
+
+        System.out.println(actualAttributeValue);
+        System.out.println(expectedAttributeValue);
+
+        Assert.assertEquals(actualAttributeValue, expectedAttributeValue, "COLOR DOES NOT MATCH");
     }
 
 

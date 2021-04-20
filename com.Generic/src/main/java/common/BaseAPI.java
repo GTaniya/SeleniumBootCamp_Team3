@@ -397,7 +397,7 @@ public class BaseAPI {
 
         }
 
-        public void implicitWait(long seconds){
+        public static void implicitWait(long seconds){
             driver.manage().timeouts().implicitlyWait(seconds, TimeUnit.SECONDS);
         }
 
@@ -427,6 +427,16 @@ public class BaseAPI {
             softAssert.assertEquals(act, exp);
             softAssert.assertAll();
         }
+    }
+
+    public static void hoverOverDropdownNClickUsingXpath(String main, String sub) {
+        implicitWait(20);
+        WebElement mainMenu = driver.findElement(By.xpath(main));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(mainMenu).perform();
+        WebElement subMenu = driver.findElement(By.xpath(sub));
+        actions.moveToElement(subMenu);
+        actions.click().build().perform();
     }
 
 

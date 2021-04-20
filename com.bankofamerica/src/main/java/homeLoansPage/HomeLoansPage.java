@@ -2,9 +2,12 @@ package homeLoansPage;
 
 
 import common.BaseAPI;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.security.cert.X509Certificate;
 
 import static homeLoansPage.HomeLoanPageLocators.*;
 
@@ -67,4 +70,43 @@ public class HomeLoansPage extends BaseAPI {
         typeOnElement(WEB_ELEMENT_INPUT_SEARCH_BAR,WEB_ELEMENT_INPUT_SEARCH_TEXT);
         clickSearchButton();
     }
+
+    @FindBy(css = WEB_ELEMENT_INPUT_USER_ID)
+    public WebElement inputUserId;
+    @FindBy(css = WEB_ELEMENT_ENTER_PASS_CODE)
+    public WebElement enterPassCode;
+    @FindBy(xpath = WEB_ELEMENT_CLICK_SIGN_IN_BUTTON)
+    public WebElement clickSignInButton;
+    @FindBy(xpath = WEB_ELEMENT_CLICK_ENROLL)
+    public WebElement clickEnroll;
+
+    public void sendKeysToInputBox(String searchKeys){sendKeysToElement(inputUserId,searchKeys);}
+
+   public void enterUserId(){
+        driver.findElement(By.cssSelector("[placeholder='Online ID']")).sendKeys("IDAddress");
+    }
+    public void enterPassword(){
+        driver.findElement(By.cssSelector("[placeholder='Passcode']")).sendKeys("12345");
+    }
+    public void clickSignIn(){
+        driver.findElement(By.xpath("//button[@id='signIn']")).click();
+    }
+    public void clickEnrollButton(){
+        driver.findElement(By.xpath("//a[normalize-space()='Enroll']")).click();
+
+    }
+    @FindBy(xpath = WEB_ELEMENT_DO_CLICK_CHECKING_BUTTON)
+    WebElement doClickCheckingButton;
+
+    public void checkingButtonClick(){
+        driver.findElement(By.xpath("//a[@id='navChecking']/span[@class='title']")).click();
+    }
+    @FindBy(id = WEB_ELEMENT_CHECKING_ONLINE_BANKING)
+    WebElement checkingOnlineBanking;
+
+    public void doCheckingOnline(){
+        clickByXpathUsingJavaScript(WEB_ELEMENT_CHECKING_ONLINE_BANKING);
+    }
+
+
 }

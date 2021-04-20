@@ -1,7 +1,6 @@
 package placeToStayPageTest;
 
 import common.BaseAPI;
-import homepage.Homepage;
 import io.cucumber.java.an.E;
 import io.cucumber.java.bs.A;
 import org.testng.Assert;
@@ -67,7 +66,7 @@ public class TestPlaceToStayPage extends BaseAPI {
         Assert.assertEquals(actualTitle,expectedTitle,"Title doesn't find");
 
     }
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void testFindHotel(){
         placeToStayPage = new PlaceToStayPage();
         placeToStayPage.findHotelForTonight();
@@ -78,9 +77,90 @@ public class TestPlaceToStayPage extends BaseAPI {
 
         Assert.assertEquals(actualTitle,expectedTitle,"Title doesn't find");
 
+    }
+    @Test(enabled = false)
+    public void testButtonCovidKey(){
+        placeToStayPage = new PlaceToStayPage();
+        placeToStayPage.buttonCovidKey();
+
+        String actualTitle = BaseAPI.driver.getTitle();
+        String expectedTitle ="COVID-19 Safety";
+
+        Assert.assertEquals(actualTitle,expectedTitle,"Title doesn't find");
+
+    }
+    @Test(enabled = false)
+    public void testExploreSafetyPracticePage() throws InterruptedException {
+        placeToStayPage = new PlaceToStayPage();
+      //  placeToStayPage.buttonCovidKey();
+        placeToStayPage.exploreSafetyPracticePage();
+
+
+        Thread.sleep(2000);
+        String actualTitle = BaseAPI.driver.getTitle();
+        String expectedTitle ="";
+
+        Assert.assertEquals(actualTitle,expectedTitle,"Title doesn't find");
+
+    }
+    @Test(enabled = false)
+    public void testDoSearchAirBNBWork() throws InterruptedException {
+        placeToStayPage = new PlaceToStayPage();
+        placeToStayPage.doSearchAirBNBWork();
+
+
+        Thread.sleep(3000);
+        String actualTitle = BaseAPI.driver.getTitle();
+        String expectedTitle = "How Airbnb Works";
+
+        Assert.assertEquals(actualTitle, expectedTitle, "Title doesn't find");
 
 
     }
+    @Test(enabled = false)
+    public void testSearchAirBNBHomes() throws InterruptedException {
+        placeToStayPage = new PlaceToStayPage();
+        placeToStayPage.SearchAirBNBHomes();
+
+
+        Thread.sleep(3000);
+        String actualTitle = BaseAPI.driver.getTitle();
+        String expectedTitle = "Anywhere · Stays · Airbnb";
+
+        Assert.assertEquals(actualTitle, expectedTitle, "Title doesn't find");
+
+    }
+    @Test(enabled = false)
+    public void testTrustAndSafety() throws InterruptedException {
+        placeToStayPage = new PlaceToStayPage();
+        placeToStayPage.trustAndSafety();
+
+
+        Thread.sleep(3000);
+        String actualTitle = BaseAPI.driver.getTitle();
+        String expectedTitle = "Airbnb Trust & Safety - Your safety is our priority";
+
+        Assert.assertEquals(actualTitle, expectedTitle, "Title doesn't find");
+
+
+    }
+    @Test(enabled = false)
+    public void testTrustAndSafetyTravelingButton(){
+        placeToStayPage = new PlaceToStayPage();
+        placeToStayPage.trustAndSafetyTraveling();
+
+        Assert.assertTrue(isElementSelected(placeToStayPage.trustAndSafetyTraveling));
+
+
+    }
+    @Test
+    public void testSearchAllJobs() throws InterruptedException {
+        placeToStayPage = new PlaceToStayPage();
+        placeToStayPage.searchAllJobsAirBNB();
+
+
+    }
+
 
 
 }

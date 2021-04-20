@@ -61,8 +61,47 @@ public class ModelsPage extends BaseAPI {
         implicitWait();
         basicHoverUsingXpath(WEB_ELEMENT_HOVER_OVER_BUTTON_DESIGN);
     }
+    @FindBy(xpath = WEB_ELEMENT_CLICK_BMW_MOUNTAINS)
+    WebElement clickBMWMountains;
 
+    public void clickBMWMountainsButton(){
+        implicitWait();
+        clickByXpathUsingJavaScript(WEB_ELEMENT_CLICK_BMW_MOUNTAINS);
     }
+    @FindBy(xpath = WEB_ELEMENT_CHECK_M5_MODEL)
+    public WebElement checkM5Model;
+
+    public void checkBMWM5Model(){
+        clickByXpathUsingJavaScript(WEB_ELEMENT_CHECK_M5_MODEL);
+    }
+    @FindBy(xpath = WEB_ELEMENT_CHECK_TWEETER)
+    public WebElement checkTweeter;
+
+    public void checkTweeterButton(){
+        clickByXpathUsingJavaScript(WEB_ELEMENT_CHECK_TWEETER);
+    }
+
+
+    @FindBy(xpath = WEB_ELEMENT_SEARCH_FUTURE_VEHICLE)
+    public WebElement searchFutureVehicle;
+
+    public void searchBMWFutureModel(){
+        clickByXpathUsingJavaScript(WEB_ELEMENT_SEARCH_FUTURE_VEHICLE);
+    }
+    @FindBy(xpath = WEB_ELEMENT_DO_SEARCH_CONCEPT_VEHICLE)
+    public WebElement doSearchConceptVehicle;
+
+    public void doSearchVehicle(){
+        clickByXpathUsingJavaScript(WEB_ELEMENT_DO_SEARCH_CONCEPT_VEHICLE);
+    }
+    @FindBy(xpath = WEB_ELEMENT_CLICK_MY_BMW)
+    public WebElement clickMyBMW;
+
+    public void doClickMyBMW(){
+        clickByXpathUsingJavaScript(WEB_ELEMENT_CLICK_MY_BMW);
+    }
+}
+
 
 
 

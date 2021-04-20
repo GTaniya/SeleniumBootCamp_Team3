@@ -32,6 +32,9 @@ public class BaseAPI {
     public DataReader dataReader;
     public static Actions actions;
     public Properties properties;
+    protected WebElement searchAllJobsAirBNB;
+    public WebElement radioOptionPric;
+
 
     String propertiesFilePath = "src/main/resources/secret.properties";
 

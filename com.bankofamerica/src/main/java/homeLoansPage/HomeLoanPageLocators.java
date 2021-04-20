@@ -19,5 +19,16 @@ public class HomeLoanPageLocators {
     public static final String WEB_ELEMENT_INPUT_SEARCH_TEXT="Bill Pay Center";
     public static final String WEB_ELEMENT_INPUT_SEARCH_BUTTON="//input[@name='Search Module - Top Result – Search Button']";
 
-    //s
+    //sign in
+    public static final String WEB_ELEMENT_INPUT_USER_ID ="#onlineId1";
+    public static final String WEB_ELEMENT_ENTER_PASS_CODE  ="[placeholder='Passcode']";
+    public static final String WEB_ELEMENT_CLICK_SIGN_IN_BUTTON  ="//button[@id='signIn']";
+    public static final String WEB_ELEMENT_CLICK_ENROLL ="//a[normalize-space()='Enroll']";
+
+
+    public static final String WEB_ELEMENT_DO_CLICK_CHECKING_BUTTON ="//a[@id='navChecking']/span[@class='title']";
+
+    public static final String WEB_ELEMENT_CHECKING_ONLINE_BANKING ="//a[@id='navCheckingOnlineBanking']";
+
+
 }

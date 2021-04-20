@@ -10,7 +10,7 @@
         <parameter name="url" value="https://www.ebay.com"/>
 
         <classes>
-            <class name="homepageTest.HomepageTest"/>
+            <class name="fashionPageTest.TestFashionPage"/>
         </classes>
 
     </test>

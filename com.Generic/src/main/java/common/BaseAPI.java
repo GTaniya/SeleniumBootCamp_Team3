@@ -21,8 +21,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
-
-
+import java.util.concurrent.TimeUnit;
 
 
 public class BaseAPI {
@@ -401,6 +400,10 @@ public class BaseAPI {
             ex.printStackTrace();
             System.out.println("UNABLE TO LOCATE ELEMENT");
         }
+    }
+
+    public static void implicitWait(long seconds){
+        driver.manage().timeouts().implicitlyWait(seconds, TimeUnit.SECONDS);
     }
 }
 

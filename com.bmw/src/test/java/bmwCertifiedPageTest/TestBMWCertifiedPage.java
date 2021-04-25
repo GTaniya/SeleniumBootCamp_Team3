@@ -19,6 +19,7 @@ public class TestBMWCertifiedPage extends BaseAPI {
 
         bmwCertifiedPage.clickBmwCertifiedPageLink();
 
+
         String actualTitle = BaseAPI.driver.getTitle();
 
         String expectedTitle = "Luxury SUVs, Sedans, Coupes, Convertibles & Crossovers | BMW USA";
@@ -36,9 +37,7 @@ public class TestBMWCertifiedPage extends BaseAPI {
 
         bmwCertifiedPage.clickBmwCertifiedPageLink();
 
-        Thread.sleep(4000);
-
-        //WebDriverWait wait = new WebDriverWait(driver,20);
+        WebDriverWait wait = new WebDriverWait(driver,20);
 
         bmwCertifiedPage.clickBmwCertifiedPageInventoryButton();
 
@@ -58,10 +57,11 @@ public class TestBMWCertifiedPage extends BaseAPI {
 
         bmwCertifiedPage = new BMWCertifiedPage();
         bmwCertifiedPage.clickBmwCertifiedPageLink();
-        Thread.sleep(4000);
-        //WebDriverWait wait = new WebDriverWait(driver,20);
+
+        implicitWait(20);
         bmwCertifiedPage.clickBmwCertifiedPageInventoryButton();
-        Thread.sleep(4000);
+
+        implicitWait(20);
         bmwCertifiedPage.doSearch();
 
         String actualTitle = BaseAPI.driver.getTitle();
@@ -257,15 +257,5 @@ public class TestBMWCertifiedPage extends BaseAPI {
 
     }
 
-    @Test
-    public void testDownloadFile() throws InterruptedException {
-        bmwCertifiedPage = new BMWCertifiedPage();
-
-        bmwCertifiedPage.clickBmwCertifiedPageLink();
-
-        bmwCertifiedPage.downloadTheFile();
-        Thread.sleep(4000);
-
-    }
 
     }

@@ -2,9 +2,10 @@ package homepageTest;
 
 import common.BaseAPI;
 import homepage.Homepage;
-import io.cucumber.java.bs.A;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.util.concurrent.TimeUnit;
 
 public class TestHomepage extends BaseAPI {
     Homepage homepage;
@@ -15,11 +16,13 @@ public class TestHomepage extends BaseAPI {
         homepage = new Homepage();
 
         homepage.doSearch();
+        fluentWait(20);
         String actualTitle = BaseAPI.driver.getTitle();
 
-        String expectedTitle = "Vacation Rentals, Homes, Hotels, Experiences & More - Airbnb";
+        String expectedTitle = "Airbnb: Vacation Rentals, Cabins, Beach Houses, Unique Homes & Experiences";
 
         Assert.assertEquals(actualTitle, expectedTitle, "TITLE DOES NOT MATCH");
+
     }
 
     //Test #2
@@ -38,7 +41,7 @@ public class TestHomepage extends BaseAPI {
     }
 
     //Test #3
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void testHelpCenter() {
 
         homepage = new Homepage();
@@ -164,9 +167,10 @@ public class TestHomepage extends BaseAPI {
     //Test #10
     @Test(enabled = false)
 
-    public void testLanguage() {
+    public void testLanguage() throws InterruptedException {
         homepage = new Homepage();
         homepage.clickLanguageButton();
+
         homepage.clickLanguageItaliaButton();
 
         String actualResult = driver.getTitle();
@@ -243,6 +247,30 @@ public class TestHomepage extends BaseAPI {
         String expectedResult = "What Makes Airbnb, Airbnb";
 
         Assert.assertEquals(actualResult, expectedResult, "Test Failed");
+    }
+
+    //Test #15
+    @Test(enabled = false)
+    public void testPrice() {
+        homepage = new Homepage();
+
+        homepage.addLocation();
+        implicitWait(10);
+        homepage.clickPrice();
+        homepage.changePrice();
+       // WebDriverWait wait = new WebDriverWait(driver, 60);
+        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+
+    }
+
+    //Test #16
+    @Test(enabled = false)
+    public void testDateField() throws InterruptedException {
+        homepage = new Homepage();
+        homepage.clickDateField();
+        homepage.clickDate();
+        Thread.sleep(4000);
+        //driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
     }
 
 }

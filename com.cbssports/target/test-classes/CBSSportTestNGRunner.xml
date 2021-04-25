@@ -7,11 +7,11 @@
 
         <parameter name="browserName" value="chrome"></parameter>
         <parameter name="browserVersion" value="90"></parameter>
-        <parameter name="url" value="https://www.att.com/"></parameter>
+        <parameter name="url" value="https://www.cbssports.com"></parameter>
 
         <classes>
 
-            <class name="homepageTest.homepageTest.homepageTest.TestShoppingPage"/>
+            <class name="golfPageTest.TestGolfPage"/>
 
         </classes>
 

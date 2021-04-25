@@ -2,6 +2,7 @@ package homepageTest;
 
 import common.BaseAPI;
 import homepage.Homepage;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -42,7 +43,7 @@ public class TestHomepage extends BaseAPI {
     public void testDropDown() throws InterruptedException {
         homepage = new Homepage();
         homepage.clickDropDownMenu();
-        Thread.sleep(4000);
+        WebDriverWait wait = new WebDriverWait(driver, 20);
 
 
     }
@@ -54,7 +55,7 @@ public class TestHomepage extends BaseAPI {
         homepage = new Homepage();
         homepage.clickDropDownMenu();
         homepage.clickDropDownMenuInternet();
-        Thread.sleep(4000);
+        WebDriverWait wait = new WebDriverWait(driver, 20);
     }
 
     //Test #5
@@ -100,7 +101,7 @@ public class TestHomepage extends BaseAPI {
         homepage = new Homepage();
         homepage.clickShopNowButton();
         homepage.clickToSelectPhoneColor();
-        Thread.sleep(4000);
+        WebDriverWait wait = new WebDriverWait(driver, 20);
     }
 
     //Test #8
@@ -112,7 +113,7 @@ public class TestHomepage extends BaseAPI {
         homepage = new Homepage();
         homepage.clickShopNowButton();
         homepage.clickToSelectPhoneCapacity();
-        Thread.sleep(4000);
+        WebDriverWait wait = new WebDriverWait(driver, 20);
     }
 
     //Test #9
@@ -123,8 +124,7 @@ public class TestHomepage extends BaseAPI {
         homepage = new Homepage();
         homepage.clickAttTvButton();
         homepage.clickAttTvLineUpButton();
-        Thread.sleep(2000);
-
+        WebDriverWait wait = new WebDriverWait(driver, 20);
     }
 
     //Test #10
@@ -197,7 +197,7 @@ public class TestHomepage extends BaseAPI {
         homepage = new Homepage();
         homepage.navigateToPrepaidPage();
         homepage.hoverOverButtonShopNow();
-        Thread.sleep(4000);
+        WebDriverWait wait = new WebDriverWait(driver, 20);
 
 
 

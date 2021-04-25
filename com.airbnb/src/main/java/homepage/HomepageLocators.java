@@ -5,8 +5,11 @@ public class HomepageLocators {
     //Search Button
 
     public static final String webElementInputSearch = "//input[@id='bigsearch-query-detached-query']";
-    public static final String webElementButtonSearch = "//div[@class='_1hb5o3s']";
+   // public static final String webElementButtonSearch = "//div[@class='_1hb5o3s']";
+    public static final String webElementButtonSearch = "//span[@class='_m9v25n']";
     public static final String webElementText = "California, United States";
+    public static final String webElementExpectedText = "//h1[.='Stays in California']";
+
 
     //SignIn
 
@@ -97,6 +100,15 @@ public class HomepageLocators {
 
     public static final String WEB_ELEMENT_FOUNDERS_LETTER = "//a[.=\"Founders' Letter\"]";
     public static final String WEB_ELEMENT_FOUNDERS_LETTER_ABOUT_US = "//ul[@id='menu-primary-navigation']//a[.='About Us']";
+
+    //Price
+
+    public static final String WEB_ELEMENT_SEARCH_BAR_LOCATION = "//input[@id='bigsearch-query-detached-query-input']";
+    public static final String WEB_ELEMENT_PRICE = "//div[@id='menuItemButton-price_range']/button[@class='_t6p96s']/span[@class='_w37zq5']//span[@class='_36rlri']";
+
+    //Date
+    public static final String WEB_ELEMENT_DATE_FIELD = "//div[@class='_1l6jpwo']/div[1]//div[@class='_uh2dzp']";
+    public static final String WEB_ELEMENT_DATE = "//div[@class='_754zdu7']/div[@class='_1lds9wb']//div[@class='_f8btejl']/div[.='4']";
 
 
 

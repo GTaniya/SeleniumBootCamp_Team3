@@ -32,7 +32,7 @@ public class TestSupportPage extends BaseAPI {
         supportPage = new SupportPage();
         supportPage.clickSupportPageLink();
         supportPage.clickChatButton();
-        Thread.sleep(4000);
+        WebDriverWait wait = new WebDriverWait(driver, 20);
 
         String actualText = driver.getTitle();
 
@@ -47,11 +47,9 @@ public class TestSupportPage extends BaseAPI {
 
         supportPage = new SupportPage();
         supportPage.clickSupportPageLink();
-        Thread.sleep(4000);
         supportPage.clickFlightsDropdown();
-        Thread.sleep(4000);
         supportPage.clickFlightsDropdownSeats();
-        Thread.sleep(4000);
+        WebDriverWait wait = new WebDriverWait(driver, 20);
 
         String actualText = driver.getTitle();
 
@@ -66,9 +64,8 @@ public class TestSupportPage extends BaseAPI {
 
         supportPage = new SupportPage();
         supportPage.clickSupportPageLink();
-        Thread.sleep(4000);
         supportPage.clickThingsToDoTab();
-        Thread.sleep(4000);
+        WebDriverWait wait = new WebDriverWait(driver, 20);
 
         String actualText = driver.getTitle();
 
@@ -115,7 +112,7 @@ public class TestSupportPage extends BaseAPI {
         supportPage.clickSupportPageLink();
         supportPage.clickContactUsButton();
         supportPage.clickContactUsWindow();
-        Thread.sleep(4000);
+        WebDriverWait wait = new WebDriverWait(driver, 20);
 
     }
 
@@ -125,10 +122,10 @@ public class TestSupportPage extends BaseAPI {
 
         supportPage = new SupportPage();
         supportPage.clickSupportPageLink();
-        Thread.sleep(4000);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         supportPage.clickThingsToDoTab();
         supportPage.selectCity();
-        Thread.sleep(4000);
+        WebDriverWait wait2 = new WebDriverWait(driver, 20);
     }
 
     //Test#11
@@ -138,17 +135,17 @@ public class TestSupportPage extends BaseAPI {
         supportPage = new SupportPage();
         supportPage.OpenSelectTravelerLink();
         supportPage.OpenSelectTravelerDecrease();
-        Thread.sleep(4000);
+        WebDriverWait wait = new WebDriverWait(driver, 20);
     }
 
     //Test#12
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void testSelectingCarTab() throws InterruptedException {
 
         supportPage = new SupportPage();
         supportPage.clickSupportPageLink();
         supportPage.selectCars();
-        Thread.sleep(4000);
+        WebDriverWait wait = new WebDriverWait(driver, 20);
 
         String actualText = driver.getTitle();
 

@@ -28,15 +28,15 @@ public class TestBusinessAndInstitutionsPage extends BaseAPI {
     }
 
     //Test #2
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void testHover() throws Exception {
 
         businessAndInstitutionsPage = new BusinessAndInstitutionsPage();
 
         businessAndInstitutionsPage.navigateToBusinessAndInstitutionsPage();
-        Thread.sleep(4000);
+        implicitWait(10);
         businessAndInstitutionsPage.hoverOverButtonManagingBusiness();
-        Thread.sleep(4000);
+
 
     }
 
@@ -66,9 +66,9 @@ public class TestBusinessAndInstitutionsPage extends BaseAPI {
         businessAndInstitutionsPage = new BusinessAndInstitutionsPage();
 
         businessAndInstitutionsPage.navigateToBusinessAndInstitutionsPage();
-        Thread.sleep(4000);
+        implicitWait(10);
         businessAndInstitutionsPage.clickManageBusinessButton();
-        Thread.sleep(4000);
+
         businessAndInstitutionsPage.scrollDown();
 
         String actualTitle = BaseAPI.driver.getTitle();
@@ -130,7 +130,7 @@ public class TestBusinessAndInstitutionsPage extends BaseAPI {
         businessAndInstitutionsPage.clickBankCareersLink();
 
         businessAndInstitutionsPage.clickBankCareersStartButton();
-        Thread.sleep(4000);
+        implicitWait(20);
 
         String actualTitle = BaseAPI.driver.getTitle();
 
@@ -151,7 +151,7 @@ public class TestBusinessAndInstitutionsPage extends BaseAPI {
         businessAndInstitutionsPage.clickBankCareersLink();
 
         businessAndInstitutionsPage.clickBankCareersShareButton();
-        Thread.sleep(4000);
+        fluentWait(20);
 
         String actualTitle = BaseAPI.driver.getTitle();
 
@@ -174,7 +174,7 @@ public class TestBusinessAndInstitutionsPage extends BaseAPI {
         businessAndInstitutionsPage.clickBankCareersShareButton();
 
         businessAndInstitutionsPage.clickBankCareersShareButtonLinkedIn();
-        Thread.sleep(4000);
+        fluentWait(20);
 
         String actualTitle = BaseAPI.driver.getTitle();
 
@@ -195,7 +195,7 @@ public class TestBusinessAndInstitutionsPage extends BaseAPI {
         businessAndInstitutionsPage.clickBankCareersLink();
 
         businessAndInstitutionsPage.clickBankCareersLinkAttractTalent();
-        Thread.sleep(4000);
+        implicitWait(10);
 
         String actualTitle = BaseAPI.driver.getTitle();
 
@@ -214,7 +214,7 @@ public class TestBusinessAndInstitutionsPage extends BaseAPI {
 
         businessAndInstitutionsPage.clickToLoginClientPortal();
 
-        Thread.sleep(4000);
+        implicitWait(20);
 
     }
 
@@ -230,7 +230,7 @@ public class TestBusinessAndInstitutionsPage extends BaseAPI {
 
         businessAndInstitutionsPage.clickClientPrimePortal();
 
-        Thread.sleep(4000);
+        implicitWait(20);
 
         String actualTitle = BaseAPI.driver.getTitle();
 

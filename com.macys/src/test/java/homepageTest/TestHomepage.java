@@ -33,7 +33,7 @@ public class TestHomepage extends BaseAPI {
         homepage = new Homepage();
         homepage.clickDropDown();
        // homepage.clickBeauty();
-        Thread.sleep(4000);
+
 
     }
 
@@ -67,7 +67,7 @@ public class TestHomepage extends BaseAPI {
     public void testHover() throws InterruptedException {
         homepage = new Homepage();
         homepage.hoverOverSignInLink();
-        Thread.sleep(6000);
+
     }
 
     //Test#7
@@ -76,7 +76,7 @@ public class TestHomepage extends BaseAPI {
         homepage = new Homepage();
         homepage.clickCatalogLink();
         homepage.clickSearchBar();
-        Thread.sleep(6000);
+
     }
 
     //Test #8

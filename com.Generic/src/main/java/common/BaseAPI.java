@@ -9,6 +9,8 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -19,6 +21,7 @@ import org.testng.asserts.SoftAssert;
 import utilities.DataReader;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -252,6 +255,7 @@ public class BaseAPI {
 
         }
 
+
         public void clickByCssSelectorUsingJavaScript(String locator) {
             WebDriverWait wait10 = new WebDriverWait(driver, 20);
             WebElement element = driver.findElement(By.cssSelector(locator));
@@ -396,6 +400,17 @@ public class BaseAPI {
 
 
         }
+//
+//        public static void fluentWait(long seconds){
+//            driver.manage().timeouts().setScriptTimeout(seconds,TimeUnit.SECONDS);
+//        }
+
+        public static void fluentWait(long seconds){
+            Wait wait = new FluentWait(driver)
+                    .withTimeout(Duration.ofSeconds(seconds))
+                    .pollingEvery(Duration.ofSeconds(seconds))
+                    .ignoring(Exception.class);
+        }
 
         public static void implicitWait(long seconds){
             driver.manage().timeouts().implicitlyWait(seconds, TimeUnit.SECONDS);
@@ -440,7 +455,37 @@ public class BaseAPI {
     }
 
 
+    public void clickByXpath(String loc){
 
+        WebElement element= driver.findElement(By.xpath(loc));
 
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", element);
+    }
+
+    public boolean isElementSelected(String element) {
+        boolean flag = false;
+
+        if (driver.findElement(By.xpath(element)).isSelected()) {
+            flag = true;
+            return flag;
+        }
+        return flag;
+    }
+
+    public boolean isElementDisplayed(String element) {
+        boolean flag = false;
+
+        if (driver.findElement(By.xpath(element)).isDisplayed()) {
+            flag = true;
+            return flag;
+        }
+        return flag;
+    }
+
+    public void explicitWaitUntilClickable(long seconds, String locator) {
+        WebDriverWait wait = new WebDriverWait(driver, seconds);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
+    }
 
 }

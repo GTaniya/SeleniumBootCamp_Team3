@@ -11,7 +11,7 @@
 
         <classes>
 
-            <class name="homepageTest.homepageTest.TestHomepage"/>
+            <class name="homepageTest.homepageTest.homepageTest.TestShoppingPage"/>
 
         </classes>
 

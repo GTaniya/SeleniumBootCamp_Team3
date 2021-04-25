@@ -15,5 +15,10 @@ public class GolfPageLocators {
 
     public static final String WEB_ELEMENT_SELECT_PLAY_GOLF = "//ul[@class='nav-networks']//a[contains(.,'Play Golf')]";
 
+    //Select Players
+    public static final String WEB_ELEMENT_SELECT_PLAYERS = "//select[@id='s-players']";
+    //public static final String WEB_ELEMENT_SELECT_PLAYERS_FOUR = "//*[@id=\"s-players\"]/option[4]";
+    public static final String WEB_ELEMENT_SELECT_PLAYERS_FOUR = "//option[.='Four']";
+
 }
 

@@ -5,6 +5,8 @@ import golfPage.GolfPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import static golfPage.GolfPageLocators.*;
+
 
 public class TestGolfPage extends BaseAPI {
 
@@ -55,16 +57,16 @@ public class TestGolfPage extends BaseAPI {
         golfPage.clickGolfLink();
         golfPage.clickDateField();
         golfPage.clickDate();
-        Thread.sleep(4000);
+
     }
 
     //Test #4
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void testPlayGoalLink() throws InterruptedException {
 
         golfPage = new GolfPage();
         golfPage.clickPlayGolfLink();
-        Thread.sleep(4000);
+
 
         String actualTitle = BaseAPI.driver.getTitle();
 
@@ -72,6 +74,17 @@ public class TestGolfPage extends BaseAPI {
 
         Assert.assertEquals(actualTitle, expectedTitle, "PAGE DOES NOT MATCH");
 
+    }
 
+    //Test #5
+    @Test(enabled = true)
+    public void testSelectPlayers() throws InterruptedException {
+        golfPage = new GolfPage();
+        golfPage.clickGolf();
+        golfPage.scrollDown();
+        fluentWait(20);
+        golfPage.selectPlayersDropDown();
+        golfPage.selectOptionFour();
+        Assert.assertTrue(isElementDisplayed(WEB_ELEMENT_SELECT_PLAYERS_FOUR));
     }
 }

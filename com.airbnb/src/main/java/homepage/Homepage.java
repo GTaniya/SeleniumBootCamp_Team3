@@ -2,6 +2,7 @@ package homepage;
 
 import common.BaseAPI;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -24,23 +25,39 @@ public class Homepage extends BaseAPI {
         PageFactory.initElements(driver, this);
     }
 
-    public void sendKeysToSearchBox(String keysToSend) {
-        inputSearchBox.sendKeys(keysToSend);
+    //Method 1
+   // public void sendKeysToSearchBox(String keysToSend) {
+//        inputSearchBox.sendKeys(keysToSend);
+//    }
+
+    //Method 2
+//    public void clickSearchButton() throws InterruptedException {
+//        WebDriverWait wait = new WebDriverWait(driver, 10);
+//        clickByXpathUsingJavaScript(webElementButtonSearch);
+//
+//    }
+//
+//    public void doSearch() throws InterruptedException {
+//        WebDriverWait wait = new WebDriverWait(driver, 10);
+//        typeOnElement(webElementInputSearch, webElementText);
+//        WebDriverWait wait2 = new WebDriverWait(driver, 10);
+//        clickSearchButton();
+//
+//    }
+
+    //Method 3
+
+    public void doSearch(){
+
+        WebElement location = driver.findElement(By.id("bigsearch-query-detached-query-input"));
+
+        location.sendKeys("California, United States");
+        buttonSearch.click();
+
     }
 
-    public void clickSearchButton() throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        clickByXpathUsingJavaScript(webElementButtonSearch);
 
-    }
 
-    public void doSearch() throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        typeOnElement(webElementInputSearch, webElementText);
-        WebDriverWait wait2 = new WebDriverWait(driver, 10);
-        clickSearchButton();
-
-    }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -376,6 +393,41 @@ public class Homepage extends BaseAPI {
 
 
 
+    @FindBy (xpath = WEB_ELEMENT_PRICE)
+    WebElement priceCheck;
+
+    @FindBy (xpath = WEB_ELEMENT_DATE_FIELD)
+    WebElement dateField;
+
+    @FindBy (xpath = WEB_ELEMENT_DATE)
+    WebElement date;
+
+    public void addLocation(){
+        WebElement location = driver.findElement(By.id("bigsearch-query-detached-query-input"));
+
+        location.sendKeys("Chicago, IL");
+        buttonSearch.click();
+    }
+
+    public void clickPrice(){
+        clickByXpathUsingJavaScript(WEB_ELEMENT_PRICE);
+    }
+
+    public void changePrice(){
+        WebElement price = driver.findElement(By.id("price_filter_min"));
+
+        price.sendKeys("0");
+    }
+
+    public void clickDateField(){
+
+       clickByXpathUsingJavaScript(WEB_ELEMENT_DATE_FIELD);
+       // clickElement(dateField);
+    }
+
+    public void clickDate(){
+        date.click();
+    }
 
 
 

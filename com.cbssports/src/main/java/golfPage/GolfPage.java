@@ -37,8 +37,32 @@ public class GolfPage extends BaseAPI {
     @FindBy(xpath = WEB_ELEMENT_SELECT_PLAY_GOLF)
     WebElement selectPlayGolf;
 
+    @FindBy (xpath = WEB_ELEMENT_SELECT_PLAYERS)
+    public WebElement selectPlayers;
+
+    @FindBy (xpath = WEB_ELEMENT_SELECT_PLAYERS_FOUR)
+    public WebElement selectFourPlayers;
+
     public void clickDateField(){clickByXpathUsingJavaScript(WEB_ELEMENT_SELECT_DATE_FIELD);}
     public void clickDate(){clickByXpathUsingJavaScript(WEB_ELEMENT_SELECT_DATE);}
 
     public void clickPlayGolfLink(){clickByXpathUsingJavaScript(WEB_ELEMENT_SELECT_PLAY_GOLF);}
+
+    public void clickGolf(){
+        clickByXpathUsingJavaScript(WEB_ELEMENT_HAMBURGER_MENU);
+        clickByXpathUsingJavaScript(WEB_ELEMENT_HAMBURGER_MENU_SELECT_GOLF);
+    }
+
+    public void scrollDown(){
+        scrollToElementJScript(selectPlayers);
+    }
+    public void selectPlayersDropDown(){
+        clickByXpath(WEB_ELEMENT_SELECT_PLAYERS);
+    }
+
+    public void selectOptionFour(){
+        clickByXpath(WEB_ELEMENT_SELECT_PLAYERS_FOUR);
+    }
+
+
 }

@@ -76,7 +76,7 @@ public class MortgagePage extends BaseAPI {
     }
 
     @FindBy(xpath = WEB_ELEMENT_PLAY_VIDEO)
-    WebElement playVideoButton;
+    public WebElement playVideoButton;
 
     public void ClickPlayVideoButton(){
         JavascriptExecutor js = (JavascriptExecutor) driver;

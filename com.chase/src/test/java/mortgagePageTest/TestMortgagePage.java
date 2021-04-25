@@ -129,13 +129,16 @@ public class TestMortgagePage extends BaseAPI {
     }
 
     //Test #8
-    @Test (enabled = false)
+    @Test (enabled = true)
     public void testPlayVideo() throws Exception {
         mortgagePage = new MortgagePage();
 
         mortgagePage.NavigateToMortgagePage();
 
         mortgagePage.ClickPlayVideoButton();
+       // Thread.sleep(4000);
+        implicitWait(40);
+        Assert.assertTrue(isElementSelected(mortgagePage.playVideoButton));
 
     }
 
@@ -199,10 +202,10 @@ public class TestMortgagePage extends BaseAPI {
 
     }
     //Test 14
-    @Test (enabled = true)
+    @Test (enabled = false)
     public void testHoverOver() throws Exception {
         mortgagePage = new MortgagePage();
-        Thread.sleep(4000);
+        implicitWait(20);
 
         String actualAttributeValue = mortgagePage.login.getAttribute("class");
         String expectedAttributeValue = "btn cta cta--primary cta--large cta--btn-green-aloe";

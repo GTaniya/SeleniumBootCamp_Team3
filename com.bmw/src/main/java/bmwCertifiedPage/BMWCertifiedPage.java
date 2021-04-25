@@ -111,7 +111,10 @@ public class BMWCertifiedPage extends BaseAPI {
 //    public void clickStartDesigningExteriorLink(){
 //        designingExterior.click();
 //    }
-    public void chooseColorForDesigningExteriorCar(){clickByXpathUsingJavaScript(WEB_ELEMENT_BMW_START_DESIGNING_EXTERIOR_COLOR_RED);}
+    public void chooseColorForDesigningExteriorCar(){
+        //clickByXpathUsingJavaScript(WEB_ELEMENT_BMW_START_DESIGNING_EXTERIOR_COLOR_RED);
+    exteriorColorRed.click();
+    }
 
     @FindBy (xpath = WEB_ELEMENT_BMW_FOOTER_LINK_CONCEPT_VEHICLES)
     WebElement conceptVehiclesLink;

@@ -102,7 +102,7 @@ public class TestSupportPage extends BaseAPI {
         supportPage = new SupportPage();
         supportPage.selectCheckBox();
         WebDriverWait wait = new WebDriverWait(driver, 20);
-
+        Assert.assertTrue(isElementSelected(supportPage.selectCheckBox));
     }
 
     //Test#8
@@ -118,7 +118,7 @@ public class TestSupportPage extends BaseAPI {
 
     //Test #10
     @Test(enabled = false)
-    public void testChoosingNewYork() throws InterruptedException {
+    public void testChoosingLasVegas() throws InterruptedException {
 
         supportPage = new SupportPage();
         supportPage.clickSupportPageLink();
@@ -129,13 +129,16 @@ public class TestSupportPage extends BaseAPI {
     }
 
     //Test#11
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void testSelectingTravelers() throws InterruptedException {
 
         supportPage = new SupportPage();
         supportPage.OpenSelectTravelerLink();
         supportPage.OpenSelectTravelerDecrease();
         WebDriverWait wait = new WebDriverWait(driver, 20);
+
+        Assert.assertTrue(isElementSelected(supportPage.chooseTravelersDecrease));
+
     }
 
     //Test#12

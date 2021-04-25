@@ -9,7 +9,8 @@ public class HomepageLocators {
     //Radio Button
 
     public static final String WEB_ELEMENT_RADIO_OPTION_ADIDAS = "//ul[@class='x-refine__body x-refine__body--flush-left x-refine__body--has-toggle']/li[1]//li[1]//li[1]//input[@class='checkbox__control']"; // xpath
-    public static final String WEB_ELEMENT_RADIO_OPTION_NIKE = "//ul[@class='x-refine__body x-refine__body--flush-left x-refine__body--has-toggle']/li[1]//li[1]//li[6]//input[@class='checkbox__control']"; // xpath
+    //public static final String WEB_ELEMENT_RADIO_OPTION_NIKE = "//ul[@class='x-refine__body x-refine__body--flush-left x-refine__body--has-toggle']/li[1]//li[1]//li[6]//input[@class='checkbox__control']"; // xpath
+    public static final String WEB_ELEMENT_RADIO_OPTION_NIKE = "//span[.='Nike (253,289) Items']";
 
     //HoverOver
     public static final String WEB_ELEMENT_CHECK_HOVER_OVER = "//div[@class='hl-cta__default hl-cta__default-js hl-loyalty__call-to-action']"; // xpath
@@ -19,7 +20,9 @@ public class HomepageLocators {
 
     //Cart
 
-    public static final String WEB_ELEMENT_CART = ".gh-cart-icon"; // css
+    //public static final String WEB_ELEMENT_CART = ".gh-cart-icon"; // css
+    public static final String WEB_ELEMENT_CART = "//a[@href='https://cart.ebay.com']"; // css
+    public static final String WEB_ELEMENT_CART_HEADER = "//div[@class='font-title-3']/span[1]/span[1]/span[.=\"You don't have any items in your cart.\"]";
     public static final String WEB_ELEMENT_CART_START_SHOPPING = "//a[.='Start shopping']"; // xpath
 
     // arrow buttons

@@ -15,6 +15,7 @@ public class HomepageLocators {
     public static final String WEB_ELEMENT_STORES ="//a[.='Stores']";
     public static final String WEB_ELEMENT_STORES_INPUT_SEARCH ="//input[@id='q']";
     public static final String WEB_ELEMENT_STORES_TEXT ="Germantown, MD, USA";
+    public static final String WEB_ELEMENT_STORES_TEXT_HEADER ="//h1[@class='Locator-title']";
     public static final String WEB_ELEMENT_STORES_SEARCH_BUTTON ="//button[@class='search-button Locator-bigButton Button-primary']";
 
     //Help

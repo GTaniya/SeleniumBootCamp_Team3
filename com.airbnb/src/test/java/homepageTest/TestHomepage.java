@@ -77,22 +77,17 @@ public class TestHomepage extends BaseAPI {
 
     //Test #5
     @Test(enabled = false)
-    public void testGiftCard() {
+    public void testGiftCard() throws InterruptedException {
 
         homepage = new Homepage();
         homepage.clickGiftCardsLink();
         homepage.clickBuyGiftCardsLink();
-        homepage.clickGiftCards25Button();
-        homepage.clickSendByTextCheckBox();
-        homepage.addRecipientMessage();
-        homepage.addRecipientEmail();
-        homepage.addRecipientMessage();
-        homepage.addSenderName();
-        homepage.clickAddToCartButton();
+        implicitWait(20);
+        homepage.sendKeysToFields();
 
         String actualResult = driver.getTitle();
 
-        String expectedResult = "Airbnb Gift Cards";
+        String expectedResult = "Buy an Airbnb gift card | Airbnb®";
 
         Assert.assertEquals(actualResult, expectedResult, "Test Failed");
 

@@ -45,7 +45,7 @@ public class SupportPage extends BaseAPI {
     WebElement selectDate;
 
     @FindBy (xpath = WEB_ELEMENT_SELECT_CHECKBOX)
-    WebElement selectCheckBox;
+    public WebElement selectCheckBox;
 
     public void clickDataField(){
         dateField.click();
@@ -68,7 +68,7 @@ public class SupportPage extends BaseAPI {
     WebElement chooseTravelers;
 
     @FindBy (xpath = WEB_ELEMENT_SELECT_TRAVELERS_ONE)
-    WebElement chooseTravelersDecrease;
+    public WebElement chooseTravelersDecrease;
 
     @FindBy (xpath = WEB_ELEMENT_SELECT_CARS)
     WebElement selectCars;

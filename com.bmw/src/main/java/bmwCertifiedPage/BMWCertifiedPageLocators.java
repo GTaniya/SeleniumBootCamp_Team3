@@ -28,7 +28,7 @@ public class BMWCertifiedPageLocators {
     public static final String WEB_ELEMENT_BMW_START_DESIGNING_BUTTON = "//a[@href='#/studio/213O']";
     public static final String WEB_ELEMENT_BMW_START_DESIGNING_EXTERIOR = "//a[contains(.,'Exterior')]";
  //   public static final String WEB_ELEMENT_BMW_START_DESIGNING_EXTERIOR_COLOR_RED = "//div[@class='byo-rail-option-base selected']//div[@class='name byo-core-type label-2 theme-core']";
-    public static final String WEB_ELEMENT_BMW_START_DESIGNING_EXTERIOR_COLOR_RED = "//div[@class='byo-rail-option-base selected']//div[@class='name byo-core-type label-2 theme-core']";
+    public static final String WEB_ELEMENT_BMW_START_DESIGNING_EXTERIOR_COLOR_RED = "//div[@class='byo-rail-option-base selected']//figure[@class='byo-rail-option-selector__thumb']";
 
     //Concept Vehicles
     public static final String WEB_ELEMENT_BMW_FOOTER_LINK_CONCEPT_VEHICLES = "//footer[@class='globalnav-footer']//a[contains(.,'Concept Vehicles')]";

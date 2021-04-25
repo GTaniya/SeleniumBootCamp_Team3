@@ -46,7 +46,7 @@ import shoppingPage.ShoppingPage;
         }
 
         //Test #3
-        @Test (enabled = false)
+        @Test (enabled = true)
         public void testSelectVideo() {
             shoppingPage = new ShoppingPage();
             shoppingPage.clickRadioButton();
@@ -64,7 +64,7 @@ import shoppingPage.ShoppingPage;
         }
 
         //Test #5
-        @Test(enabled = false)
+        @Test(enabled = true)
         public void testCompareVehicles() {
             shoppingPage = new ShoppingPage();
             shoppingPage.clickShoppingButton();

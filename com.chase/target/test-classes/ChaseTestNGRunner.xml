@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Macy's Test Suite">
+<suite name="ATAndT Test Suite">
 
     <test name="CR1">
 
         <parameter name="browserName" value="chrome"></parameter>
         <parameter name="browserVersion" value="90"></parameter>
-        <parameter name="url" value="https://www.macys.com"></parameter>
+        <parameter name="url" value="https://www.chase.com"></parameter>
 
         <classes>
 
-            <class name="homepageTest.TestHomepage"/>
+            <class name="mortgagePageTest.TestMortgagePage"/>
 
         </classes>
 

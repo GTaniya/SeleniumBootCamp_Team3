@@ -48,7 +48,7 @@ public class TestMLBPage extends BaseAPI {
     }
 
     //Test #3
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void testDatePicker() throws Exception {
         mlbPage = new MLBPage();
         mlbPage.clickMLBPageTab();
@@ -119,7 +119,7 @@ public class TestMLBPage extends BaseAPI {
     }
 
     //Test #8
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void testSelectPlayer() throws Exception {
         mlbPage = new MLBPage();
         mlbPage.clickMLBPageTab();

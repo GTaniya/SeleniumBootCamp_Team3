@@ -28,7 +28,7 @@ public class TestBusinessAndInstitutionsPage extends BaseAPI {
     }
 
     //Test #2
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void testHover() throws Exception {
 
         businessAndInstitutionsPage = new BusinessAndInstitutionsPage();
@@ -162,7 +162,7 @@ public class TestBusinessAndInstitutionsPage extends BaseAPI {
     }
 
     //Test #9
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void testCareersPageShareButtonLinkedIn() throws InterruptedException {
 
         businessAndInstitutionsPage = new BusinessAndInstitutionsPage();
@@ -219,7 +219,7 @@ public class TestBusinessAndInstitutionsPage extends BaseAPI {
     }
 
     //Test #12
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void testClientPortalPrimePage() throws InterruptedException {
 
         businessAndInstitutionsPage = new BusinessAndInstitutionsPage();

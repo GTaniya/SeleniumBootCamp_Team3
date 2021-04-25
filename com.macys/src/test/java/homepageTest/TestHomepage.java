@@ -38,17 +38,15 @@ public class TestHomepage extends BaseAPI {
     }
 
     //Test#4
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void testLocationSearch() throws InterruptedException {
         homepage = new Homepage();
         homepage.clickStoresLink();
         homepage.SearchStoreLocation();
 
-        String actualTitle = BaseAPI.driver.getTitle();
+        String expectedHeader = "Find a Macy's Store";
+        softAssert.assertEquals(expectedHeader,WEB_ELEMENT_STORES_TEXT_HEADER);
 
-        String expectedTitle = "Find Macy's Department Store Near You - Macy's Store Locator";
-
-        Assert.assertEquals(actualTitle, expectedTitle, "TITLE DOES NOT MATCH");
 
     }
 
@@ -103,7 +101,7 @@ public class TestHomepage extends BaseAPI {
     }
 
     //Test#10
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void testCheckBox() throws InterruptedException {
         homepage = new Homepage();
         homepage.navigateToSignInPage();

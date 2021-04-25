@@ -84,13 +84,17 @@ public class Homepage extends BaseAPI {
     public void clickBrandOutletLink(){clickByXpathUsingJavaScript(WEB_ELEMENT_CHECK_BRAND_OUTLET_PAGE);}
     public void clickBrandOutletChampionDiscount(){clickByXpathUsingJavaScript(WEB_ELEMENT_CHECK_BRAND_OUTLET_PAGE_CHAMPION_DISCOUNT);}
 
-    @FindBy (css = WEB_ELEMENT_CART)
+    @FindBy (xpath = WEB_ELEMENT_CART)
     WebElement shoppingCart;
 
     @FindBy (xpath = WEB_ELEMENT_CART_START_SHOPPING)
     WebElement startShoppingButton;
 
-    public void clickShoppingCart(){clickByCssSelectorUsingJavaScript(WEB_ELEMENT_CART);}
+    public void clickShoppingCart(){
+        //iframeHandle(shoppingCart);
+        shoppingCart.click();
+       // clickByCssSelectorUsingJavaScript(WEB_ELEMENT_CART);
+    }
     public void clickShoppingButton(){clickByXpathUsingJavaScript(WEB_ELEMENT_CART);}
 
     @FindBy (css = WEB_ELEMENT_SLIDE_PREV)

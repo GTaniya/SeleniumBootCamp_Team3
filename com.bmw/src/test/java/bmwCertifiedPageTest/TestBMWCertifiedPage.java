@@ -79,10 +79,10 @@ public class TestBMWCertifiedPage extends BaseAPI {
 
         bmwCertifiedPage = new BMWCertifiedPage();
         bmwCertifiedPage.clickBmwCertifiedPageLink();
-        Thread.sleep(4000);
+        implicitWait(20);
         //WebDriverWait wait = new WebDriverWait(driver,20);
         bmwCertifiedPage.clickBmwSpecialOffersButton();
-        Thread.sleep(4000);
+        implicitWait(20);
 
         String actualTitle = BaseAPI.driver.getTitle();
 
@@ -99,8 +99,8 @@ public class TestBMWCertifiedPage extends BaseAPI {
 
         bmwCertifiedPage = new BMWCertifiedPage();
         bmwCertifiedPage.clickBmwCertifiedPageLink();
-        Thread.sleep(4000);
-        //WebDriverWait wait = new WebDriverWait(driver,20);
+
+        WebDriverWait wait = new WebDriverWait(driver,20);
         bmwCertifiedPage.clickBmwSpecialOffersButton();
         bmwCertifiedPage.clickMoreInformationLink();
 
@@ -119,14 +119,13 @@ public class TestBMWCertifiedPage extends BaseAPI {
 
         bmwCertifiedPage = new BMWCertifiedPage();
         bmwCertifiedPage.clickBmwCertifiedPageLink();
-        Thread.sleep(4000);
-        //WebDriverWait wait = new WebDriverWait(driver,20);
-        Thread.sleep(4000);
+        WebDriverWait wait = new WebDriverWait(driver,20);
+
         bmwCertifiedPage.scroll();
         bmwCertifiedPage.clickPricingAndFeaturesLink();
-        Thread.sleep(4000);
+        implicitWait(20);
         String actualTitle = BaseAPI.driver.getTitle();
-        Thread.sleep(4000);
+        implicitWait(20);
 
         String expectedTitle = "X1 Sports Activity Vehicle® – Pricing and Features | BMW USA";
 
@@ -141,17 +140,18 @@ public class TestBMWCertifiedPage extends BaseAPI {
 
         bmwCertifiedPage = new BMWCertifiedPage();
         bmwCertifiedPage.clickBmwCertifiedPageLink();
-        Thread.sleep(4000);
+        implicitWait(20);
         //WebDriverWait wait = new WebDriverWait(driver,20);
         bmwCertifiedPage.clickSelectX1Button();
-        Thread.sleep(4000);
+        implicitWait(20);
         bmwCertifiedPage.clickPricingAndFeaturesLink();
-        Thread.sleep(4000);
+        implicitWait(20);
         bmwCertifiedPage.clickSelectX1Button();
         bmwCertifiedPage.selectTheColorOfTheCar();
+        implicitWait(20);
         String actualTitle = BaseAPI.driver.getTitle();
 
-        String expectedTitle = "X1 Sports Activity Vehicle® – Pricing and Features | BMW USA";
+        String expectedTitle = "X1 Sports Activity Vehicle® Overview | BMW USA";
 
         Assert.assertEquals(actualTitle, expectedTitle, "PAGE DOES NOT MATCH");
 
@@ -164,9 +164,9 @@ public class TestBMWCertifiedPage extends BaseAPI {
 
         bmwCertifiedPage = new BMWCertifiedPage();
         bmwCertifiedPage.clickBmwCertifiedPageLink();
-        Thread.sleep(4000);
+        implicitWait(20);
         bmwCertifiedPage.clickLearnMoreLink();
-        Thread.sleep(4000);
+        implicitWait(20);
         String actualTitle = BaseAPI.driver.getTitle();
 
         String expectedTitle = "Certified Pre-Owned Luxury Vehicles | BMW USA";
@@ -183,7 +183,7 @@ public class TestBMWCertifiedPage extends BaseAPI {
         bmwCertifiedPage = new BMWCertifiedPage();
 
         bmwCertifiedPage.clickDesigningSedan3Link();
-        Thread.sleep(4000);
+        implicitWait(20);
         String actualTitle = BaseAPI.driver.getTitle();
 
         String expectedTitle = "Build Your Own – Engine and Drivetrain Options – BMW USA";
@@ -199,11 +199,11 @@ public class TestBMWCertifiedPage extends BaseAPI {
         bmwCertifiedPage = new BMWCertifiedPage();
 
         bmwCertifiedPage.clickDesigningSedan3Link();
-        Thread.sleep(4000);
+        implicitWait(20);
         bmwCertifiedPage.clickStartDesigningButton();
-        Thread.sleep(4000);
+        implicitWait(20);
         bmwCertifiedPage.clickStartDesigningExteriorLink();
-        Thread.sleep(4000);
+        implicitWait(20);
 
 
         String actualTitle = BaseAPI.driver.getTitle();
@@ -215,20 +215,20 @@ public class TestBMWCertifiedPage extends BaseAPI {
     }
 
     //Test #11
-    @Test(enabled = false)
+    @Test(enabled = true)
 
     public void testDesigningCarColor() throws InterruptedException {
 
         bmwCertifiedPage = new BMWCertifiedPage();
 
         bmwCertifiedPage.clickDesigningSedan3Link();
-        Thread.sleep(4000);
+        implicitWait(20);
         bmwCertifiedPage.clickStartDesigningButton();
-        Thread.sleep(4000);
+        implicitWait(20);
         bmwCertifiedPage.clickStartDesigningExteriorLink();
-        Thread.sleep(4000);
+        implicitWait(20);
         bmwCertifiedPage.chooseColorForDesigningExteriorCar();
-        Thread.sleep(4000);
+        implicitWait(20);
 
         String actualTitle = BaseAPI.driver.getTitle();
 
@@ -246,7 +246,7 @@ public class TestBMWCertifiedPage extends BaseAPI {
         bmwCertifiedPage = new BMWCertifiedPage();
 
         bmwCertifiedPage.clickConceptVehiclesLink();
-        Thread.sleep(4000);
+        implicitWait(20);
 
         String actualTitle = BaseAPI.driver.getTitle();
 

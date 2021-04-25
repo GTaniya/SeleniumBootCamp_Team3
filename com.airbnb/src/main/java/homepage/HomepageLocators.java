@@ -35,7 +35,7 @@ public class HomepageLocators {
     //Gift Cards
 
     public static final String webElementGiftCards = "//a[.='Gift cards']";
-    public static final String webElementBuyGiftCards = "//span[@class='_m9v25n']"; //css
+    public static final String webElementBuyGiftCards = "//span[@class='_m9v25n']";
     public static final String webElementBuyGiftCardsPrice = "//input[@class='input-field__denom-range-value']";
     //public static final String webElementBuyGiftCardsPrice = "//div[.='$25']";
     public static final String webElementBuyGiftCards25 = "25";
@@ -44,7 +44,7 @@ public class HomepageLocators {
     public static final String webElementRecipientName = "Taniya"; //id
     public static final String webElementRecipientEmailField = "//input[@id='recipient_email']"; //id
     public static final String webElementRecipientEmail = "gawritaniya@gmail.com"; //id
-    public static final String webElementRecipientMessageField = "[name='gift_message']"; //xpath
+    public static final String webElementRecipientMessageField = "//textarea[@placeholder='Gift Message']"; //xpath
     public static final String webElementRecipientMessage = "Enjoy your Gift"; //xpath
     public static final String webElementSenderNameField = "//input[@id='sender_name']"; //xpath
     public static final String webElementSenderName = "Nadi"; //xpath
@@ -78,8 +78,9 @@ public class HomepageLocators {
 
     //Language
 
-    public static final String WEB_ELEMENT_LANGUAGE_BUTTON = "//button[@class='_q730rga']";
-    public static final String WEB_ELEMENT_LANGUAGE_ITALIA = "//div[.='Italia']";
+    public static final String WEB_ELEMENT_LANGUAGE_BUTTON = "//button[@aria-label='Language and currency']";
+    //public static final String WEB_ELEMENT_LANGUAGE_ITALIA = "//div[.='Italia']";
+    public static final String WEB_ELEMENT_LANGUAGE_ITALIA = "//a[.='ItalianoItalia']";
 
     //Investors
 

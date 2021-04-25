@@ -77,7 +77,7 @@ public class TestGolfPage extends BaseAPI {
     }
 
     //Test #5
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void testSelectPlayers() throws InterruptedException {
         golfPage = new GolfPage();
         golfPage.clickGolf();

@@ -69,7 +69,10 @@ public class Homepage extends BaseAPI {
     public void clickStoresLink(){clickByXpathUsingJavaScript(WEB_ELEMENT_STORES);}
     public void clickStoreSearchButton(){clickByXpathUsingJavaScript(WEB_ELEMENT_STORES_SEARCH_BUTTON);}
     public void SearchStoreLocation(){
-        typeOnElement(WEB_ELEMENT_STORES_INPUT_SEARCH, WEB_ELEMENT_STORES_TEXT);
+
+        WebElement location = driver.findElement(By.xpath(WEB_ELEMENT_STORES_INPUT_SEARCH));
+        location.sendKeys("20874");
+        //typeOnElement(WEB_ELEMENT_STORES_INPUT_SEARCH, WEB_ELEMENT_STORES_TEXT);
         clickStoreSearchButton();
     }
 

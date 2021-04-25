@@ -196,16 +196,28 @@ public class Homepage extends BaseAPI {
     WebElement addToCartButton;
 
     public void clickGiftCardsLink() {clickByXpathUsingJavaScript(webElementGiftCards);}
-    WebDriverWait wait2 = new WebDriverWait(driver, 10);
 
     public void clickBuyGiftCardsLink() {clickByXpathUsingJavaScript(webElementBuyGiftCards);}
-    WebDriverWait wait3 = new WebDriverWait(driver, 10);
 
     public void clickGiftCards25Button() {
         WebDriverWait wait2 = new WebDriverWait(driver, 10);
         typeOnElement(webElementBuyGiftCardsPrice, webElementBuyGiftCards25);
         WebDriverWait wait3 = new WebDriverWait(driver, 10);
     }
+
+    public void sendKeysToFields(){
+        WebElement nameRecipient = driver.findElement(By.id("recipient_name"));
+        WebElement email = driver.findElement(By.id("recipient_email"));
+        WebElement GiftMessage = driver.findElement(By.id(webElementRecipientMessageField));
+        WebElement senderName = driver.findElement(By.id("sender_name"));
+
+        nameRecipient.sendKeys("Taniya");
+        email.sendKeys("taniya@gmail.com");
+        GiftMessage.sendKeys("Enjoy your gift!");
+        senderName.sendKeys("Nadi");
+
+    }
+
 
 //    public void clickGiftCards25Button() {clickByXpathUsingJavaScript(webElementBuyGiftCardsPrice);}
 //    WebDriverWait wait5 = new WebDriverWait(driver, 10);

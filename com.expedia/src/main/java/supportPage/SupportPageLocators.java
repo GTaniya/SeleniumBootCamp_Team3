@@ -6,6 +6,7 @@ public class SupportPageLocators {
     public static final String WEB_ELEMENT_SUPPORT_PAGE = "//a[@href='https://www.expedia.com/service/']";
 
     public static final String WEB_ELEMENT_CHAT_BUTTON = "//button[@id='chatButton']";
+    public static final String WEB_ELEMENT_CHAT_HEADER = "//h2[@class='uitk-subheading cpce-vac-header-text']";
 
     //Flights
     public static final String WEB_ELEMENT_FLIGHTS_DROPDOWN = "//article[@class='segment-info info cf target toggle-trigger aside-segment open']/div[@class='info-summary col k']";

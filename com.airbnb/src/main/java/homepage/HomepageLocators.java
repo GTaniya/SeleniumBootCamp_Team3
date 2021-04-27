@@ -106,6 +106,7 @@ public class HomepageLocators {
 
     public static final String WEB_ELEMENT_SEARCH_BAR_LOCATION = "//input[@id='bigsearch-query-detached-query-input']";
     public static final String WEB_ELEMENT_PRICE = "//div[@id='menuItemButton-price_range']/button[@class='_t6p96s']/span[@class='_w37zq5']//span[@class='_36rlri']";
+    public static final String WEB_ELEMENT_PRICE_PAGE_HEADER = "//h1[@class='_14i3z6h']";
 
     //Date
     public static final String WEB_ELEMENT_DATE_FIELD = "//div[@class='_1l6jpwo']/div[1]//div[@class='_uh2dzp']";

@@ -7,6 +7,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import supportPage.SupportPage;
 
+import static supportPage.SupportPageLocators.*;
+
 public class TestSupportPage extends BaseAPI {
 
     SupportPage supportPage;
@@ -34,11 +36,9 @@ public class TestSupportPage extends BaseAPI {
         supportPage.clickChatButton();
         WebDriverWait wait = new WebDriverWait(driver, 20);
 
-        String actualText = driver.getTitle();
+        String expectedValue ="Chat with Virtual Agent";
+        softAssert.assertEquals(expectedValue, WEB_ELEMENT_CHAT_HEADER);
 
-        String expectedText = "Customer Service Portal";
-
-        Assert.assertEquals(actualText, expectedText, "Test not found");
     }
 
     //Test#3
@@ -94,6 +94,8 @@ public class TestSupportPage extends BaseAPI {
         supportPage.clickDataField();
         supportPage.selectData();
 
+        Assert.assertTrue(isElementSelected(supportPage.selectDate));;
+
     }
 
     //Test #7
@@ -129,7 +131,7 @@ public class TestSupportPage extends BaseAPI {
     }
 
     //Test#11
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void testSelectingTravelers() throws InterruptedException {
 
         supportPage = new SupportPage();

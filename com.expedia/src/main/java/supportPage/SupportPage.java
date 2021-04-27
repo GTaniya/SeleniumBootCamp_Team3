@@ -42,7 +42,7 @@ public class SupportPage extends BaseAPI {
     WebElement dateField;
 
     @FindBy (css = WEB_ELEMENT_SELECT_DATE)
-    WebElement selectDate;
+    public WebElement selectDate;
 
     @FindBy (xpath = WEB_ELEMENT_SELECT_CHECKBOX)
     public WebElement selectCheckBox;

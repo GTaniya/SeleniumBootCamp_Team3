@@ -21,6 +21,9 @@ public class Homepage extends BaseAPI {
     @FindBy (xpath = webElementButtonSearch)
     WebElement buttonSearch;
 
+    @FindBy(xpath = WEB_ELEMENT_PRICE_PAGE_HEADER)
+    public WebElement pageHeader;
+
     public Homepage() {
         PageFactory.initElements(driver, this);
     }
@@ -412,7 +415,7 @@ public class Homepage extends BaseAPI {
     WebElement dateField;
 
     @FindBy (xpath = WEB_ELEMENT_DATE)
-    WebElement date;
+    public WebElement date;
 
     public void addLocation(){
         WebElement location = driver.findElement(By.id("bigsearch-query-detached-query-input"));

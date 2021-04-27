@@ -19,9 +19,9 @@ public class TestMortgagePage extends BaseAPI {
         mortgagePage = new MortgagePage();
 
         mortgagePage.clickDropDownMenu();
-        Thread.sleep(4000);
+        implicitWait(20);
         mortgagePage.clickMortgagePageLink();
-        Thread.sleep(4000);
+        implicitWait(20);
 
         String actualTitle = BaseAPI.driver.getTitle();
 
@@ -38,11 +38,11 @@ public class TestMortgagePage extends BaseAPI {
         mortgagePage = new MortgagePage();
 
         mortgagePage.clickDropDownMenu();
-        Thread.sleep(4000);
+        implicitWait(20);
         mortgagePage.clickMortgagePageLink();
         //Thread.sleep(4000);
         mortgagePage.clickGetStartedButton();
-        Thread.sleep(4000);
+        implicitWait(20);
 
         String actualTitle = BaseAPI.driver.getTitle();
 
@@ -93,9 +93,9 @@ public class TestMortgagePage extends BaseAPI {
     public void testStartOnlineButton() throws InterruptedException {
         mortgagePage = new MortgagePage();
         mortgagePage.clickDropDownMenu();
-        Thread.sleep(4000);
+        implicitWait(20);
         mortgagePage.clickMortgagePageLink();
-        Thread.sleep(4000);
+        implicitWait(20);
         mortgagePage.clickStartOnlineButton();
 
         String actualTitle = BaseAPI.driver.getTitle();
@@ -129,7 +129,7 @@ public class TestMortgagePage extends BaseAPI {
     }
 
     //Test #8
-    @Test (enabled = true)
+    @Test (enabled = false)
     public void testPlayVideo() throws Exception {
         mortgagePage = new MortgagePage();
 
@@ -213,7 +213,7 @@ public class TestMortgagePage extends BaseAPI {
         System.out.println(actualAttributeValue);
         System.out.println(expectedAttributeValue);
 
-        Assert.assertEquals(actualAttributeValue, expectedAttributeValue, "COLOR DOES NOT MATCH");
+        Assert.assertEquals(actualAttributeValue, expectedAttributeValue, "CLASS DOES NOT MATCH");
     }
 
 

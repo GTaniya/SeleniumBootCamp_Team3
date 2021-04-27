@@ -7,21 +7,29 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
+import static homepage.HomepageLocators.*;
+
 public class TestHomepage extends BaseAPI {
     Homepage homepage;
 
     //Test #1
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void testDoSearch() throws InterruptedException {
         homepage = new Homepage();
 
         homepage.doSearch();
         fluentWait(20);
-        String actualTitle = BaseAPI.driver.getTitle();
 
-        String expectedTitle = "Airbnb: Vacation Rentals, Cabins, Beach Houses, Unique Homes & Experiences";
 
-        Assert.assertEquals(actualTitle, expectedTitle, "TITLE DOES NOT MATCH");
+        String actualText = getTextFromElement(homepage.pageHeader);
+
+        Assert.assertTrue(compareStrings(actualText,WEB_ELEMENT_PRICE_PAGE_HEADER));
+
+//        String actualTitle = BaseAPI.driver.getTitle();
+//
+//        String expectedTitle = "Airbnb: Vacation Rentals, Cabins, Beach Houses, Unique Homes & Experiences";
+//
+//        Assert.assertEquals(actualTitle, expectedTitle, "TITLE DOES NOT MATCH");
 
     }
 
@@ -193,6 +201,8 @@ public class TestHomepage extends BaseAPI {
         Assert.assertEquals(actualResult, expectedResult, "Test Failed");
     }
 
+
+
     //Test #12
     @Test(enabled = false)
 
@@ -246,6 +256,21 @@ public class TestHomepage extends BaseAPI {
 
     //Test #15
     @Test(enabled = false)
+    public void testDateField() throws InterruptedException {
+        homepage = new Homepage();
+        homepage.clickDateField();
+        homepage.clickDate();
+        //Thread.sleep(4000);
+        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+
+        softAssert.assertAll();
+
+
+    }
+
+
+    //Test #16
+    @Test(enabled = false)
     public void testPrice() {
         homepage = new Homepage();
 
@@ -256,16 +281,11 @@ public class TestHomepage extends BaseAPI {
        // WebDriverWait wait = new WebDriverWait(driver, 60);
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 
+        String expectedValue ="Stays in Chicago";
+        softAssert.assertEquals(expectedValue, WEB_ELEMENT_PRICE_PAGE_HEADER);
+
     }
 
-    //Test #16
-    @Test(enabled = false)
-    public void testDateField() throws InterruptedException {
-        homepage = new Homepage();
-        homepage.clickDateField();
-        homepage.clickDate();
-        Thread.sleep(4000);
-        //driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-    }
+
 
 }

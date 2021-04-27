@@ -33,4 +33,8 @@ public class BuildYourOwnPageLocators {
     public static final String WEB_ELEMENT_Z4_DESIGN= "//a[@href='#/studio/21ZB']";
     public static final String WEB_ELEMENT_Z4_SHADOWLINE= "//div[normalize-space()='Shadowline']";
     public static final String WEB_ELEMENT_Z4= "//button[contains(.,'Z4')]";
+    public static final String WEB_ELEMENT_Z4_INTERIOR= "//a[contains(.,'Interior')]";
+    public static final String WEB_ELEMENT_Z4_ALCANTARA= "//div[normalize-space()='Black Alcantara Black']";
+    public static final String WEB_ELEMENT_Z4_IVORY_WHITE= "//div[normalize-space()='Ivory White']";
+    public static final String WEB_ELEMENT_Z4_MAGMA= "//div[normalize-space()='Magma Red']";
 }

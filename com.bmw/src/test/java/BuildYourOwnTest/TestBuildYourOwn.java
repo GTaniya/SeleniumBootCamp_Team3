@@ -141,7 +141,7 @@ public class TestBuildYourOwn extends BaseAPI {
         BuildYourOwn.setBmwCenterZIPSearch();
     }
 
-    @Test
+    @Test(enabled = false)
     public void testZ4Shadowline() throws Exception {
         BuildYourOwn = new BuildYourOwnPage();
         BuildYourOwn.clickMenu();
@@ -158,6 +158,62 @@ public class TestBuildYourOwn extends BaseAPI {
         Thread.sleep(2000);
     }
 
+    @Test(enabled = false)
+    public void testZ4Alcantara() throws Exception {
+        BuildYourOwn = new BuildYourOwnPage();
+        BuildYourOwn.clickMenu();
+        Thread.sleep(2000);
+        BuildYourOwn.clickBuildYourOwnPage();
+        Thread.sleep(2000);
+        BuildYourOwn.clickZ4();
+        Thread.sleep(2000);
+        BuildYourOwn.clickZ4Select();
+        Thread.sleep(2000);
+        BuildYourOwn.clickZ4Design();
+        Thread.sleep(2000);
+        BuildYourOwn.clickZ4Interior();
+        Thread.sleep(2000);
+        BuildYourOwn.clickZ4Alcantara();
+        Thread.sleep(2000);
+    }
+
+    @Test(enabled = false)
+    public void testZ4IvoryWhite() throws Exception {
+        BuildYourOwn = new BuildYourOwnPage();
+        BuildYourOwn.clickMenu();
+        Thread.sleep(2000);
+        BuildYourOwn.clickBuildYourOwnPage();
+        Thread.sleep(2000);
+        BuildYourOwn.clickZ4();
+        Thread.sleep(2000);
+        BuildYourOwn.clickZ4Select();
+        Thread.sleep(2000);
+        BuildYourOwn.clickZ4Design();
+        Thread.sleep(2000);
+        BuildYourOwn.clickZ4Interior();
+        Thread.sleep(2000);
+        BuildYourOwn.clickZ4IvoryWhite();
+        Thread.sleep(2000);
+    }
+
+    @Test
+    public void testZ4Magma() throws Exception {
+        BuildYourOwn = new BuildYourOwnPage();
+        BuildYourOwn.clickMenu();
+        Thread.sleep(2000);
+        BuildYourOwn.clickBuildYourOwnPage();
+        Thread.sleep(2000);
+        BuildYourOwn.clickZ4();
+        Thread.sleep(2000);
+        BuildYourOwn.clickZ4Select();
+        Thread.sleep(2000);
+        BuildYourOwn.clickZ4Design();
+        Thread.sleep(2000);
+        BuildYourOwn.clickZ4Interior();
+        Thread.sleep(2000);
+        BuildYourOwn.clickZ4Magma();
+        Thread.sleep(2000);
+    }
 
 
 }

@@ -138,5 +138,23 @@ public class BuildYourOwnPage extends BaseAPI {
 
     public void clickZ4() { clickByXpathUsingJavaScript(WEB_ELEMENT_Z4); }
 
+    @FindBy(xpath = WEB_ELEMENT_Z4_INTERIOR)
+    WebElement z4Interior;
 
+    public void clickZ4Interior() { clickByXpathUsingJavaScript(WEB_ELEMENT_Z4_INTERIOR); }
+
+    @FindBy(xpath = WEB_ELEMENT_Z4_ALCANTARA)
+    WebElement z4Alcantara;
+
+    public void clickZ4Alcantara() { clickByXpathUsingJavaScript(WEB_ELEMENT_Z4_ALCANTARA); }
+
+    @FindBy(xpath = WEB_ELEMENT_Z4_IVORY_WHITE)
+    WebElement z4WhiteIvory;
+
+    public void clickZ4IvoryWhite() { clickByXpathUsingJavaScript(WEB_ELEMENT_Z4_IVORY_WHITE); }
+
+    @FindBy(xpath = WEB_ELEMENT_Z4_MAGMA)
+    WebElement z4Magma;
+
+    public void clickZ4Magma() { clickByXpathUsingJavaScript(WEB_ELEMENT_Z4_MAGMA); }
 }

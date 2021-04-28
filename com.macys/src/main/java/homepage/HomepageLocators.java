@@ -24,7 +24,7 @@ public class HomepageLocators {
     public static final String WEB_ELEMENT_HELP_SEE_ALL="//div[@id='ordersHover']//a[.='See All']";
 
     //Hover
-    public static final String WEB_ELEMENT_HOVER_SIGN_IN="//span[.='Sign In']";
+    public static final String WEB_ELEMENT_HOVER_SIGN_IN="//span[@class='tier-status']";
 
     //Catalog
     public static final String WEB_ELEMENT_CATALOG="//a[.='Catalogs']";
@@ -37,6 +37,7 @@ public class HomepageLocators {
 
     //SignIn
     public static final String WEB_ELEMENT_SIGN_IN_PAGE="//span[.='Sign In']";
+    public static final String WEB_ELEMENT_SIGN_IN_PAGE_HEADER="//h1[@class='inline-header']";
     public static final String WEB_ELEMENT_SIGN_IN_EMAIL="//input[@id='email']";
     public static final String WEB_ELEMENT_SIGN_IN_PASSWORD="//input[@id='pw-input']";
     public static final String WEB_ELEMENT_SIGN_IN_BUTTON="//input[@id='sign-in']";

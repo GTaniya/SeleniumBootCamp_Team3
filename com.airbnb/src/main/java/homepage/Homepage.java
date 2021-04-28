@@ -65,7 +65,7 @@ public class Homepage extends BaseAPI {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     @FindBy (css = webElementFieldGuide)
-    WebElement fieldGuideToggle;
+    public WebElement fieldGuideToggle;
 
     @FindBy (css = webElementSignUp)
     WebElement signUpSearch;
@@ -337,7 +337,14 @@ public class Homepage extends BaseAPI {
 
     public void clickLanguageButton(){clickByXpathUsingJavaScript(WEB_ELEMENT_LANGUAGE_BUTTON);}
 
-    public void clickLanguageItaliaButton(){clickByXpathUsingJavaScript(WEB_ELEMENT_LANGUAGE_ITALIA);}
+    public void clickLanguageItaliaButton(){
+        waitForElementToBeClickable(languageItalia);
+        WebDriverWait wait10 = new WebDriverWait(driver, 20);
+        WebElement element = driver.findElement(By.xpath(WEB_ELEMENT_LANGUAGE_ITALIA));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click()", element);
+
+    }
 
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -351,7 +358,10 @@ public class Homepage extends BaseAPI {
 
     public void clickInvestorsLink(){clickByXpathUsingJavaScript(WEB_ELEMENT_INVESTORS);}
 
-    public void clickInvestorsQuarterlyResults(){clickByXpathUsingJavaScript(WEB_ELEMENT_INVESTORS_QUARTERLY_RESULTS);}
+    public void clickInvestorsQuarterlyResults(){
+
+        clickByXpathUsingJavaScript(WEB_ELEMENT_INVESTORS_QUARTERLY_RESULTS);
+    }
 
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

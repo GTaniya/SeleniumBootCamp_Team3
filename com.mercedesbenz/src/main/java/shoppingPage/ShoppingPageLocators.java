@@ -6,9 +6,12 @@ public class ShoppingPageLocators {
     public static final String WEB_ELEMENT_SELECT_SHOPPING_BUILD_YOUR_OWN = "//li[@class='global-header__menu-l3-panel-item global-header__menu-l3-panel-item--shopping global-header__menu-l3-panel-item--active']//a[.='Build Your Own']";
 
     //Color select
-    public static final String WEB_ELEMENT_SELECT_VEHICLE = "//section[@class='all-vehicles module-separator']/section[2]//div[@class='all-vehicles__body-group-listing']/div[1]//a[.='Choose Models']";
-    public static final String WEB_ELEMENT_SELECT_VEHICLE_GLA_SUV = "//span[contains(.,'GLA 250 SUV')]";
-    public static final String WEB_ELEMENT_SELECT_VEHICLE_COLOR_SELECT= "//*[@id=\"option-swatch-2:667\"]/div/picture/img";
+    //public static final String WEB_ELEMENT_SELECT_VEHICLE = "//section[@class='all-vehicles module-separator']/section[2]//div[@class='all-vehicles__body-group-listing']/div[1]//a[.='Choose Models']";
+    public static final String WEB_ELEMENT_SELECT_VEHICLE = "//img[@alt='GLA SUV']";
+    //public static final String WEB_ELEMENT_SELECT_VEHICLE_GLA_SUV = "//span[contains(.,'GLA 250 SUV')]";
+    public static final String WEB_ELEMENT_SELECT_VEHICLE_GLA_SUV = "//a[@aria-label='Build GLA 250 SUV']";
+    //public static final String WEB_ELEMENT_SELECT_VEHICLE_COLOR_SELECT= "//*[@id=\"option-swatch-2:667\"]/div/picture/img";
+    public static final String WEB_ELEMENT_SELECT_VEHICLE_COLOR_SELECT= "//img[@alt='Select Patagonia Red metallic']";
 
     //Radio Button
     public static final String WEB_ELEMENT_RADIO_BUTTON_VIDEO = "//div[@class='hero-flipbook__nav-selector']/div[2]//div[@class='form__radio-indicator']";

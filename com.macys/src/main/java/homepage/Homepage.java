@@ -27,7 +27,6 @@ public class Homepage extends BaseAPI {
         String item = earrings.get(2);
         typeOnElement(WEB_ELEMENT_INPUT_SEARCH, item);
 
-
         WebDriverWait wait10 = new WebDriverWait(driver, 20);
         WebElement element = driver.findElement(By.xpath(WEB_ELEMENT_SEARCH_BUTTON));
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -41,7 +40,10 @@ public class Homepage extends BaseAPI {
         String item = mascara.get(3);
         typeOnElement(WEB_ELEMENT_INPUT_SEARCH, item);
 
-        clickByXpathUsingJavaScript(WEB_ELEMENT_SEARCH_BUTTON);
+        WebDriverWait wait10 = new WebDriverWait(driver, 20);
+        WebElement element = driver.findElement(By.xpath(WEB_ELEMENT_SEARCH_BUTTON));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click()", element);
 
     }
 
@@ -87,7 +89,7 @@ public class Homepage extends BaseAPI {
     WebElement seeAllHelpTopics;
 
     @FindBy (xpath = WEB_ELEMENT_HOVER_SIGN_IN)
-    WebElement hoverSignIn;
+    public WebElement hoverSignIn;
 
     public void clickHelpLink(){clickByXpathUsingJavaScript(WEB_ELEMENT_HELP);}
     public void clickHelpLinkSeeAll(){clickByXpathUsingJavaScript(WEB_ELEMENT_HELP_SEE_ALL);}
@@ -134,6 +136,9 @@ public class Homepage extends BaseAPI {
     @FindBy(xpath = WEB_ELEMENT_SIGN_IN_BUTTON)
     WebElement signInButton;
 
+    @FindBy(xpath = WEB_ELEMENT_SIGN_IN_REMEMBER_ME_CHECK_BOX)
+    public WebElement checkBox;
+
     public void navigateToSignInPage(){clickByXpathUsingJavaScript(WEB_ELEMENT_SIGN_IN_PAGE);}
 
     public void addUserCredentials(){
@@ -142,6 +147,7 @@ public class Homepage extends BaseAPI {
 
         email.sendKeys("someone@gmail.com");
         password.sendKeys("thisIsMyPassword");
+        signInButton.click();
     }
 
     @FindBy(xpath = WEB_ELEMENT_SIGN_IN_REMEMBER_ME_CHECK_BOX)

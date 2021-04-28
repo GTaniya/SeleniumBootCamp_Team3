@@ -49,7 +49,10 @@ public class ShoppingPage extends BaseAPI {
 
     public void clickToChooseVehicle(){clickByXpath(WEB_ELEMENT_SELECT_VEHICLE);}
 
-    public void clickBuildVehicleButton(){clickByXpath(WEB_ELEMENT_SELECT_VEHICLE_GLA_SUV);}
+    public void clickBuildVehicleButton(){
+        waitForElementToBeClickable(selectBuildButton);
+        clickByXpath(WEB_ELEMENT_SELECT_VEHICLE_GLA_SUV);
+    }
 
     public void SelectTheVehicleColor(){clickByXpath(WEB_ELEMENT_SELECT_VEHICLE_COLOR_SELECT);}
 

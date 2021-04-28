@@ -32,21 +32,29 @@ import shoppingPage.ShoppingPage;
         }
 
         //Test #2
-        @Test(enabled = false)
+        @Test(enabled = true)
         public void testSelectColor() throws InterruptedException {
             shoppingPage = new ShoppingPage();
             shoppingPage.NavigateToColorChange();
             shoppingPage.clickToChooseVehicle();
+            Thread.sleep(2000);
             shoppingPage.clickBuildVehicleButton();
-            implicitWait(20);
+//            implicitWait(20);
             shoppingPage.SelectTheVehicleColor();
-            implicitWait(20);
-            Assert.assertFalse(isElementSelected(shoppingPage.selectVehicleColor));
+            Thread.sleep(2000);
+
+
+            String actualAttribute = shoppingPage.selectVehicleColor.getAttribute("class");
+
+            String expectedAttribute = "responsive-image";
+
+            Assert.assertEquals(actualAttribute, expectedAttribute, "CLASS DOSE NOT MATCH");
+
 
         }
 
         //Test #3
-        @Test (enabled = true)
+        @Test (enabled = false)
         public void testSelectVideo() {
             shoppingPage = new ShoppingPage();
             shoppingPage.clickRadioButton();
@@ -64,7 +72,7 @@ import shoppingPage.ShoppingPage;
         }
 
         //Test #5
-        @Test(enabled = true)
+        @Test(enabled = false)
         public void testCompareVehicles() {
             shoppingPage = new ShoppingPage();
             shoppingPage.clickShoppingButton();

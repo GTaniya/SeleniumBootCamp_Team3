@@ -70,15 +70,38 @@ public class MortgagePage extends BaseAPI {
     @FindBy (id = WEB_ELEMENT_RADIO_BUTTON_NO)
     public WebElement radioOptionNo;
 
-    public void selectYesRadioOption(){
+    @FindBy (id = WEB_ELEMENT_RADIO_BUTTON__RIGHT_3)
+    public WebElement radioOptionRight3;
 
-        waitForElementToBeClickable(radioOptionYes);
-        clickElement(radioOptionYes);
-        //selectElement(radioOptionYes);
+    @FindBy (id = WEB_ELEMENT_RADIO_BUTTON__RIGHT_4)
+    public WebElement radioOptionRight4;
+
+    @FindBy (id = WEB_ELEMENT_RADIO_BUTTON__RIGHT_5)
+    public WebElement radioOptionRight5;
+
+    @FindBy (id = WEB_ELEMENT_RADIO_BUTTON_LEFT_2)
+    public WebElement radioOptionLeft2;
+
+    @FindBy (id = WEB_ELEMENT_RADIO_BUTTON_LEFT_1)
+    public WebElement radioOptionLeft1;
+
+    @FindBy (id = WEB_ELEMENT_RADIO_BUTTON_LEFT_0)
+    public WebElement radioOptionLeft0;
+
+
+    public void selectPrevRadioOption(){
+
+        clickElement(radioOptionRight3);
+        clickElement(radioOptionRight4);
+        clickElement(radioOptionRight5);
+
     }
 
-    public void selectNoRadioOption(){
-        selectElement(radioOptionNo);
+    public void selectNextRadioOption(){
+
+        clickElement(radioOptionLeft2);
+        clickElement(radioOptionLeft1);
+        clickElement(radioOptionLeft0);
     }
 
     //************************************************************************************************************
@@ -86,14 +109,28 @@ public class MortgagePage extends BaseAPI {
     @FindBy(xpath = WEB_ELEMENT_PLAY_VIDEO)
     public WebElement playVideoButton;
 
-    public void ClickPlayVideoButton() {
+
+    public void ClickPlayVideoButton() throws InterruptedException {
+//        JavascriptExecutor js = (JavascriptExecutor) driver;
+//        js.executeScript("window.scrollBy(0,1500)");
+//        WebDriverWait wait10 = new WebDriverWait(driver, 20);
+//       // WebElement element = driver.findElement(By.xpath(WEB_ELEMENT_PLAY_VIDEO));
+//        JavascriptExecutor jss = (JavascriptExecutor) driver;
+//        jss.executeScript("arguments[0].click()", playVideoButton);
+
+       //   scrollToElementJScript(playVideoButton);
+//        WebDriverWait wait10 = new WebDriverWait(driver, 20);
+       // playVideoButton.click();
+//        clickByXpathUsingJavaScript(WEB_ELEMENT_PLAY_VIDEO);
+//        WebElement element = driver.findElement(By.xpath(WEB_ELEMENT_PLAY_VIDEO));
+//        element.click();
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,1000)");
-        WebDriverWait wait10 = new WebDriverWait(driver, 20);
-        WebElement element = driver.findElement(By.xpath(WEB_ELEMENT_PLAY_VIDEO));
-        JavascriptExecutor jss = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].click()", element);
-        // clickByXpathUsingJavaScript(WEB_ELEMENT_PLAY_VIDEO);}
+        js.executeScript("window.scrollBy(0,1500)");
+        waitForElementToBeClickable(playVideoButton);
+        clickByXpathUsingJavaScript(WEB_ELEMENT_PLAY_VIDEO);
+
+
+
     }
 
     //************************************************************************************************************
@@ -120,7 +157,7 @@ public class MortgagePage extends BaseAPI {
     //************************************************************************************************************
 
     @FindBy (xpath = WEB_ELEMENT_SLIDE_ARROW)
-    WebElement slideArrow;
+    public WebElement slideArrow;
 
     @FindBy(xpath = WEB_ELEMENT_HOME_LOANS)
     WebElement homeLoans;

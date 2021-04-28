@@ -98,10 +98,10 @@ public class Homepage extends BaseAPI {
     public void clickShoppingButton(){clickByXpathUsingJavaScript(WEB_ELEMENT_CART);}
 
     @FindBy (css = WEB_ELEMENT_SLIDE_PREV)
-    WebElement slideToPrevious;
+    public WebElement slideToPrevious;
 
     @FindBy (css = WEB_ELEMENT_SLIDE_NEXT)
-    WebElement slideToNext;
+    public WebElement slideToNext;
 
     public void clickSlidePrevButton(){clickByXpathUsingJavaScript(WEB_ELEMENT_SLIDE_PREV);}
     public void clickSlideNextButton(){clickByXpathUsingJavaScript(WEB_ELEMENT_SLIDE_NEXT);}

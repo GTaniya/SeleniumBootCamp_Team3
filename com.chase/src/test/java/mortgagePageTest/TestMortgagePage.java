@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import static mortgagePage.MortgagePageLocators.*;
+
 public class TestMortgagePage extends BaseAPI {
 
     MortgagePage mortgagePage;
@@ -23,11 +25,8 @@ public class TestMortgagePage extends BaseAPI {
         WebDriverWait wait = new WebDriverWait(driver, 20);
         mortgagePage.clickMortgagePageLink();
 
-        String actualTitle = BaseAPI.driver.getTitle();
-
-        String expectedTitle = "Chase Mortgage | Home Lending | Chase.com";
-
-        Assert.assertEquals(actualTitle, expectedTitle, "TITLE DOES NOT MATCH");
+        String expectedHeader = "Your home journey starts here";
+        softAssert.assertEquals(expectedHeader,WEB_ELEMENT_MORTGAGE_PAGE_HEADER);
     }
 
     //Test #2
@@ -108,23 +107,27 @@ public class TestMortgagePage extends BaseAPI {
 
     //Test #6
     @Test (enabled = false)
-    public void testSelectYes() {
+    public void testSelectRadioButtonPrev() throws InterruptedException {
         mortgagePage = new MortgagePage();
 
-        mortgagePage.selectYesRadioOption();
+        mortgagePage.selectPrevRadioOption();;
 
-        Assert.assertFalse(isElementSelected(mortgagePage.radioOptionYes));
+        Thread.sleep(2000);
+
+       // Assert.assertTrue(isElementSelected(mortgagePage.radioOptionYes));
 
     }
 
     //Test #7
     @Test (enabled = false)
-    public void testSelectNo() {
+    public void testSelectRadioButtonNext() throws InterruptedException {
         mortgagePage = new MortgagePage();
 
-        mortgagePage.selectNoRadioOption();
+        mortgagePage.selectNextRadioOption();
 
-        Assert.assertFalse(isElementSelected(mortgagePage.radioOptionYes));
+        Thread.sleep(2000);
+
+        //Assert.assertTrue(isElementSelected(mortgagePage.radioOptionYes));
 
     }
 
@@ -136,9 +139,9 @@ public class TestMortgagePage extends BaseAPI {
         mortgagePage.NavigateToMortgagePage();
 
         mortgagePage.ClickPlayVideoButton();
-       // Thread.sleep(4000);
-        implicitWait(40);
-        Assert.assertTrue(isElementSelected(mortgagePage.playVideoButton));
+         Thread.sleep(4000);
+        //implicitWait(40);
+       // Assert.assertTrue(isElementSelected(mortgagePage.playVideoButton));
 
     }
 
@@ -177,11 +180,15 @@ public class TestMortgagePage extends BaseAPI {
         mortgagePage = new MortgagePage();
 
         mortgagePage.clickSlideArrow();
-        String actualTitle = BaseAPI.driver.getTitle();
+        WebDriverWait wait10 = new WebDriverWait(driver, 20);
 
-        String expectedTitle = "Credit Card, Mortgage, Banking, Auto | Chase Online | Chase.com";
+//        String actualTitle = BaseAPI.driver.getTitle();
+//
+//        String expectedTitle = "Credit Card, Mortgage, Banking, Auto | Chase Online | Chase.com";
+//
+//        Assert.assertEquals(actualTitle, expectedTitle, "TITLE DOES NOT MATCH");
 
-        Assert.assertEquals(actualTitle, expectedTitle, "TITLE DOES NOT MATCH");
+         Assert.assertTrue(isElementSelected(mortgagePage.slideArrow));
     }
 
     //Test 12

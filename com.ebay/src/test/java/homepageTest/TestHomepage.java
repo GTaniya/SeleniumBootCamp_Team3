@@ -121,7 +121,7 @@ public class TestHomepage extends BaseAPI {
     }
 
     //Test#8
-    @Test (enabled = false)
+    @Test (enabled = true)
     public void testStartShoppingButton() throws Exception {
         homepage = new Homepage();
         homepage.clickShoppingCart();
@@ -136,17 +136,13 @@ public class TestHomepage extends BaseAPI {
     }
 
     //Test#9
-    @Test (enabled = true)
+    @Test (enabled = false)
     public void testSlideToPrevButton() throws Exception {
         homepage = new Homepage();
         homepage.clickSlidePrevButton();
         Thread.sleep(4000);
 
-        String actualText = driver.getTitle();
-
-        String expectedText = "Electronics, Cars, Fashion, Collectibles & More | eBay";
-
-        Assert.assertEquals(actualText, expectedText, "Test not found");
+         Assert.assertTrue(isElementSelected(homepage.slideToPrevious));
     }
 
     //Test#10

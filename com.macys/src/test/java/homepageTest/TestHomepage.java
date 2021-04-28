@@ -2,24 +2,25 @@ package homepageTest;
 
 import common.BaseAPI;
 import homepage.Homepage;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static homepage.HomepageLocators.*;
+
 
 public class TestHomepage extends BaseAPI {
 
     Homepage homepage;
 
     //Test #1
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void testSearchEarringUsingExcel() throws Exception {
         homepage = new Homepage();
         homepage.searchEarringsUsingExcel();
 
         String expectedHeader = "earrings";
         softAssert.assertEquals(expectedHeader,WEB_ELEMENT_EARRINGS);
-
 
     }
 
@@ -67,10 +68,20 @@ public class TestHomepage extends BaseAPI {
     }
 
     //Test#6
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void testHover() throws InterruptedException {
         homepage = new Homepage();
         homepage.hoverOverSignInLink();
+
+        //Thread.sleep(4000);
+        WebDriverWait wait10 = new WebDriverWait(driver, 20);
+        String actualAttributeValue = homepage.hoverSignIn.getAttribute("class");
+        String expectedAttributeValue = "tier-status";
+
+        System.out.println(actualAttributeValue);
+        System.out.println(expectedAttributeValue);
+
+        Assert.assertEquals(actualAttributeValue, expectedAttributeValue, "CLASS DOES NOT MATCH");
 
     }
 
@@ -100,8 +111,11 @@ public class TestHomepage extends BaseAPI {
         homepage.navigateToSignInPage();
         homepage.addUserCredentials();
         homepage.clickCheckBox();
+        WebDriverWait wait10 = new WebDriverWait(driver, 20);
 
-        softAssertEqualsGetTitle("Sign In - Macy's");
+        String expectedValue ="Secure Sign In";
+        softAssert.assertEquals(expectedValue,WEB_ELEMENT_SIGN_IN_PAGE_HEADER );
+
 
 
     }
@@ -113,7 +127,8 @@ public class TestHomepage extends BaseAPI {
         homepage.navigateToSignInPage();
         homepage.clickCheckBox();
 
-        softAssertEqualsGetTitle("Sign In - Macy's");
+        Assert.assertTrue(isElementSelected(homepage.checkBox));
+
 
 
     }

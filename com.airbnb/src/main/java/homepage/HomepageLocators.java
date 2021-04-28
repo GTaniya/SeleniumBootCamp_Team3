@@ -79,8 +79,8 @@ public class HomepageLocators {
     //Language
 
     public static final String WEB_ELEMENT_LANGUAGE_BUTTON = "//button[@aria-label='Language and currency']";
-    //public static final String WEB_ELEMENT_LANGUAGE_ITALIA = "//div[.='Italia']";
-    public static final String WEB_ELEMENT_LANGUAGE_ITALIA = "//a[.='ItalianoItalia']";
+    public static final String WEB_ELEMENT_LANGUAGE_ITALIA = "//div[.='Italia']";
+
 
     //Investors
 

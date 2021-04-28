@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import static homeLoansPage.HomeLoanPageLocators.WEB_ELEMENT_CLICK_HOME_LOAN_PAGE;
+import static homeLoansPage.HomeLoanPageLocators.WEB_ELEMENT_SEARCH_MORTGAGE_PAGE;
 
 
 public class TestHomeLoanPage extends BaseAPI {
@@ -19,23 +21,20 @@ public class TestHomeLoanPage extends BaseAPI {
         homeLoansPage = new HomeLoansPage();
         homeLoansPage.clickHomeLoanPage();
 
-        String actualTitle = BaseAPI.driver.getTitle();
+        String expectedText ="Home Loans";
+        softAssert.assertEquals(expectedText, WEB_ELEMENT_CLICK_HOME_LOAN_PAGE);
 
-        String expectedTitle = "Bank of America - Banking, Credit Cards, Loans and Merrill Investing";
 
-        Assert.assertEquals(actualTitle, expectedTitle, "TITLE DOES NOT MATCH");
     }
-    @Test(enabled = false)
+    @Test(enabled =false)
     public void testSearMortgagePage(){
         homeLoansPage = new HomeLoansPage();
         homeLoansPage.clickHomeLoanPage();
         homeLoansPage.doSearchMortgagePage();
 
-        String actualTitle = BaseAPI.driver.getTitle();
 
-        String expectedTitle = "Mortgages - Home Mortgage Loans from Bank of America";
-
-        Assert.assertEquals(actualTitle, expectedTitle, "TITLE DOES NOT MATCH");
+        String expectedText ="mortgages";
+        softAssert.assertEquals(expectedText, WEB_ELEMENT_SEARCH_MORTGAGE_PAGE);
 
     }
     @Test(enabled = false)
@@ -54,17 +53,14 @@ public class TestHomeLoanPage extends BaseAPI {
 
 
     }
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void testHomeLoanRefinance(){
         homeLoansPage = new HomeLoansPage();
         homeLoansPage.homeLoanRefinanceSearch();
 
 
-        String actualTitle = BaseAPI.driver.getTitle();
-
-        String expectedTitle = "Mortgage Refinance and Home Refinancing from Bank of America";
-
-        Assert.assertEquals(actualTitle, expectedTitle, "TITLE DOES NOT MATCH");
+        String expectedText = "refinance";
+        softAssert.assertEquals(expectedText,WEB_ELEMENT_CLICK_HOME_LOAN_PAGE);
 
     }
     @Test(enabled = false)
@@ -96,11 +92,11 @@ public class TestHomeLoanPage extends BaseAPI {
 
     }
     @Test(enabled = false)
-    public void testEnterUserId() throws InterruptedException {
+    public void testEnterUserId()  {
         homeLoansPage = new HomeLoansPage();
         homeLoansPage.enterUserId();
 
-        Thread.sleep(1000);
+
          String actualTitle = BaseAPI.driver.getTitle();
 
         String expectedTitle = "Bank of America - Banking, Credit Cards, Loans and Merrill Investing";
@@ -110,12 +106,12 @@ public class TestHomeLoanPage extends BaseAPI {
 
     }
     @Test(enabled = false)
-    public void testEnterPassWord() throws InterruptedException {
+    public void testEnterPassWord()  {
         homeLoansPage = new HomeLoansPage();
         homeLoansPage.enterUserId();
         homeLoansPage.enterPassword();
 
-        Thread.sleep(1000);
+
         String actualTitle = BaseAPI.driver.getTitle();
 
         String expectedTitle = "Bank of America | Online Banking | Sign In | Online ID";
@@ -125,41 +121,41 @@ public class TestHomeLoanPage extends BaseAPI {
 
     }
     @Test(enabled = false)
-    public void testClickSignInButton() throws InterruptedException {
+    public void testClickSignInButton()  {
         homeLoansPage = new HomeLoansPage();
         homeLoansPage.enterUserId();
         homeLoansPage.enterPassword();
         homeLoansPage.clickSignIn();
 
-        Thread.sleep(1000);
+
     }
     @Test(enabled = false)
-    public void testClickEnrollButton() throws InterruptedException {
+    public void testClickEnrollButton()  {
         homeLoansPage = new HomeLoansPage();
         homeLoansPage.enterUserId();
         homeLoansPage.enterPassword();
         homeLoansPage.clickSignIn();
         homeLoansPage.clickEnrollButton();
 
-        Thread.sleep(1000);
+
 
 
     }
     @Test(enabled = false)
-    public void testDoClickChecking() throws InterruptedException {
+    public void testDoClickChecking() {
         homeLoansPage = new HomeLoansPage();
         homeLoansPage.checkingButtonClick();
 
-        Thread.sleep(1500);
+
 
 
     }
-    @Test
-    public void testDoOnlineCkecking() throws InterruptedException {
+    @Test(enabled = false)
+    public void testDoOnlineCkecking()  {
         homeLoansPage = new HomeLoansPage();
         homeLoansPage.doCheckingOnline();
 
-        Thread.sleep(1000);
+
         String actualTitle = BaseAPI.driver.getTitle();
 
         String expectedTitle = "Mobile and Online Banking Benefits & Features from Bank of America";

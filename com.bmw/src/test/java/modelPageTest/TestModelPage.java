@@ -9,11 +9,11 @@ public class TestModelPage extends BaseAPI {
     ModelsPage modelsPage;
 
     @Test(enabled = false)
-    public void testClickModelButton() throws InterruptedException {
+    public void testClickModelButton()  {
         modelsPage = new ModelsPage();
         modelsPage.clickButton();
 
-        Thread.sleep(60);
+
         String actualResult = BaseAPI.driver.getTitle();
         String expectedResult = "Luxury SUVs, Sedans, Coupes, Convertibles & Crossovers | BMW USA";
 
@@ -31,26 +31,24 @@ public class TestModelPage extends BaseAPI {
 
     }
     @Test(enabled = false)
-    public void testVehiclesModels() throws InterruptedException {
+    public void testVehiclesModels()  {
         modelsPage = new ModelsPage();
         modelsPage.clickBMWMButton();
         modelsPage.checkX6Models();
 
 
-        Thread.sleep(1000);
         String actualResult = BaseAPI.driver.getTitle();
         String expectedResult = "X6 Sports Activity Coupe® | BMW USA";
 
         Assert.assertEquals(actualResult,expectedResult,"TEST FAILED");
     }
     @Test(enabled = false)
-    public void testSearchLocationBar() throws InterruptedException {
+    public void testSearchLocationBar()  {
         modelsPage = new ModelsPage();
         modelsPage.searchLocationBar();
 
 
 
-        Thread.sleep(1000);
         String actualResult = BaseAPI.driver.getTitle();
         String expectedResult = "Luxury SUVs, Sedans, Coupes, Convertibles & Crossovers | BMW USA";
 
@@ -72,12 +70,11 @@ public class TestModelPage extends BaseAPI {
         Assert.assertEquals(actualAttributeValue,expectedAttributeValue,"class not found");
     }
     @Test(enabled = false)
-    public void testDesignYourOwnCar() throws InterruptedException {
+    public void testDesignYourOwnCar()  {
         modelsPage = new ModelsPage();
         modelsPage.designYourOwnCar();
 
 
-        Thread.sleep(1000);
         String actualResult = BaseAPI.driver.getTitle();
         String expectedResult = "Build Your Own – Engine and Drivetrain Options – BMW USA";
 
@@ -99,12 +96,11 @@ public class TestModelPage extends BaseAPI {
 
     }
     @Test(enabled = false)
-    public void testsBMWMountainsButton() throws InterruptedException {
+    public void testsBMWMountainsButton() {
         modelsPage = new ModelsPage();
         modelsPage.clickBMWMountainsButton();
 
 
-        Thread.sleep(1000);
         String actualResult = BaseAPI.driver.getTitle();
         String expectedResult = "BMW.com | The international BMW Website";
 
@@ -112,33 +108,32 @@ public class TestModelPage extends BaseAPI {
 
     }
     @Test(enabled = false)
-    public void testBMWModelM5() throws InterruptedException {
+    public void testBMWModelM5()  {
         modelsPage = new ModelsPage();
         modelsPage.clickButton();
         modelsPage.checkBMWM5Model();
 
 
-        Thread.sleep(1000);
         String actualResult = BaseAPI.driver.getTitle();
         String expectedResult = "THE M5. BMW 5 Series Sedan M Automobiles: Discover highlights | BMW.com";
 
         Assert.assertEquals(actualResult,expectedResult,"TEST FAILED");
     }
     @Test(enabled = false)
-    public void checkTweeterButton() throws InterruptedException {
+    public void checkTweeterButton()  {
         modelsPage = new ModelsPage();
         modelsPage.checkTweeterButton();
 
 
     }
     @Test(enabled = false)
-    public void testSearchFutureVehicle() throws InterruptedException {
+    public void testSearchFutureVehicle()  {
         modelsPage = new ModelsPage();
         modelsPage.searchBMWFutureModel();
 
 
 
-        Thread.sleep(1000);
+
         String actualResult = BaseAPI.driver.getTitle();
         String expectedResult = "Future Vehicles - New BMW Models Coming Soon - BMW USA";
 
@@ -146,14 +141,13 @@ public class TestModelPage extends BaseAPI {
 
 
     }
-    @Test
-    public void testDoSearchConceptVehicle() throws InterruptedException {
+    @Test(enabled = false)
+    public void testDoSearchConceptVehicle(){
         modelsPage = new ModelsPage();
-       modelsPage.doSearchVehicle();
+       modelsPage.searchConceptVehicle();
 
 
 
-        Thread.sleep(15000);
         String actualResult = BaseAPI.driver.getTitle();
         String expectedResult = "Concept Vehicles - BMW North America - BMW USA";
 
@@ -161,17 +155,15 @@ public class TestModelPage extends BaseAPI {
 
 
     }
-    @Test
-    public void testDoClickMyBMW() throws InterruptedException {
-        modelsPage = new ModelsPage();
-        modelsPage.doClickMyBMW();
 
 
 
-        Thread.sleep(15000);
-        String actualResult = BaseAPI.driver.getTitle();
-        String expectedResult = "My BMW";
-
-        Assert.assertEquals(actualResult,expectedResult,"TEST FAILED");
     }
-}
+
+
+
+
+
+
+
+

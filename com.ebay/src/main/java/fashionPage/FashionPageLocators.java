@@ -33,4 +33,30 @@ public class FashionPageLocators {
     public static final String WEB_ELEMENT_DROP_DOWN_FEATURES ="//span[.='Featured']";
 
     public static final String WEB_ELEMENT_CLICK_BOOST_DEALS ="//a[.='Boost-Worthy Deals']";
+
+     //new
+
+    public static final String WEB_ELEMENT_HOVER_HOME_AND_GARDEN ="//ul[@class='hl-cat-nav__container']/li[@class='hl-cat-nav__js-tab']/a[.='Home & Garden']";
+
+    public static final String WEB_ELEMENT_DO_SEARCH_VACUUMS ="//div[.='Vacuums']";
+
+    public static final String WEB_ELEMENT_SELECT_DYSON ="//p[.='Dyson']";
+
+    public static final String WEB_ELEMENT_PEAK_VACUUM ="//h3[.='Dyson V7 Fluffy HEPA Cordless Vacuum Cleaner | Blue | New']";
+
+    public static final String WEB_ELEMENT_PEAK_VACUUM_HEADER ="//span[@class='b-pageheader__text']']";
+
+    public static final String WEB_ELEMENT_INPUT_SEARCH_BAR  ="//input[@id='gh-ac']";
+
+    public static final String WEB_ELEMENT_INPUT_SEARCH_BUTTON  ="//input[@id='gh-btn']";
+
+    public static final String WEB_ELEMENT_INPUT_SEARCH_BAGS  ="//span[.='bags']";
+
+   // public static final String WEB_ELEMENT_INPUT_SEARCH_BAGS  ="//span[.='bags']";
+
+
+
+
+
+
 }

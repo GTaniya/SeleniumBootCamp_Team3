@@ -28,7 +28,11 @@ public class ModelsPageLocators {
 
     public static final String WEB_ELEMENT_DO_SEARCH_CONCEPT_VEHICLE="//div[@class='concept-vehicle-title--content']";
 
-    public static final String WEB_ELEMENT_CLICK_MY_BMW="//div[@class='globalnav-primary-my-bmw__portal-holder']/a[contains(.,'My BMW')]";
+
+
+
+
+
 
 
 

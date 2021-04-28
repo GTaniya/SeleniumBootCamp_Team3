@@ -6,25 +6,21 @@ import io.cucumber.java.bs.A;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import placeToStayPage.PlaceToStayPage;
+import static placeToStayPage.PlaceToStayPageLocators.*;
 
 public class TestPlaceToStayPage extends BaseAPI {
     PlaceToStayPage placeToStayPage;
 
 
-    @Test(enabled = false)
-    public void testExploreRoleButton() throws InterruptedException {
+    @Test(enabled = true)
+    public void testExploreRoleButton()  {
 
         placeToStayPage = new PlaceToStayPage();
         placeToStayPage.checkCareers();
         placeToStayPage.clickExploreRolesButton();
-        Thread.sleep(2000);
 
-
-        String actualTitle = BaseAPI.driver.getTitle();
-        String expectedTitle ="Careers at Airbnb";
-
-        Assert.assertEquals(actualTitle,expectedTitle,"Title doesn't find");
-
+        String expectedText = "";
+        softAssert.assertEquals(expectedText,WEB_ELEMENT_CAREERS_EXPLORE_ROLES_BUTTON);
     }
 
     @Test(enabled = false)
@@ -35,10 +31,8 @@ public class TestPlaceToStayPage extends BaseAPI {
         // placeToStayPage.clickExploreRolesButton();
         placeToStayPage.clickUniversityLink();
 
-        String actualTitle = BaseAPI.driver.getTitle();
-        String expectedTitle ="University - Careers at Airbnb";
 
-        Assert.assertEquals(actualTitle,expectedTitle,"Title doesn't find");
+
 
     }
 
@@ -90,13 +84,13 @@ public class TestPlaceToStayPage extends BaseAPI {
 
     }
     @Test(enabled = false)
-    public void testExploreSafetyPracticePage() throws InterruptedException {
+    public void testExploreSafetyPracticePage()  {
         placeToStayPage = new PlaceToStayPage();
       //  placeToStayPage.buttonCovidKey();
         placeToStayPage.exploreSafetyPracticePage();
 
 
-        Thread.sleep(2000);
+
         String actualTitle = BaseAPI.driver.getTitle();
         String expectedTitle ="";
 
@@ -104,12 +98,12 @@ public class TestPlaceToStayPage extends BaseAPI {
 
     }
     @Test(enabled = false)
-    public void testDoSearchAirBNBWork() throws InterruptedException {
+    public void testDoSearchAirBNBWork()  {
         placeToStayPage = new PlaceToStayPage();
         placeToStayPage.doSearchAirBNBWork();
 
 
-        Thread.sleep(3000);
+
         String actualTitle = BaseAPI.driver.getTitle();
         String expectedTitle = "How Airbnb Works";
 
@@ -118,12 +112,11 @@ public class TestPlaceToStayPage extends BaseAPI {
 
     }
     @Test(enabled = false)
-    public void testSearchAirBNBHomes() throws InterruptedException {
+    public void testSearchAirBNBHomes()  {
         placeToStayPage = new PlaceToStayPage();
         placeToStayPage.SearchAirBNBHomes();
 
 
-        Thread.sleep(3000);
         String actualTitle = BaseAPI.driver.getTitle();
         String expectedTitle = "Anywhere · Stays · Airbnb";
 
@@ -131,12 +124,11 @@ public class TestPlaceToStayPage extends BaseAPI {
 
     }
     @Test(enabled = false)
-    public void testTrustAndSafety() throws InterruptedException {
+    public void testTrustAndSafety()  {
         placeToStayPage = new PlaceToStayPage();
         placeToStayPage.trustAndSafety();
 
 
-        Thread.sleep(3000);
         String actualTitle = BaseAPI.driver.getTitle();
         String expectedTitle = "Airbnb Trust & Safety - Your safety is our priority";
 
@@ -153,10 +145,27 @@ public class TestPlaceToStayPage extends BaseAPI {
 
 
     }
-    @Test
+    @Test(enabled = false)
     public void testSearchAllJobs() throws InterruptedException {
         placeToStayPage = new PlaceToStayPage();
         placeToStayPage.searchAllJobsAirBNB();
+
+
+    }
+    @Test(enabled = false)
+    public void testSelectDate(){
+        placeToStayPage = new PlaceToStayPage();
+        placeToStayPage.clickDateField();
+        placeToStayPage.selectDate();
+
+
+        String actualTitle = BaseAPI.driver.getTitle();
+        String expectedTitle = "Airbnb: Vacation Rentals, Cabins, Beach Houses, Unique Homes & Experiences";
+
+        Assert.assertEquals(actualTitle, expectedTitle, "Title doesn't find");
+
+
+
 
 
     }

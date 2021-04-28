@@ -1,11 +1,13 @@
 package fashionPage;
 
 import common.BaseAPI;
+import fashionPage.ebayDataDriver.DataSource;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.sql.PreparedStatement;
+import java.util.List;
 
 import static fashionPage.FashionPageLocators.*;
 
@@ -27,9 +29,15 @@ public class FashionPage extends BaseAPI {
 
         public void searchDressPage(){clickByXpathUsingJavaScript(WEB_ELEMENT_SEARCH_DRESSED_PAGE);}
 
+        @FindBy(xpath = WEB_ELEMENT_CLICK_JEWELRY_DROP_DOWN)
+        public WebElement clickJewelery;
+
         public void clickJeweleryDropDown(){clickByXpathUsingJavaScript(WEB_ELEMENT_CLICK_JEWELRY_DROP_DOWN);}
 
         public void searchJewelryPage (){clickByXpathUsingJavaScript(WEB_ELEMENT_SEARCH_JEWELRY_PAGE);}
+
+        @FindBy(xpath =WEB_ELEMENT_DROP_DOWN_MY_EBAY_MENU )
+        public WebElement DropDownMenu;
 
         public void dropDownMyEbayMenu (){clickByXpathUsingJavaScript(WEB_ELEMENT_DROP_DOWN_MY_EBAY_MENU);}
 
@@ -50,6 +58,37 @@ public class FashionPage extends BaseAPI {
         public void dropDownFeatures(){clickByXpathUsingJavaScript(WEB_ELEMENT_DROP_DOWN_FEATURES);}
 
         public void clickBoostDeal(){clickByXpathUsingJavaScript(WEB_ELEMENT_CLICK_BOOST_DEALS);}
+
+        @FindBy(xpath = WEB_ELEMENT_HOVER_HOME_AND_GARDEN)
+         public WebElement hoverHomeAndGarden;
+
+        public void hoverHomeAndGardenButton(){clickByXpathUsingJavaScript(WEB_ELEMENT_HOVER_HOME_AND_GARDEN);}
+
+        @FindBy(xpath = WEB_ELEMENT_DO_SEARCH_VACUUMS)
+        public WebElement doSearchVacuums;
+
+        public void searchVacuums(){clickByXpathUsingJavaScript(WEB_ELEMENT_DO_SEARCH_VACUUMS);}
+
+        @FindBy(xpath = WEB_ELEMENT_SELECT_DYSON)
+        public WebElement selectDyson;
+
+        public void selectVacuumBrand(){clickByXpathUsingJavaScript(WEB_ELEMENT_SELECT_DYSON);}
+
+        @FindBy(xpath = WEB_ELEMENT_PEAK_VACUUM)
+        public WebElement peakVacuum;
+
+        public void peakYourItem(){clickByXpathUsingJavaScript(WEB_ELEMENT_PEAK_VACUUM);}
+
+        public void searchBags() throws Exception {
+            List<String> bags = DataSource.getItemsListFromExcel();
+            String item = bags.get(1);
+            typeOnElement(WEB_ELEMENT_INPUT_SEARCH_BAR,item);
+            clickByXpathUsingJavaScript(WEB_ELEMENT_INPUT_SEARCH_BUTTON);
+
+        }
+
+
+
 
 
     }

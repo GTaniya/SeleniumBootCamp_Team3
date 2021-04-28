@@ -114,10 +114,10 @@ public class PhoneAndDevicePage extends BaseAPI {
     @FindBy(xpath = WEB_ELEMENT_CLICK_HOME_PHONE_)
     WebElement clickHomePhone;
     @FindBy(xpath = WEB_ELEMENT_EXPLORE_HOME_PHONE_BAR_)
-    WebElement exploreHomePhoneBar;
+    public WebElement exploreHomePhoneBar;
 
     public void clickHomePhoneFromMenu(){
-        selectElement(clickHomePhone);
+        clickByXpathUsingJavaScript(WEB_ELEMENT_CLICK_HOME_PHONE_);
     }
     public void clickExploreHomePhone(){
         clickByXpathUsingJavaScript(WEB_ELEMENT_EXPLORE_HOME_PHONE_BAR_);

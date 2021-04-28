@@ -33,6 +33,10 @@ public class PlaceToStayPageLocators {
 
     public static final String WEB_ELEMENT_TRUST_AND_SAFETY ="//a[.='Trust & Safety']";
 
+    public static final String WEB_ELEMENT_SELECT_DATE_FIELD ="//div[@class='_1l6jpwo']/div[1]//div[@class='_uh2dzp']";
+
+    public static final String WEB_ELEMENT_SELECT_DATE ="//div[@class='_754zdu7']/div[@class='_1lds9wb']//div[@class='_f8btejl']/div[.='10']";
+
 
 
 

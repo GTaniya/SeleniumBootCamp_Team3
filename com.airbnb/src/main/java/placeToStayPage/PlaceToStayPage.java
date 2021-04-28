@@ -153,9 +153,18 @@ public class PlaceToStayPage extends BaseAPI {
 
         public void searchAllJobsAirBNB(){selectElement(searchAllJobsAirBNB);}
 
+        @FindBy(xpath = WEB_ELEMENT_SELECT_DATE)
+        public WebElement selectDate;
+
+        public void clickDateField(){clickByXpathUsingJavaScript(WEB_ELEMENT_SELECT_DATE_FIELD);}
+
+        public void selectDate(){selectDate.click();}
+
+
 
 
 }
+
 
 
 

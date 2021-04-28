@@ -7,6 +7,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.xml.dom.ParentSetter;
 
+import static fantasyPage.FantasyPageLocators.WEB_ELEMENT_DROP_DOWN_FANTASY;
+
 public class TestFantasyPage extends BaseAPI {
     FantasyPage fantasyPage;
 
@@ -48,41 +50,32 @@ public class TestFantasyPage extends BaseAPI {
         fantasyPage = new FantasyPage();
         fantasyPage.clickPodcastButton();
 
-        String actualTitle = BaseAPI.driver.getTitle();
-        String expectedTitle = "CBS Sports - News, Live Scores, Schedules, Fantasy Games, Video and more. - CBSSports.com";
-
-        Assert.assertEquals(actualTitle, expectedTitle, "TITLE DOES NOT MATCH");
-
+      Assert.assertTrue(isElementSelected(fantasyPage.clickPodcastButton));
 
     }
     @Test(enabled = false)
-    public void testClickAboutUsButton() throws InterruptedException {
+    public void testClickAboutUsButton() {
         fantasyPage = new FantasyPage();
         fantasyPage.clickAboutUsButton();
 
-        Thread.sleep(1000);
-
-        String actualTitle = BaseAPI.driver.getTitle();
-        String expectedTitle = "CBS Sports - News, Live Scores, Schedules, Fantasy Games, Video and more. - CBSSports.com";
-
-        Assert.assertEquals(actualTitle, expectedTitle, "TITLE DOES NOT MATCH");
-
+        Assert.assertTrue(isElementSelected(fantasyPage.clickAboutUs));
 
     }
-    @Test(enabled = false)
-    public void testDropDownFantasy() throws InterruptedException {
+    @Test(enabled = true)
+    public void testDropDownFantasy()  {
         fantasyPage = new FantasyPage();
         fantasyPage.dropDown();
 
-        Thread.sleep(1000);
+        String expectedText ="fantasy";
+        Assert.assertEquals(expectedText,WEB_ELEMENT_DROP_DOWN_FANTASY);
+
 
     }
     @Test(enabled = false)
-    public void testOpenBasketballPage() throws InterruptedException {
+    public void testOpenBasketballPage()  {
         fantasyPage = new FantasyPage();
        fantasyPage.OpenBasketballPage();
 
-        Thread.sleep(1000);
 
 
         String actualTitle = BaseAPI.driver.getTitle();
@@ -92,35 +85,39 @@ public class TestFantasyPage extends BaseAPI {
 
     }
     @Test(enabled = false)
-    public void testClickCheckButton() throws InterruptedException {
+    public void testClickCheckButton()  {
         fantasyPage = new FantasyPage();
         fantasyPage.checkButton();
 
-        Thread.sleep(1000);
+
         String actualTitle = BaseAPI.driver.getTitle();
         String expectedTitle = "CBS Sports - News, Live Scores, Schedules, Fantasy Games, Video and more. - CBSSports.com";
 
         Assert.assertEquals(actualTitle, expectedTitle, "TITLE DOES NOT MATCH");
     }
       @Test(enabled = false)
-    public void testDropDownPodcast() throws InterruptedException {
+    public void testDropDownPodcast() {
           fantasyPage = new FantasyPage();
           fantasyPage.doDropDownPodcast();
 
-          Thread.sleep(1500);
+          Assert.assertTrue(isElementSelected(fantasyPage.dropDownPodcast));
+
+
 
       }
       @Test(enabled = false)
     public void testClickDropDown(){
         fantasyPage = new FantasyPage();
         fantasyPage.clickDropDown();
+
+
       }
       @Test(enabled = false)
-    public void testClickNavBar() throws InterruptedException {
+    public void testClickNavBar() {
         fantasyPage = new FantasyPage();
         fantasyPage.clickNavBar();
 
-          Thread.sleep(2000);
+
 
           String actualTitle = BaseAPI.driver.getTitle();
           String expectedTitle = "CBS Sports - News, Live Scores, Schedules, Fantasy Games, Video and more. - CBSSports.com";
@@ -130,12 +127,12 @@ public class TestFantasyPage extends BaseAPI {
 
 
       }
-      @Test
-    public void testSearchFlipBoard() throws InterruptedException {
+      @Test(enabled = false)
+    public void testSearchFlipBoard()  {
           fantasyPage = new FantasyPage();
           fantasyPage.searchInput();
 
-          Thread.sleep(2000);
+
 
           String actualTitle = BaseAPI.driver.getTitle();
           String expectedTitle = "CBS Sports (@cbssports) on Flipboard";
@@ -144,7 +141,7 @@ public class TestFantasyPage extends BaseAPI {
 
 
       }
-      @Test
+      @Test(enabled = false)
     public void testInputUserName(){
         fantasyPage = new FantasyPage();
         fantasyPage.searchInput();

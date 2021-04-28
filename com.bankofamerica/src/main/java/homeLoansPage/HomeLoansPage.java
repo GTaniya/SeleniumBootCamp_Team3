@@ -44,14 +44,16 @@ public class HomeLoansPage extends BaseAPI {
         clickByXpathUsingJavaScript(WEB_ELEMENT_MORTGAGE_RATES);
     }
     @FindBy(xpath = WEB_ELEMENT_HOME_LOAN_REFINANCE)
-    WebElement homeLoanRefinance;
-
-    @FindBy(xpath = WEB_ELEMENT_MORTGAGE_REFINANCE_CALCULATOR)
-    WebElement mortgageRefinanceCalculator;
+   public WebElement homeLoanRefinance;
 
     public void homeLoanRefinanceSearch(){
         clickByXpathUsingJavaScript(WEB_ELEMENT_HOME_LOAN_REFINANCE);
     }
+
+    @FindBy(xpath = WEB_ELEMENT_MORTGAGE_REFINANCE_CALCULATOR)
+    WebElement mortgageRefinanceCalculator;
+
+
     public void mortgageRefinanceCalculator(){
 
         clickByXpathUsingJavaScript(WEB_ELEMENT_MORTGAGE_REFINANCE_CALCULATOR);

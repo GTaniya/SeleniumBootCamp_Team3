@@ -14,6 +14,7 @@ public class FantasyPageLocators {
 
     //Click
     public static final String WEB_ELEMENT_CLICK_LOGIN_BUTTON="//span[.='Log In']";
+
     public static final String WEB_ELEMENT_CLICK_PODCAST_BUTTON ="//span[.='Podcasts']";
     public static final String WEB_ELEMENT_CLICK_ABOUT_US ="//a[.='About Us']";
     public static final String WEB_ELEMENT_CLICK_NAVIGATION_BAR ="//div[@class='SocialNavBar']//li[4]/a[1]";

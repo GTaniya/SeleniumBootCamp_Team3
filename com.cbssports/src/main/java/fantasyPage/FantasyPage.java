@@ -48,14 +48,14 @@ public class FantasyPage extends BaseAPI {
     }
 
     @FindBy(xpath = WEB_ELEMENT_CLICK_PODCAST_BUTTON)
-    WebElement clickPodcastButton;
+   public WebElement clickPodcastButton;
 
     public void clickPodcastButton() {
         clickByXpathUsingJavaScript(WEB_ELEMENT_CLICK_PODCAST_BUTTON);
     }
 
     @FindBy(xpath = WEB_ELEMENT_OPEN_SPORTS_PAGE)
-    WebElement openSportsPage;
+   public WebElement openSportsPage;
 
     public void openSportsPage() {
         clickByXpathUsingJavaScript(WEB_ELEMENT_OPEN_SPORTS_PAGE);
@@ -63,7 +63,7 @@ public class FantasyPage extends BaseAPI {
 
 
     @FindBy(xpath = WEB_ELEMENT_CLICK_ABOUT_US)
-    WebElement clickAboutUs;
+   public WebElement clickAboutUs;
 
     public void clickAboutUsButton() {
         clickByXpathUsingJavaScript(WEB_ELEMENT_CLICK_ABOUT_US);
@@ -84,14 +84,14 @@ public class FantasyPage extends BaseAPI {
     }
 
     @FindBy(xpath = WEB_ELEMENT_DROP_DOWN_PODCAST)
-    WebElement dropDownPodcast;
+   public WebElement dropDownPodcast;
 
     public void doDropDownPodcast() {
         clickByXpathUsingJavaScript(WEB_ELEMENT_DROP_DOWN_PODCAST);
     }
 
     @FindBy(xpath = WEB_ELEMENT_DO_DROP_DOWN)
-    WebElement doDropDown;
+   public WebElement doDropDown;
 
     public void clickDropDown(){
         clickByXpathUsingJavaScript(WEB_ELEMENT_DROP_DOWN_PODCAST);

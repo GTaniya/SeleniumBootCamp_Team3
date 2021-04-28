@@ -15,6 +15,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
+import org.testng.asserts.SoftAssert;
 import utilities.DataReader;
 
 import java.io.IOException;
@@ -31,6 +32,7 @@ public class BaseAPI {
     public DataReader dataReader;
     public static Actions actions;
     public Properties properties;
+    public static SoftAssert softAssert = new SoftAssert();
 
     String propertiesFilePath = "src/main/resources/secret.properties";
 
@@ -219,38 +221,7 @@ public class BaseAPI {
     }
 
     // Gets text from List<WebElements> and compares against expected String array from Excel workbook
-    public boolean compareAttributeListToExpectedStringArray(By by, String attribute, String path, String sheetName) throws IOException {
-        List<WebElement> actualList = driver.findElements(by);
-        String[] expectedList = dataReader.fileReaderStringXSSF(path, sheetName);
 
-        String[] actual = new String[actualList.size()];
-
-        for (int j = 0; j < actualList.size(); j++) {
-            actual[j] = actualList.get(j).getAttribute(attribute).replaceAll("&amp;", "&").replaceAll("’", "'").replaceAll("<br>", "\n").trim();
-            actual[j].replaceAll("&amp;", "&").replaceAll("’", "'").replaceAll("<br>", "\n").trim();
-//            escapeHtml4(actual[j]);
-//            escapeHtml3(actual[j]);
-        }
-
-        int falseCount = 0;
-        boolean flag = false;
-
-        for (int i = 0; i < expectedList.length; i++) {
-            if (actual[i].equalsIgnoreCase(expectedList[i])) {
-                flag = true;
-                System.out.println("ACTUAL " + attribute.toUpperCase() + " " + (i + 1) + ": " + actual[i]);
-                System.out.println("EXPECTED " + attribute.toUpperCase() + " " + (i + 1) + ": " + expectedList[i] + "\n");
-            } else {
-                System.out.println("FAILED AT INDEX " + (i + 1) + "\nEXPECTED " + attribute.toUpperCase() + ": " + expectedList[i] +
-                        "\nACTUAL " + attribute.toUpperCase() + ": " + actual[i] + "\n");
-                falseCount++;
-            }
-        }
-        if (falseCount > 0) {
-            flag = false;
-        }
-        return flag;
-    }
 
 
 //    public static WebDriver driver;
@@ -404,6 +375,22 @@ public class BaseAPI {
 
     public static void implicitWait(long seconds){
         driver.manage().timeouts().implicitlyWait(seconds, TimeUnit.SECONDS);
+    }
+
+    public static void softAssertAssertEqualsGetText(String actual, String expected){
+        try {
+            String exp = expected;
+            String act = driver.findElement(By.xpath(actual)).getText();
+            softAssert.assertEquals(act, exp);
+            softAssert.assertAll();
+        } catch (Exception e){
+            e.printStackTrace();
+            System.out.println("\n*** First Attempt Failed - Trying Again ***");
+            String exp = expected;
+            String act = driver.findElement(By.xpath(actual)).getText();
+            softAssert.assertEquals(act, exp);
+            softAssert.assertAll();
+        }
     }
 }
 

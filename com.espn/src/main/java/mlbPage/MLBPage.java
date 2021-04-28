@@ -31,6 +31,7 @@ public class MLBPage extends BaseAPI {
         robot.keyPress(KeyEvent.VK_ENTER);
 
     }
+//************************************************************************************************************
 
     public void clickMLBPageTab(){
         clickByXpathUsingJavaScript(WEB_ELEMENT_MLB_PAGE);
@@ -62,18 +63,34 @@ public class MLBPage extends BaseAPI {
     WebElement teamPlayerNico;
 
     public void clickSlideArrow(){
+
         slideArrow.click();
     }
-    public void clickDateWindow(){clickByXpath(WEB_ELEMENT_DATE_WINDOW);}
-    public void chooseDate(){dateSelect.click();}
+    //************************************************************************************************************
+    public void clickDateWindow(){
+        clickByXpath(WEB_ELEMENT_DATE_WINDOW);
+    }
+    public void chooseDate(){
+        dateSelect.click();
+    }
+
+    public void dataSelect(){
+        clickByXpath(WEB_ELEMENT_DATE_WINDOW);
+        dateSelect.click();
+    }
+
+    //************************************************************************************************************
 
     public void clickSchedulePage(){clickByXpath(WEB_ELEMENT_SCHEDULES_PAGE);}
     public void closeAD(){
         waitForVisibilityOfElement(popupAD);
         clickByXpath(WEB_ELEMENT_CLOSE_AD);
     }
+    //************************************************************************************************************
 
-    public void clickDropDown(){clickByXpathUsingJavaScript(WEB_ELEMENT_TEAM_SCHEDULE);}
+    public void clickDropDown(){
+        clickByXpathUsingJavaScript(WEB_ELEMENT_TEAM_SCHEDULE);
+    }
     public void selectChicagoCubs(){clickByXpathUsingJavaScript(WEB_ELEMENT_TEAM_SCHEDULE_CHICAGO_CUBS);}
 
     public void clickNewYorkMets(){clickElement(teamNewYorkMets);}

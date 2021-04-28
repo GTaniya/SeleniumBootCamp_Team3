@@ -2,6 +2,7 @@ package homepageTest;
 
 import common.BaseAPI;
 import homepage.Homepage;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -13,7 +14,7 @@ public class TestHomepage extends BaseAPI {
     Homepage homepage;
 
     //Test #1
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void testDoSearch() throws InterruptedException {
         homepage = new Homepage();
 
@@ -90,7 +91,8 @@ public class TestHomepage extends BaseAPI {
         homepage = new Homepage();
         homepage.clickGiftCardsLink();
         homepage.clickBuyGiftCardsLink();
-        implicitWait(20);
+        homepage.clickGiftCards25Button();
+        WebDriverWait wait = new WebDriverWait(driver, 20);
         homepage.sendKeysToFields();
 
         String actualResult = driver.getTitle();
@@ -255,7 +257,7 @@ public class TestHomepage extends BaseAPI {
     }
 
     //Test #15
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void testDateField() throws InterruptedException {
         homepage = new Homepage();
         homepage.clickDateField();

@@ -425,19 +425,26 @@ public class Homepage extends BaseAPI {
     }
 
     public void clickPrice(){
-        clickByXpathUsingJavaScript(WEB_ELEMENT_PRICE);
-    }
 
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+        WebElement element = driver.findElement(By.xpath(WEB_ELEMENT_PRICE));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click()", element);
+
+    }
     public void changePrice(){
         WebElement price = driver.findElement(By.id("price_filter_min"));
 
         price.sendKeys("0");
     }
-
+//*************************************************************************************************************
     public void clickDateField(){
 
-       clickByXpathUsingJavaScript(WEB_ELEMENT_DATE_FIELD);
-       // clickElement(dateField);
+        WebDriverWait wait10 = new WebDriverWait(driver, 20);
+        WebElement element = driver.findElement(By.xpath(WEB_ELEMENT_DATE_FIELD));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click()", element);
+
     }
 
     public void clickDate(){

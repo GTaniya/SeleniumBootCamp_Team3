@@ -4,6 +4,7 @@ import common.BaseAPI;
 import mortgagePage.MortgagePage;
 import org.apache.poi.ss.formula.functions.T;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -19,9 +20,8 @@ public class TestMortgagePage extends BaseAPI {
         mortgagePage = new MortgagePage();
 
         mortgagePage.clickDropDownMenu();
-        implicitWait(20);
+        WebDriverWait wait = new WebDriverWait(driver, 20);
         mortgagePage.clickMortgagePageLink();
-        implicitWait(20);
 
         String actualTitle = BaseAPI.driver.getTitle();
 
@@ -38,11 +38,11 @@ public class TestMortgagePage extends BaseAPI {
         mortgagePage = new MortgagePage();
 
         mortgagePage.clickDropDownMenu();
-        implicitWait(20);
+        WebDriverWait wait = new WebDriverWait(driver,30);
         mortgagePage.clickMortgagePageLink();
         //Thread.sleep(4000);
         mortgagePage.clickGetStartedButton();
-        implicitWait(20);
+
 
         String actualTitle = BaseAPI.driver.getTitle();
 
@@ -93,9 +93,9 @@ public class TestMortgagePage extends BaseAPI {
     public void testStartOnlineButton() throws InterruptedException {
         mortgagePage = new MortgagePage();
         mortgagePage.clickDropDownMenu();
-        implicitWait(20);
+        WebDriverWait wait = new WebDriverWait(driver,30);
         mortgagePage.clickMortgagePageLink();
-        implicitWait(20);
+
         mortgagePage.clickStartOnlineButton();
 
         String actualTitle = BaseAPI.driver.getTitle();
@@ -205,7 +205,8 @@ public class TestMortgagePage extends BaseAPI {
     @Test (enabled = false)
     public void testHoverOver() throws Exception {
         mortgagePage = new MortgagePage();
-        implicitWait(20);
+        mortgagePage.hoverOverButton();
+        WebDriverWait wait = new WebDriverWait(driver,30);
 
         String actualAttributeValue = mortgagePage.login.getAttribute("class");
         String expectedAttributeValue = "btn cta cta--primary cta--large cta--btn-green-aloe";

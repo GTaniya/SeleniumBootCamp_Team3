@@ -21,6 +21,9 @@ public class MortgagePage extends BaseAPI {
     @FindBy(xpath = WEB_ELEMENT_NAVIGATE_TO_MORTGAGE_PAGE)
     WebElement navigateToMortgagePage;
 
+    @FindBy (css = WEB_ELEMENT_NAVIGATE_TO_MORTGAGE_PAGE_GET_STARTED_BUTTON)
+    WebElement getStarted;
+
     public MortgagePage() {
         PageFactory.initElements(driver, this);
     }
@@ -29,10 +32,9 @@ public class MortgagePage extends BaseAPI {
 
     public void clickMortgagePageLink(){clickByXpathUsingJavaScript(WEB_ELEMENT_NAVIGATE_TO_MORTGAGE_PAGE);}
 
-    @FindBy (css = WEB_ELEMENT_NAVIGATE_TO_MORTGAGE_PAGE_GET_STARTED_BUTTON)
-    WebElement getStarted;
-
     public void clickGetStartedButton(){clickByCssSelectorUsingJavaScript(WEB_ELEMENT_NAVIGATE_TO_MORTGAGE_PAGE_GET_STARTED_BUTTON);}
+
+    //************************************************************************************************************
 
     @FindBy (xpath = WEB_ELEMENT_HOVER_OVER_SIGN_IN)
     public WebElement buttonSignIn;
@@ -44,23 +46,24 @@ public class MortgagePage extends BaseAPI {
         hoverOverElement(buttonSignIn);
     }
 
+    public void hoverOverTheButton(){
+        basicHoverUsingXpath(WEB_ELEMENT_HOVER_OVER_SIGN_IN);
+    }
+
     public void NavigateToMortgagePage(){
 
         clickByXpathUsingJavaScript(WEB_ELEMENT_CLICK_DROP_DOWN);
         waitUntilClickable(WEB_ELEMENT_NAVIGATE_TO_MORTGAGE_PAGE);
         clickByXpathUsingJavaScript(WEB_ELEMENT_NAVIGATE_TO_MORTGAGE_PAGE);
-        implicitWait(10);
-    }
 
-    public void hoverOverTheButton(){
-        basicHoverUsingXpath(WEB_ELEMENT_HOVER_OVER_SIGN_IN);
     }
 
     public void clickStartOnlineButton(){
         scrollToElementJScript(startOnlineButton);
-        implicitWait(10);
+        WebDriverWait wait = new WebDriverWait(driver,30);
         clickByXpathUsingJavaScript(WEB_ELEMENT_START_ONLINE);}
 
+ //************************************************************************************************************
     @FindBy (id = WEB_ELEMENT_RADIO_BUTTON_YES)
     public WebElement radioOptionYes;
 
@@ -68,20 +71,32 @@ public class MortgagePage extends BaseAPI {
     public WebElement radioOptionNo;
 
     public void selectYesRadioOption(){
-        selectElement(radioOptionYes);
+
+        waitForElementToBeClickable(radioOptionYes);
+        clickElement(radioOptionYes);
+        //selectElement(radioOptionYes);
     }
 
     public void selectNoRadioOption(){
         selectElement(radioOptionNo);
     }
 
+    //************************************************************************************************************
+
     @FindBy(xpath = WEB_ELEMENT_PLAY_VIDEO)
     public WebElement playVideoButton;
 
-    public void ClickPlayVideoButton(){
+    public void ClickPlayVideoButton() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,1000)");
-        clickByXpathUsingJavaScript(WEB_ELEMENT_PLAY_VIDEO);}
+        WebDriverWait wait10 = new WebDriverWait(driver, 20);
+        WebElement element = driver.findElement(By.xpath(WEB_ELEMENT_PLAY_VIDEO));
+        JavascriptExecutor jss = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click()", element);
+        // clickByXpathUsingJavaScript(WEB_ELEMENT_PLAY_VIDEO);}
+    }
+
+    //************************************************************************************************************
 
     @FindBy(xpath = WEB_ELEMENT_ATM_AND_BRANCH)
     WebElement atmAndBranch;
@@ -97,10 +112,12 @@ public class MortgagePage extends BaseAPI {
     public void clickSearchButton(){clickByXpathUsingJavaScript(WEB_ELEMENT_ATM_AND_BRANCH_INPUT_SEARCH_BUTTON);}
 
     public void doSearch(){
-        implicitWait(10);
+        WebDriverWait wait = new WebDriverWait(driver,30);
         typeOnElement(WEB_ELEMENT_ATM_AND_BRANCH_INPUT_SEARCH_BAR, WEB_ELEMENT_ATM_AND_BRANCH_INPUT_SEARCH_BAR_TEXT);
         clickSearchButton();
     }
+
+    //************************************************************************************************************
 
     @FindBy (xpath = WEB_ELEMENT_SLIDE_ARROW)
     WebElement slideArrow;
@@ -111,7 +128,7 @@ public class MortgagePage extends BaseAPI {
     public void clickSlideArrow(){clickByXpathUsingJavaScript(WEB_ELEMENT_SLIDE_ARROW);}
     public void clickHomeLoansButton(){clickByXpathUsingJavaScript(WEB_ELEMENT_HOME_LOANS);}
 
-
+    //************************************************************************************************************
 
     @FindBy (xpath = WEB_ELEMENT_INPUT_USERID)
     WebElement inputUserID;
@@ -141,14 +158,15 @@ public class MortgagePage extends BaseAPI {
         clickSearch();
     }
 
+    //************************************************************************************************************
 
     @FindBy (xpath = WEB_ELEMENT_IFRAME_LOGIN)
     public WebElement login;
 
     public void hoverOverButton() throws Exception {
-        implicitWait(10);
-        //hoverOverElement(hoverOverTheButton);
-        basicHoverUsingXpath(WEB_ELEMENT_IFRAME_LOGIN);
+        WebDriverWait wait = new WebDriverWait(driver,30);
+        hoverOverElement(login);
+        //basicHoverUsingXpath(WEB_ELEMENT_IFRAME_LOGIN);
     }
 }
 

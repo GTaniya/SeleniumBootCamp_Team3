@@ -37,6 +37,7 @@ public class BaseAPI {
         public Properties properties;
         public static SoftAssert softAssert = new SoftAssert();
 
+
         String propertiesFilePath = "src/main/resources/secret.properties";
 
         public BaseAPI() {

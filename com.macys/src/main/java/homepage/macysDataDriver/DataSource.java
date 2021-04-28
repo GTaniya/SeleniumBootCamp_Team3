@@ -12,7 +12,6 @@ public class DataSource extends BaseAPI {
     public static DataReader excelReader = new DataReader();
 
 
-    //Excel file
     public static List<String> getItemsListFromExcel() throws Exception, IOException, SQLException, ClassNotFoundException{
         String path = "../com.macys/dataTest/Macys.xlsx";
         String[] myStringArray = excelReader.fileReader2(path, 0);

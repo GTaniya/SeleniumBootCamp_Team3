@@ -6,6 +6,7 @@ public class HomepageLocators {
     public static final String WEB_ELEMENT_INPUT_SEARCH ="//input[@id='globalSearchInputField']";
     public static final String WEB_ELEMENT_EARRINGS ="//h1[.='earrings']";
     public static final String WEB_ELEMENT_MASCARA ="//h1[.='mascara']";
+    public static final String WEB_ELEMENT_SEARCH_BUTTON ="//button[@id='searchSubmit']";
 
     //Menu
     public static final String WEB_ELEMENT_OPEN_DROP_DOWN_MENU ="//span[@id='shopByDepartmentLabelText']";

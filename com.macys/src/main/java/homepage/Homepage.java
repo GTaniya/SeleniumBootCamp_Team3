@@ -3,6 +3,7 @@ package homepage;
 import common.BaseAPI;
 import homepage.macysDataDriver.DataSource;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -26,8 +27,12 @@ public class Homepage extends BaseAPI {
         String item = earrings.get(2);
         typeOnElement(WEB_ELEMENT_INPUT_SEARCH, item);
 
-        Robot robot = new Robot();
-        robot.keyPress(KeyEvent.VK_ENTER);
+
+        WebDriverWait wait10 = new WebDriverWait(driver, 20);
+        WebElement element = driver.findElement(By.xpath(WEB_ELEMENT_SEARCH_BUTTON));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click()", element);
+
 
     }
 
@@ -36,8 +41,7 @@ public class Homepage extends BaseAPI {
         String item = mascara.get(3);
         typeOnElement(WEB_ELEMENT_INPUT_SEARCH, item);
 
-        Robot robot = new Robot();
-        robot.keyPress(KeyEvent.VK_ENTER);
+        clickByXpathUsingJavaScript(WEB_ELEMENT_SEARCH_BUTTON);
 
     }
 

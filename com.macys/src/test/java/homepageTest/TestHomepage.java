@@ -12,11 +12,15 @@ public class TestHomepage extends BaseAPI {
     Homepage homepage;
 
     //Test #1
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void testSearchEarringUsingExcel() throws Exception {
         homepage = new Homepage();
         homepage.searchEarringsUsingExcel();
-        softAssertAssertEqualsGetText(WEB_ELEMENT_EARRINGS, "earrings");
+
+        String expectedHeader = "earrings";
+        softAssert.assertEquals(expectedHeader,WEB_ELEMENT_EARRINGS);
+
+
     }
 
     //Test #2
@@ -24,7 +28,9 @@ public class TestHomepage extends BaseAPI {
     public void testSearchMascaraUsingExcel() throws Exception {
         homepage = new Homepage();
         homepage.searchMascaraUsingExcel();
-        softAssertAssertEqualsGetText(WEB_ELEMENT_MASCARA, "Mascara");
+
+        String expectedHeader = "Mascara";
+        softAssert.assertEquals(expectedHeader,WEB_ELEMENT_MASCARA);
     }
 
     //Test#3
@@ -38,7 +44,7 @@ public class TestHomepage extends BaseAPI {
     }
 
     //Test#4
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void testLocationSearch() throws InterruptedException {
         homepage = new Homepage();
         homepage.clickStoresLink();

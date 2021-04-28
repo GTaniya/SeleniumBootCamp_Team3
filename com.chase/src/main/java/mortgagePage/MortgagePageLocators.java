@@ -39,6 +39,14 @@ public class MortgagePageLocators {
 
     public static final String WEB_ELEMENT_IFRAME_LOGIN= "//div[@class='herolayer__button']/a[.='Open an account']";
 
+    public static final String WEB_ELEMENT_SEARCH_FIELD_BUTTON= "//a[contains(.,'Show Search.')]";
+
+    public static final String WEB_ELEMENT_SEARCH_INPUT_FIELD= "//input[@class='header__section--search__bar--search-input']";
+
+    public static final String WEB_ELEMENT_SEARCH_BUTTON= "//input[@class='header__section--search__bar--search-input']";
+
+
+
 
 
 

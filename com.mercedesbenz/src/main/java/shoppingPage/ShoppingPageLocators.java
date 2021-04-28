@@ -46,6 +46,10 @@ public class ShoppingPageLocators {
     public static final String WEB_ELEMENT_OWNERS_MANUAL_SLIDE_ARROW = "//a[@href='/content/dam/mb-nafta/us/owners/manuals/2017/operators/MY17_AMG_E-Class_Sedan_Operator.pdf']";
 
 
+    public static final String WEB_ELEMENT_CHECK_INSIDE_CAR_OPTION = "//span[@class='view-toggle__icon icon-steering-wheel']";
+    public static final String WEB_ELEMENT_CHECK_INSIDE_CAR_OPTION_SCROLL_TO_RIGHT = "//span[@class='rotation-controls__icon icon-caret-right-thin']";
+
+
 
 }
 

@@ -32,7 +32,7 @@ import shoppingPage.ShoppingPage;
         }
 
         //Test #2
-        @Test(enabled = true)
+        @Test(enabled = false)
         public void testSelectColor() throws InterruptedException {
             shoppingPage = new ShoppingPage();
             shoppingPage.NavigateToColorChange();
@@ -52,6 +52,20 @@ import shoppingPage.ShoppingPage;
 
 
         }
+        //Test #2
+        @Test(enabled = true)
+        public void testTestInsideTheVehicle() throws InterruptedException {
+            shoppingPage = new ShoppingPage();
+            shoppingPage.NavigateToColorChange();
+            shoppingPage.clickToChooseVehicle();
+            Thread.sleep(2000);
+            shoppingPage.clickBuildVehicleButton();
+//            implicitWait(20);
+            shoppingPage.selectCheckInsideSuvOption();
+            shoppingPage.scrollToRightToCgeckInsideTheSuv();
+            Thread.sleep(4000);
+        }
+
 
         //Test #3
         @Test (enabled = false)

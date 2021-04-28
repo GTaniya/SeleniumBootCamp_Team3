@@ -42,12 +42,7 @@ public class TestMortgagePage extends BaseAPI {
         //Thread.sleep(4000);
         mortgagePage.clickGetStartedButton();
 
-
-        String actualTitle = BaseAPI.driver.getTitle();
-
-        String expectedTitle = "Buying a Home | Home Lending | Chase.com";
-
-        Assert.assertEquals(actualTitle, expectedTitle, "TITLE DOES NOT MATCH");
+        Assert.assertTrue(isElementSelected(mortgagePage.getStarted));
     }
 
     //Test #3
@@ -106,7 +101,7 @@ public class TestMortgagePage extends BaseAPI {
     }
 
     //Test #6
-    @Test (enabled = false)
+    @Test (enabled = true)
     public void testSelectRadioButtonPrev() throws InterruptedException {
         mortgagePage = new MortgagePage();
 
@@ -152,11 +147,9 @@ public class TestMortgagePage extends BaseAPI {
 
         mortgagePage.NavigateToMortgagePage();
         mortgagePage.NavigateToAtmBranchPage();
-        String actualTitle = BaseAPI.driver.getTitle();
 
-        String expectedTitle = "Find a Chase ATM or branch near you | Chase Bank";
-
-        Assert.assertEquals(actualTitle, expectedTitle, "TITLE DOES NOT MATCH");
+        String expectedHeader = "Find a Chase ATM or branch near you";
+        softAssert.assertEquals(expectedHeader,WEB_ELEMENT_ATM_AND_BRANCH_PAGE);
     }
 
     //Test #10

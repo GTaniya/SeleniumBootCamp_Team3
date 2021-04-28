@@ -2,6 +2,7 @@ package shoppingPage;
 
 import common.BaseAPI;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -38,6 +39,12 @@ public class ShoppingPage extends BaseAPI {
     @FindBy(xpath = WEB_ELEMENT_SCHEDULE_SERVICE_SEARCH_BAR)
     WebElement searchBar;
 
+    @FindBy(xpath = WEB_ELEMENT_CHECK_INSIDE_CAR_OPTION)
+    public WebElement checkInsideSUV;
+
+    @FindBy(xpath = WEB_ELEMENT_CHECK_INSIDE_CAR_OPTION_SCROLL_TO_RIGHT)
+    public WebElement checkInsideSUVScroll;
+
 
     public void clickShoppingButton(){
         clickByXpath(WEB_ELEMENT_SELECT_SHOPPING);
@@ -56,11 +63,29 @@ public class ShoppingPage extends BaseAPI {
 
     public void SelectTheVehicleColor(){clickByXpath(WEB_ELEMENT_SELECT_VEHICLE_COLOR_SELECT);}
 
+    public void selectCheckInsideSuvOption(){
+        waitForElementToBeClickable(checkInsideSUV);
+        clickByXpath(WEB_ELEMENT_CHECK_INSIDE_CAR_OPTION);
+    }
+
+    public void scrollToRightToCgeckInsideTheSuv() throws InterruptedException {
+        for (int i = 0; i < 10; i++){
+            waitForElementToBeClickable(checkInsideSUVScroll);
+            WebElement element= driver.findElement(By.xpath(WEB_ELEMENT_CHECK_INSIDE_CAR_OPTION_SCROLL_TO_RIGHT));
+
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            executor.executeScript("arguments[0].click();", element);
+            Thread.sleep(2000);
+        }
+    }
+
     public void NavigateToColorChange(){
         clickByXpath(WEB_ELEMENT_SELECT_SHOPPING);
         clickByXpath(WEB_ELEMENT_SELECT_SHOPPING_BUILD_YOUR_OWN);
 
         }
+
+
 
     public void clickRadioButton(){
         clickByXpath(WEB_ELEMENT_RADIO_BUTTON_VIDEO);

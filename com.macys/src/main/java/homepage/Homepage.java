@@ -22,12 +22,12 @@ public class Homepage extends BaseAPI {
         PageFactory.initElements(driver, this);
     }
 
-    public void searchEarringsUsingExcel() throws Exception {
+    public void searchEarrings() throws Exception {
         List<String> earrings = DataSource.getItemsListFromExcel();
         String item = earrings.get(2);
         typeOnElement(WEB_ELEMENT_INPUT_SEARCH, item);
 
-        WebDriverWait wait10 = new WebDriverWait(driver, 20);
+        WebDriverWait wait1 = new WebDriverWait(driver, 20);
         WebElement element = driver.findElement(By.xpath(WEB_ELEMENT_SEARCH_BUTTON));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click()", element);
@@ -48,7 +48,7 @@ public class Homepage extends BaseAPI {
     }
 
     @FindBy( xpath = WEB_ELEMENT_OPEN_DROP_DOWN_MENU)
-    WebElement openDropDownDown;
+    public WebElement openDropDownDown;
 
     @FindBy( xpath = WEB_ELEMENT_DROP_DOWN_MENU_BEAUTY)
     WebElement beauty;

@@ -441,6 +441,10 @@ public class Homepage extends BaseAPI {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click()", element);
 
+        WebElement price = driver.findElement(By.id("price_filter_min"));
+
+        price.sendKeys("0");
+
     }
     public void changePrice(){
         WebElement price = driver.findElement(By.id("price_filter_min"));

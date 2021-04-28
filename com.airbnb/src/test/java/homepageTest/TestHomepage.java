@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 import static homepage.HomepageLocators.*;
 
+
 public class TestHomepage extends BaseAPI {
     Homepage homepage;
 
@@ -174,11 +175,9 @@ public class TestHomepage extends BaseAPI {
 
         homepage.clickLanguageItaliaButton();
 
-        String actualResult = driver.getTitle();
+        String expectedLanguage = "Nella natura";
+        softAssert.assertEquals(expectedLanguage,WEB_ELEMENT_LANGUAGE_ITALIA_PAGE);
 
-        String expectedResult = "Airbnb: case vacanze, chalet, case al mare, alloggi ed Esperienze incredibili";
-
-        Assert.assertEquals(actualResult, expectedResult, "Test Failed");
 
     }
 
@@ -275,7 +274,7 @@ public class TestHomepage extends BaseAPI {
         homepage.addLocation();
         implicitWait(10);
         homepage.clickPrice();
-        homepage.changePrice();
+        //homepage.changePrice();
        // WebDriverWait wait = new WebDriverWait(driver, 60);
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 

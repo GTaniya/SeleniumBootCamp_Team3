@@ -28,6 +28,7 @@ public class MortgagePageLocators {
 
     //Tab
     public static final String WEB_ELEMENT_ATM_AND_BRANCH = "//a[.='ATM & branch']";
+    public static final String WEB_ELEMENT_ATM_AND_BRANCH_PAGE = "//h1[@class='HeroSearchBar-title']";
     public static final String WEB_ELEMENT_ATM_AND_BRANCH_INPUT_SEARCH_BAR = "//input[@id='q']";
     public static final String WEB_ELEMENT_ATM_AND_BRANCH_INPUT_SEARCH_BAR_TEXT = "20874";
     public static final String WEB_ELEMENT_ATM_AND_BRANCH_INPUT_SEARCH_BUTTON = "//button[@class='search-button chaseanalytics-track-link']";

@@ -22,7 +22,7 @@ public class MortgagePage extends BaseAPI {
     WebElement navigateToMortgagePage;
 
     @FindBy (css = WEB_ELEMENT_NAVIGATE_TO_MORTGAGE_PAGE_GET_STARTED_BUTTON)
-    WebElement getStarted;
+    public WebElement getStarted;
 
     public MortgagePage() {
         PageFactory.initElements(driver, this);
@@ -91,9 +91,12 @@ public class MortgagePage extends BaseAPI {
 
     public void selectPrevRadioOption(){
 
-        clickElement(radioOptionRight3);
-        clickElement(radioOptionRight4);
-        clickElement(radioOptionRight5);
+        driverWait.until(ExpectedConditions.elementToBeClickable(radioOptionRight3));
+        radioOptionRight3.click();
+        driverWait.until(ExpectedConditions.elementToBeClickable(radioOptionRight4));
+        radioOptionRight4.click();
+        driverWait.until(ExpectedConditions.elementToBeClickable(radioOptionRight5));
+        radioOptionRight5.click();
 
     }
 

@@ -17,7 +17,7 @@ public class TestHomepage extends BaseAPI {
     @Test(enabled = false)
     public void testSearchEarringUsingExcel() throws Exception {
         homepage = new Homepage();
-        homepage.searchEarringsUsingExcel();
+        homepage.searchEarrings();
 
         String expectedHeader = "earrings";
         softAssert.assertEquals(expectedHeader,WEB_ELEMENT_EARRINGS);
@@ -40,7 +40,7 @@ public class TestHomepage extends BaseAPI {
         homepage = new Homepage();
         homepage.clickDropDown();
        // homepage.clickBeauty();
-
+        Assert.assertTrue(isElementSelected(homepage.openDropDownDown));
 
     }
 

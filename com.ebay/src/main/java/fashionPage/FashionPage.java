@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.sql.PreparedStatement;
 import java.util.List;
 
 import static fashionPage.FashionPageLocators.*;
@@ -18,7 +17,7 @@ public class FashionPage extends BaseAPI {
     }
 
         @FindBy(xpath = WEB_ELEMENT_CLICK_FASHION_BUTTON )
-        WebElement clickFashionButton;
+        public WebElement clickFashionButton;
 
         public void fashionButton(){
             clickByXpathUsingJavaScript(WEB_ELEMENT_CLICK_FASHION_BUTTON);
@@ -79,12 +78,35 @@ public class FashionPage extends BaseAPI {
 
         public void peakYourItem(){clickByXpathUsingJavaScript(WEB_ELEMENT_PEAK_VACUUM);}
 
+        @FindBy(xpath = WEB_ELEMENT_ADD_TO_CART)
+        public WebElement addToCart;
+
+        public void addItemToYourCart(){clickByXpathUsingJavaScript(WEB_ELEMENT_ADD_TO_CART);}
+
+        @FindBy(xpath = WEB_ELEMENT_CLICK_CHECK_OUT)
+        public WebElement clickCheckOut;
+
+        public void clickCheckOutButton(){clickByXpathUsingJavaScript(WEB_ELEMENT_CLICK_CHECK_OUT);}
+
         public void searchBags() throws Exception {
             List<String> bags = DataSource.getItemsListFromExcel();
             String item = bags.get(1);
             typeOnElement(WEB_ELEMENT_INPUT_SEARCH_BAR,item);
             clickByXpathUsingJavaScript(WEB_ELEMENT_INPUT_SEARCH_BUTTON);
 
+        }
+        public void searchJewelry() throws Exception {
+            List<String> jewelry = DataSource.getItemsListFromExcel();
+            String items = jewelry.get(2);
+            typeOnElement(WEB_ELEMENT_INPUT_SEARCH_BAR,items);
+            clickByXpathUsingJavaScript(WEB_ELEMENT_INPUT_SEARCH_JEWELRY);
+
+        }
+        public void searchWatches() throws Exception {
+            List<String> watches = DataSource.getItemsListFromExcel();
+            String itemToSearch = watches.get(3);
+            typeOnElement(WEB_ELEMENT_INPUT_SEARCH_BAR,itemToSearch);
+            clickByXpathUsingJavaScript(WEB_ELEMENT_INPUT_SEARCH_WATCHES);
         }
 
 

@@ -42,9 +42,13 @@ public class FashionPageLocators {
 
     public static final String WEB_ELEMENT_SELECT_DYSON ="//p[.='Dyson']";
 
+    public static final String WEB_ELEMENT_PEAK_VACUUM_HEADER ="//span[@class='b-pageheader__text']']";
+
     public static final String WEB_ELEMENT_PEAK_VACUUM ="//h3[.='Dyson V7 Fluffy HEPA Cordless Vacuum Cleaner | Blue | New']";
 
-    public static final String WEB_ELEMENT_PEAK_VACUUM_HEADER ="//span[@class='b-pageheader__text']']";
+    public static final String WEB_ELEMENT_ADD_TO_CART ="//div[@class='item-primary-cta']//a[.='Add to cart']";
+
+    public static final String WEB_ELEMENT_CLICK_CHECK_OUT ="//div[@class='cartsummary']";
 
     public static final String WEB_ELEMENT_INPUT_SEARCH_BAR  ="//input[@id='gh-ac']";
 
@@ -52,7 +56,9 @@ public class FashionPageLocators {
 
     public static final String WEB_ELEMENT_INPUT_SEARCH_BAGS  ="//span[.='bags']";
 
-   // public static final String WEB_ELEMENT_INPUT_SEARCH_BAGS  ="//span[.='bags']";
+    public static final String WEB_ELEMENT_INPUT_SEARCH_JEWELRY ="//span[.='jewelry']";
+
+    public static final String WEB_ELEMENT_INPUT_SEARCH_WATCHES =" //span[.='watches']";
 
 
 

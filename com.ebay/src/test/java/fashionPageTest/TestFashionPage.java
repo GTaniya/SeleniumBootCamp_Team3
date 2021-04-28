@@ -3,6 +3,7 @@ package fashionPageTest;
 import common.BaseAPI;
 import fashionPage.FashionPage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -12,22 +13,19 @@ public class TestFashionPage extends BaseAPI {
 
     FashionPage fashionPage;
 
-    @Test(enabled = false)
-    public void testClickFashionButton(){
+    @Test(enabled = true)
+    public void testClickFashionButton() {
         fashionPage = new FashionPage();
         fashionPage.fashionButton();
 
+        String expectedText ="Fashion";
+        String actualText =driver.getTitle();
 
-
-        String actualResult = BaseAPI.driver.getTitle();
-        String expectedResult = "Fashion products for sale | eBay";
-
-        Assert.assertEquals(actualResult, expectedResult, "TEST FAILED");
-
+        Assert.assertFalse(expectedText.equalsIgnoreCase(actualText));
     }
 
     @Test(enabled = false)
-    public void testClickShopByCategory()  {
+    public void testClickShopByCategory() {
         fashionPage = new FashionPage();
         fashionPage.fashionButton();
         fashionPage.clickShopByCategory();
@@ -36,7 +34,7 @@ public class TestFashionPage extends BaseAPI {
         String expectedTest = "button";
         String actualText = driver.findElement(By.xpath("//'[@id=\"mainContent']/section[1]/div[2]/a[1]/div[2]")).getAttribute("type");
 
-        Assert.assertEquals(actualText,expectedTest,"Test Failed");
+        Assert.assertEquals(actualText, expectedTest, "Test Failed");
 
 
     }
@@ -49,17 +47,16 @@ public class TestFashionPage extends BaseAPI {
         fashionPage.clickFashionWoman();
 
 
-
         String expectedTest = "button";
         String actualText = driver.findElement(By.xpath("//a[.='Women']")).getAttribute("type");
 
-        Assert.assertEquals(actualText,expectedTest,"Test Failed");
+        Assert.assertEquals(actualText, expectedTest, "Test Failed");
 
 
     }
 
     @Test(enabled = false)
-    public void testSearchDressPage(){
+    public void testSearchDressPage() {
         fashionPage = new FashionPage();
         fashionPage.fashionButton();
         fashionPage.clickShopByCategory();
@@ -79,10 +76,10 @@ public class TestFashionPage extends BaseAPI {
         fashionPage.fashionButton();
         fashionPage.clickJeweleryDropDown();
 
-        String expectedText ="b-accordion-text";
-        String actualText =fashionPage.clickJewelery.getAttribute("class");
+        String expectedText = "b-accordion-text";
+        String actualText = fashionPage.clickJewelery.getAttribute("class");
 
-        Assert.assertEquals(actualText,expectedText,"Test Doesn't Work");
+        Assert.assertEquals(actualText, expectedText, "Test Doesn't Work");
 
 
     }
@@ -101,6 +98,7 @@ public class TestFashionPage extends BaseAPI {
 
 
     }
+
     @Test(enabled = false)
     public void testDropDownMyEbayMenuBar() {
         fashionPage = new FashionPage();
@@ -113,14 +111,13 @@ public class TestFashionPage extends BaseAPI {
         Assert.assertEquals(actualResult, expectedResult, "TEST FAILED");
 
 
-
     }
+
     @Test(enabled = false)
-    public void doSearchFineJewelry(){
+    public void doSearchFineJewelry() {
         fashionPage = new FashionPage();
         fashionPage.fashionButton();
         fashionPage.doSearchFineJewelry();
-
 
 
         String actualResult = BaseAPI.driver.getTitle();
@@ -129,8 +126,9 @@ public class TestFashionPage extends BaseAPI {
         Assert.assertEquals(actualResult, expectedResult, "TEST FAILED");
 
     }
+
     @Test(enabled = false)
-    public void testClickRegistrationButton(){
+    public void testClickRegistrationButton() {
         fashionPage = new FashionPage();
         fashionPage.clickRegistrationButton();
 
@@ -142,8 +140,9 @@ public class TestFashionPage extends BaseAPI {
 
 
     }
+
     @Test(enabled = false)
-    public void testSignInYourAccount(){
+    public void testSignInYourAccount() {
         fashionPage = new FashionPage();
         fashionPage.clickRegistrationButton();
         fashionPage.signInYourAccount();
@@ -155,8 +154,9 @@ public class TestFashionPage extends BaseAPI {
         Assert.assertEquals(actualResult, expectedResult, "TEST FAILED");
 
     }
+
     @Test(enabled = false)
-    public void testSignUpEbayAccount(){
+    public void testSignUpEbayAccount() {
         fashionPage = new FashionPage();
         fashionPage.clickRegistrationButton();
         fashionPage.signUpEbayAccount();
@@ -168,8 +168,9 @@ public class TestFashionPage extends BaseAPI {
         Assert.assertEquals(actualResult, expectedResult, "TEST FAILED");
 
     }
+
     @Test(enabled = false)
-    public void testClickCheckBoxBorder(){
+    public void testClickCheckBoxBorder() {
         fashionPage = new FashionPage();
         fashionPage.clickRegistrationButton();
         fashionPage.signUpEbayAccount();
@@ -183,8 +184,9 @@ public class TestFashionPage extends BaseAPI {
 
 
     }
+
     @Test(enabled = false)
-    public void testSearchSellAndEvent(){
+    public void testSearchSellAndEvent() {
         fashionPage = new FashionPage();
         fashionPage.searchSailAndEvent();
 
@@ -195,8 +197,9 @@ public class TestFashionPage extends BaseAPI {
 
 
     }
+
     @Test(enabled = false)
-    public void testSearchDealPage(){
+    public void testSearchDealPage() {
         fashionPage = new FashionPage();
         fashionPage.searchDeals();
 
@@ -208,8 +211,9 @@ public class TestFashionPage extends BaseAPI {
 
 
     }
+
     @Test(enabled = false)
-    public void testDropDownFeature(){
+    public void testDropDownFeature() {
         fashionPage = new FashionPage();
         fashionPage.searchDeals();
         fashionPage.dropDownFeatures();
@@ -222,8 +226,9 @@ public class TestFashionPage extends BaseAPI {
 
 
     }
+
     @Test(enabled = false)
-    public void testClickBoostDeals(){
+    public void testClickBoostDeals() {
         fashionPage = new FashionPage();
         fashionPage.searchDeals();
         fashionPage.dropDownFeatures();
@@ -231,29 +236,32 @@ public class TestFashionPage extends BaseAPI {
 
 
         String expectedValue = "";
-        softAssert.assertEquals(expectedValue,WEB_ELEMENT_CLICK_BOOST_DEALS);
+        softAssert.assertEquals(expectedValue, WEB_ELEMENT_CLICK_BOOST_DEALS);
 
     }
+
     @Test(enabled = false)
-    public void testHoverHomeAndGarden(){
+    public void testHoverHomeAndGarden() {
         fashionPage = new FashionPage();
         fashionPage.hoverHomeAndGardenButton();
 
-        String exp="Home & Garden";
-        softAssert.assertEquals(exp,WEB_ELEMENT_HOVER_HOME_AND_GARDEN);
+        String exp = "Home & Garden";
+        softAssert.assertEquals(exp, WEB_ELEMENT_HOVER_HOME_AND_GARDEN);
     }
+
     @Test(enabled = false)
-    public void testClickBathIcon(){
+    public void testClickBathIcon() {
         fashionPage = new FashionPage();
         fashionPage.hoverHomeAndGardenButton();
         fashionPage.searchVacuums();
 
 
-      String expectedText ="vacuums";
-      softAssert.assertEquals(expectedText,WEB_ELEMENT_DO_SEARCH_VACUUMS);
+        String expectedText = "vacuums";
+        softAssert.assertEquals(expectedText, WEB_ELEMENT_DO_SEARCH_VACUUMS);
 
 
     }
+
     @Test(enabled = false)
     public void testSelectVacuumBrand() {
         fashionPage = new FashionPage();
@@ -261,13 +269,13 @@ public class TestFashionPage extends BaseAPI {
         fashionPage.searchVacuums();
         fashionPage.selectVacuumBrand();
 
-        String expectedText = "Dyson Stick Vacuum Cleaners";
-        softAssert.assertEquals(expectedText,WEB_ELEMENT_PEAK_VACUUM_HEADER);
+        Assert.assertFalse(isElementSelected(fashionPage.peakVacuum));
 
 
     }
+
     @Test(enabled = false)
-    public void testPeakYourItem(){
+    public void testPeakYourItem() {
         fashionPage = new FashionPage();
         fashionPage.hoverHomeAndGardenButton();
         fashionPage.searchVacuums();
@@ -275,10 +283,44 @@ public class TestFashionPage extends BaseAPI {
         fashionPage.peakYourItem();
 
 
+        String expectedText = "Stick ";
+        String actualText = driver.getTitle();
+
+        Assert.assertFalse(expectedText.equalsIgnoreCase(actualText));
+
+    }
+    @Test(enabled = false)
+    public void testVacuumForAnimals() {
+        fashionPage = new FashionPage();
+        fashionPage.hoverHomeAndGardenButton();
+        fashionPage.searchVacuums();
+        fashionPage.selectVacuumBrand();
+        fashionPage.peakYourItem();
+        fashionPage.addItemToYourCart();
+
+
+        String expectedText = " vacuum";
+        softAssert.assertEquals(expectedText, WEB_ELEMENT_ADD_TO_CART);
+    }
+    @Test(enabled = false)
+    public void testClickCheckOut(){
+        fashionPage = new FashionPage();
+        fashionPage.hoverHomeAndGardenButton();
+        fashionPage.searchVacuums();
+        fashionPage.selectVacuumBrand();
+        fashionPage.peakYourItem();
+        fashionPage.addItemToYourCart();
+        fashionPage.clickCheckOutButton();
+
+
+//        String expectedText = " true";
+//        softAssert.assertEquals(expectedText, WEB_ELEMENT_HOVER_CART);
+
+
 
 
     }
-    @Test
+    @Test(enabled = false)
     public void testSearchBags() throws Exception {
         fashionPage = new FashionPage();
         fashionPage.searchBags();
@@ -286,7 +328,22 @@ public class TestFashionPage extends BaseAPI {
         String expectedText = " shoes";
         softAssert.assertEquals(expectedText,WEB_ELEMENT_INPUT_SEARCH_BAGS);
     }
+    @Test(enabled = false)
+    public void testSearchJewelry() throws Exception {
+        fashionPage = new FashionPage();
+        fashionPage.searchJewelry();
 
+       String expectedText = " jewelry";
+       softAssert.assertEquals(expectedText,WEB_ELEMENT_INPUT_SEARCH_JEWELRY);
+    }
+    @Test(enabled = false)
+    public void testSearchWatches() throws Exception {
+        fashionPage = new FashionPage();
+        fashionPage.searchWatches();
+
+        String expectedText = "watches";
+        softAssert.assertEquals(expectedText, WEB_ELEMENT_INPUT_SEARCH_WATCHES);
+    }
 
 }
 

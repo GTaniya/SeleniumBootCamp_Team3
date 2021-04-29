@@ -257,7 +257,7 @@ public class TestHomepage extends BaseAPI {
         homepage = new Homepage();
         homepage.clickDateField();
         homepage.clickDate();
-        //Thread.sleep(4000);
+
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 
         softAssert.assertAll();

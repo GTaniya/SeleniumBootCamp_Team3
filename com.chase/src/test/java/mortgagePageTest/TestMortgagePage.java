@@ -107,7 +107,8 @@ public class TestMortgagePage extends BaseAPI {
 
         mortgagePage.selectPrevRadioOption();;
 
-        Thread.sleep(2000);
+
+        WebDriverWait wait1 = new WebDriverWait(driver, 20);
 
        // Assert.assertTrue(isElementSelected(mortgagePage.radioOptionYes));
 
@@ -120,7 +121,8 @@ public class TestMortgagePage extends BaseAPI {
 
         mortgagePage.selectNextRadioOption();
 
-        Thread.sleep(2000);
+        WebDriverWait wait1 = new WebDriverWait(driver, 20);
+
 
         //Assert.assertTrue(isElementSelected(mortgagePage.radioOptionYes));
 
@@ -134,8 +136,8 @@ public class TestMortgagePage extends BaseAPI {
         mortgagePage.NavigateToMortgagePage();
 
         mortgagePage.ClickPlayVideoButton();
-         Thread.sleep(4000);
-        //implicitWait(40);
+
+        implicitWait(40);
        // Assert.assertTrue(isElementSelected(mortgagePage.playVideoButton));
 
     }

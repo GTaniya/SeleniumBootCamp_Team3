@@ -52,7 +52,7 @@ import shoppingPage.ShoppingPage;
 
 
         }
-        //Test #2
+        //Test #3
         @Test(enabled = true)
         public void testTestInsideTheVehicle() throws InterruptedException {
             shoppingPage = new ShoppingPage();
@@ -62,7 +62,7 @@ import shoppingPage.ShoppingPage;
             shoppingPage.clickBuildVehicleButton();
 //            implicitWait(20);
             shoppingPage.selectCheckInsideSuvOption();
-            shoppingPage.scrollToRightToCgeckInsideTheSuv();
+            shoppingPage.scrollToRightToCheckInsideTheSuv();
             Thread.sleep(4000);
         }
 

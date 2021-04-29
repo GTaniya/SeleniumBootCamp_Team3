@@ -7,6 +7,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
@@ -28,6 +29,7 @@ public class Homepage extends BaseAPI {
         typeOnElement(WEB_ELEMENT_INPUT_SEARCH, item);
 
         WebDriverWait wait1 = new WebDriverWait(driver, 20);
+        wait1.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(WEB_ELEMENT_SEARCH_BUTTON))));
         WebElement element = driver.findElement(By.xpath(WEB_ELEMENT_SEARCH_BUTTON));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click()", element);
@@ -39,11 +41,10 @@ public class Homepage extends BaseAPI {
         List<String> mascara = DataSource.getItemsListFromExcel();
         String item = mascara.get(3);
         typeOnElement(WEB_ELEMENT_INPUT_SEARCH, item);
-
+        clickByXpathUsingJavaScript(WEB_ELEMENT_SEARCH_BUTTON);
         WebDriverWait wait10 = new WebDriverWait(driver, 20);
-        WebElement element = driver.findElement(By.xpath(WEB_ELEMENT_SEARCH_BUTTON));
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].click()", element);
+
+
 
     }
 

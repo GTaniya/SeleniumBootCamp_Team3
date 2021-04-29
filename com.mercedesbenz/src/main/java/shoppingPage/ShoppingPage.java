@@ -4,6 +4,7 @@ import common.BaseAPI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -13,27 +14,29 @@ import static shoppingPage.ShoppingPageLocators.*;
 
 public class ShoppingPage extends BaseAPI {
 
-    public ShoppingPage() { PageFactory.initElements(driver, this);}
+    public ShoppingPage() {
+        PageFactory.initElements(driver, this);
+    }
 
-    @FindBy (xpath = WEB_ELEMENT_SELECT_SHOPPING)
+    @FindBy(xpath = WEB_ELEMENT_SELECT_SHOPPING)
     WebElement selectShopping;
 
-    @FindBy (xpath = WEB_ELEMENT_SELECT_SHOPPING_BUILD_YOUR_OWN)
+    @FindBy(xpath = WEB_ELEMENT_SELECT_SHOPPING_BUILD_YOUR_OWN)
     public WebElement ShoppingBuildYourOwn;
 
-    @FindBy (xpath = WEB_ELEMENT_SELECT_VEHICLE)
+    @FindBy(xpath = WEB_ELEMENT_SELECT_VEHICLE)
     WebElement selectVehicle;
 
-    @FindBy (xpath = WEB_ELEMENT_SELECT_VEHICLE_GLA_SUV)
+    @FindBy(xpath = WEB_ELEMENT_SELECT_VEHICLE_GLA_SUV)
     WebElement selectBuildButton;
 
-    @FindBy (xpath = WEB_ELEMENT_SELECT_VEHICLE_COLOR_SELECT)
+    @FindBy(xpath = WEB_ELEMENT_SELECT_VEHICLE_COLOR_SELECT)
     public WebElement selectVehicleColor;
 
-    @FindBy (xpath = WEB_ELEMENT_RADIO_BUTTON_VIDEO)
+    @FindBy(xpath = WEB_ELEMENT_RADIO_BUTTON_VIDEO)
     public WebElement radioOptionVideo;
 
-    @FindBy (xpath = WEB_ELEMENT_SCHEDULE_SERVICE_SEARCH_BUTTON)
+    @FindBy(xpath = WEB_ELEMENT_SCHEDULE_SERVICE_SEARCH_BUTTON)
     WebElement submitButton;
 
     @FindBy(xpath = WEB_ELEMENT_SCHEDULE_SERVICE_SEARCH_BAR)
@@ -46,74 +49,102 @@ public class ShoppingPage extends BaseAPI {
     public WebElement checkInsideSUVScroll;
 
 
-    public void clickShoppingButton(){
+    public void clickShoppingButton() {
         clickByXpath(WEB_ELEMENT_SELECT_SHOPPING);
     }
 
-    public void clickBuildYourOwn(){
+    public void clickBuildYourOwn() {
         clickByXpath(WEB_ELEMENT_SELECT_SHOPPING_BUILD_YOUR_OWN);
     }
 
-    public void clickToChooseVehicle(){clickByXpath(WEB_ELEMENT_SELECT_VEHICLE);}
+    public void clickToChooseVehicle() {
+        clickByXpath(WEB_ELEMENT_SELECT_VEHICLE);
+    }
 
-    public void clickBuildVehicleButton(){
+    public void clickBuildVehicleButton() {
         waitForElementToBeClickable(selectBuildButton);
         clickByXpath(WEB_ELEMENT_SELECT_VEHICLE_GLA_SUV);
     }
 
-    public void SelectTheVehicleColor(){clickByXpath(WEB_ELEMENT_SELECT_VEHICLE_COLOR_SELECT);}
+    public void SelectTheVehicleColor() {
+        clickByXpath(WEB_ELEMENT_SELECT_VEHICLE_COLOR_SELECT);
+    }
 
-    public void selectCheckInsideSuvOption(){
+    public void selectCheckInsideSuvOption() {
         waitForElementToBeClickable(checkInsideSUV);
         clickByXpath(WEB_ELEMENT_CHECK_INSIDE_CAR_OPTION);
     }
 
-    public void scrollToRightToCgeckInsideTheSuv() throws InterruptedException {
-        for (int i = 0; i < 10; i++){
-            waitForElementToBeClickable(checkInsideSUVScroll);
-            WebElement element= driver.findElement(By.xpath(WEB_ELEMENT_CHECK_INSIDE_CAR_OPTION_SCROLL_TO_RIGHT));
+    public void scrollToRightToCheckInsideTheSuv() throws InterruptedException {
+        /**
+         * Method 1
+         */
+//        for (int i = 0; i < 10; i++){
+//              waitForElementToBeClickable(checkInsideSUVScroll);
+//            WebElement element= driver.findElement(By.xpath(WEB_ELEMENT_CHECK_INSIDE_CAR_OPTION_SCROLL_TO_RIGHT));
+//            JavascriptExecutor executor = (JavascriptExecutor) driver;
+//            executor.executeScript("arguments[0].click();", element);
+//            Thread.sleep(2000);
+//          }
 
-            JavascriptExecutor executor = (JavascriptExecutor) driver;
-            executor.executeScript("arguments[0].click();", element);
-            Thread.sleep(2000);
-        }
+        /**
+         * Method 1
+         */
+
+        waitForElementToBeClickable(checkInsideSUVScroll);
+        Actions action = new Actions(driver);
+        WebElement element = driver.findElement(By.xpath(WEB_ELEMENT_CHECK_INSIDE_CAR_OPTION_SCROLL_TO_RIGHT));
+        action.moveToElement(checkInsideSUVScroll).clickAndHold().moveByOffset(310, 220).build().perform();
+        Thread.sleep(2000);
+
     }
 
-    public void NavigateToColorChange(){
+    public void NavigateToColorChange() {
         clickByXpath(WEB_ELEMENT_SELECT_SHOPPING);
         clickByXpath(WEB_ELEMENT_SELECT_SHOPPING_BUILD_YOUR_OWN);
 
-        }
+    }
 
 
-
-    public void clickRadioButton(){
+    public void clickRadioButton() {
         clickByXpath(WEB_ELEMENT_RADIO_BUTTON_VIDEO);
     }
 
-    public void clickScheduleServiceLink(){clickByXpath(WEB_ELEMENT_SCHEDULE_SERVICE);}
+    public void clickScheduleServiceLink() {
+        clickByXpath(WEB_ELEMENT_SCHEDULE_SERVICE);
+    }
 
-    public void clickSearchBar(){searchBar.click();}
+    public void clickSearchBar() {
+        searchBar.click();
+    }
 
-    public void SearchZipCode(){
+    public void SearchZipCode() {
         WebElement zipCode = driver.findElement(By.id(WEB_ELEMENT_SCHEDULE_SERVICE_SEARCH_BAR));
 
         zipCode.sendKeys("20874");
 
     }
 
-    @FindBy (xpath = WEB_ELEMENT_COMPARE_VEHICLE)
+    @FindBy(xpath = WEB_ELEMENT_COMPARE_VEHICLE)
     WebElement compareVehicleLink;
 
-    @FindBy (xpath = WEB_ELEMENT_COMPARE_VEHICLE_TO_ADD_VEHICLE_ONE)
+    @FindBy(xpath = WEB_ELEMENT_COMPARE_VEHICLE_TO_ADD_VEHICLE_ONE)
     WebElement compareVehicleOne;
 
-    @FindBy (xpath = WEB_ELEMENT_COMPARE_VEHICLE_ADD_SEDAN)
+    @FindBy(xpath = WEB_ELEMENT_COMPARE_VEHICLE_ADD_SEDAN)
     public WebElement addSedan;
 
-    public void clickCompareVehicleLink(){clickByXpath(WEB_ELEMENT_COMPARE_VEHICLE);}
-    public void AddCompareVehicleOne(){clickByXpath(WEB_ELEMENT_COMPARE_VEHICLE_TO_ADD_VEHICLE_ONE);}
-    public void clickCheckBoxForSedan(){addSedan.click();}
+    public void clickCompareVehicleLink() {
+        clickByXpath(WEB_ELEMENT_COMPARE_VEHICLE);
+    }
+
+    public void AddCompareVehicleOne() {
+        clickByXpath(WEB_ELEMENT_COMPARE_VEHICLE_TO_ADD_VEHICLE_ONE);
+    }
+
+    public void clickCheckBoxForSedan() {
+        addSedan.click();
+    }
 
 
     @FindBy(xpath = WEB_ELEMENT_ESTIMATE_PAYMENT_SELECT_CLASS)
@@ -125,40 +156,53 @@ public class ShoppingPage extends BaseAPI {
     @FindBy(xpath = WEB_ELEMENT_ESTIMATE_PAYMENT_SUBMIT_BUTTON)
     public WebElement submitButtonHover;
 
-    @FindBy (xpath = WEB_ELEMENT_SERVICES_ADDITIONAL_RESOURCES)
+    @FindBy(xpath = WEB_ELEMENT_SERVICES_ADDITIONAL_RESOURCES)
     public WebElement servicesAdditionalResources;
 
-    @FindBy (xpath = WEB_ELEMENT_SERVICES_ADDITIONAL_RESOURCES_HEADER)
+    @FindBy(xpath = WEB_ELEMENT_SERVICES_ADDITIONAL_RESOURCES_HEADER)
     public WebElement servicesAdditionalResourcesHeader;
 
-    @FindBy (xpath = WEB_ELEMENT_SERVICES_OWNERS_MANUAL_HEADER_IMAGE)
+    @FindBy(xpath = WEB_ELEMENT_SERVICES_OWNERS_MANUAL_HEADER_IMAGE)
     public WebElement headerImage;
 
 
-    public void clickEstimatePaymentLink(){clickByXpath(WEB_ELEMENT_ESTIMATE_PAYMENT);}
-    public void clickDropDown(){clickByXpath(WEB_ELEMENT_ESTIMATE_PAYMENT_SELECT_CLASS);}
-    public void clickDropDownOption(){ selectClassCLA.click();}
+    public void clickEstimatePaymentLink() {
+        clickByXpath(WEB_ELEMENT_ESTIMATE_PAYMENT);
+    }
 
-    public void hoverOverSubmitButton()  {
+    public void clickDropDown() {
+        clickByXpath(WEB_ELEMENT_ESTIMATE_PAYMENT_SELECT_CLASS);
+    }
+
+    public void clickDropDownOption() {
+        selectClassCLA.click();
+    }
+
+    public void hoverOverSubmitButton() {
         hoverOverElement(submitButtonHover);
     }
 
-    public void clickServicesLink(){clickByXpath(WEB_ELEMENT_SERVICES);}
-    public void clickAdditionalResources(){servicesAdditionalResources.click();}
+    public void clickServicesLink() {
+        clickByXpath(WEB_ELEMENT_SERVICES);
+    }
 
-    public void navigateToServicesPage(){
+    public void clickAdditionalResources() {
+        servicesAdditionalResources.click();
+    }
+
+    public void navigateToServicesPage() {
         clickByXpath(WEB_ELEMENT_SELECT_SHOPPING);
         clickByXpath(WEB_ELEMENT_SERVICES);
         servicesAdditionalResources.click();
 
     }
 
-    public void clickOwnersLink(){
+    public void clickOwnersLink() {
         clickByXpath(WEB_ELEMENT_SERVICES_OWNERS_MANUAL);
     }
 
 
-    public void clickSlideArrow(){
+    public void clickSlideArrow() {
         WebElement slider = driver.findElement(By.xpath(WEB_ELEMENT_OWNERS_MANUAL_SLIDE_ARROW));
     }
 
